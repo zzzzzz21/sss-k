@@ -1,0 +1,96 @@
+// インデント
+@mixin textIndent {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+// vw計算
+@function get_vw($size, $viewport: 320) {
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+@mixin fz_vw($font_size: 10) {
+  font-size: $font_size * 1px;
+  font-size: get_vw($font_size);
+}
+
+// 三角形を作る getTriangle(色, 矢印の方向, 幅, 高さ) を入力する。
+@mixin getTriangle(
+  $color: $base-white,
+  $direction: right,
+  $width: 7,
+  $height: 8
+) {
+  position: relative;
+  $valWidth: $width / 2;
+  $valHeight: $height / 2;
+
+  &::after {
+    border-style: solid;
+    bottom: 0;
+    box-sizing: border-box;
+    content: "";
+    height: 0;
+    margin: auto;
+    position: absolute;
+    width: 0;
+    top: 0;
+    @if ($direction == top) {
+      border-width: 0 $valWidth * 1px $height * 1px $valWidth * 1px;
+      border-color: transparent transparent $color transparent;
+    } @else if ($direction == left) {
+      border-width: $valHeight * 1px $width * 1px $valHeight * 1px 0;
+      border-color: transparent $color transparent transparent;
+    } @else if ($direction == right) {
+      border-width: $valHeight * 1px 0 $valHeight * 1px $width * 1px;
+      border-color: transparent transparent transparent $color;
+      right: 4px;
+    } @else if ($direction == bottom) {
+      border-width: $height * 1px $valWidth * 1px 0 $valWidth * 1px;
+      border-color: $color transparent transparent transparent;
+    }
+  }
+}
+
+// 矢印を作る getArrow(色, 矢印の方向, 幅, 高さ, ラインの厚さ)
+@mixin getArrow(
+  $color: #000,
+  $direction: bottom,
+  $width: 6,
+  $height: 6,
+  $thick: 2
+) {
+  position: relative;
+
+  &::before {
+    border-right: $thick * 1px solid $color;
+    border-top: $thick * 1px solid $color;
+    box-sizing: border-box;
+    content: "";
+    height: $height * 1px;
+    margin: auto;
+    position: absolute;
+    width: $width * 1px;
+    @if ($direction == top) {
+      transform: rotate(-45deg);
+    } @else if ($direction == left) {
+      transform: rotate(225deg);
+    } @else if ($direction == right) {
+      transform: rotate(45deg);
+    } @else if ($direction == bottom) {
+      transform: rotate(135deg);
+    }
+  }
+}
+
+// アンダーラインを作る getUnderline(色, アンダーラインの厚さ(パーセント))
+@mixin getUnderline($color, $thick) {
+  $colorThick: $thick * 1%;
+  $transparentThick: 100% - $colorThick;
+
+  background: linear-gradient(
+    transparent $transparentThick,
+    $color $colorThick
+  );
+}

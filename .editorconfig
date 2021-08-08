@@ -1,0 +1,4 @@
+# 改行コード設定）
+end_of_line = lf
+# 文字コード設定
+charset = utf-8

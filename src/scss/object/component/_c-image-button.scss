@@ -1,0 +1,14 @@
+.c-image-button {
+  @include getTriangle;
+  align-items: center;
+  background: rgba($base-white, 0.8);
+  border: 2px solid $c-image-button-blue;
+  color: $base-blue;
+  display: inline-flex;
+  font-size: 14px;
+  min-width: 284px;
+}
+
+.c-image-button__image {
+  font-size: 0;
+}

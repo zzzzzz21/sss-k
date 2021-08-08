@@ -1,0 +1,6 @@
+.l-top {
+  @include pc {
+    padding: 100px 0 60px;
+    position: relative;
+  }
+}

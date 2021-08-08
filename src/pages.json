@@ -1,0 +1,13 @@
+{
+  "pages": [
+    {
+      "url":"/",
+      "name": "index",
+      "ogtype": "website",
+      "title": "トップ",
+      "description": "トップ",
+      "contents": "contents/_index",
+      "path": "./"
+    }
+  ]
+}

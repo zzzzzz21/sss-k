@@ -1,0 +1,195 @@
+.l-header {
+  box-sizing: border-box;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @include pc {
+    margin: 0 auto;
+    max-width: $PC_CONTENT_WIDTH;
+    padding: 12px 20px;
+  }
+
+  @include sp {
+    background: $base-blue;
+    padding: 7px 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+  }
+}
+
+.l-header-ci {
+  align-items: center;
+  display: flex;
+  width: auto;
+}
+
+.l-header-ci__text {
+  fill: $l-header-ci__text-color;
+  margin-left: 23px;
+
+  @include sp {
+    height: auto;
+    margin-left: 10px;
+    width: 139px;
+  }
+}
+
+.l-header-logo {
+  position: relative;
+
+  @include pc {
+    width: 280px;
+  }
+}
+
+.l-header-require {
+  @include pc {
+    align-items: center;
+    background: $l-header-require;
+    color: $base-white;
+    display: flex;
+    font-size: 14px;
+    padding: 4px 30px 4px 4px;
+
+    @include getTriangle;
+
+    &::before {
+      background: url(#{$IMG_PATH}common/icon-mail.svg) left top / 100%
+        no-repeat;
+      content: "";
+      width: 30px;
+      height: 21px;
+    }
+  }
+}
+
+.l-header-require__text {
+  margin-left: 17px;
+}
+
+// ハンバーガーメニューボタン
+
+.l-header-button {
+  @include pc {
+    display: none;
+  }
+  @include sp {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    outline: none;
+    position: relative;
+    z-index: 3;
+
+    &[aria-expanded="true"] {
+      .l-header-button__lines {
+        &::before {
+          display: none;
+        }
+      }
+
+      .l-header-button__line {
+        background: $base-nav-color;
+      }
+
+      .l-header-button__line {
+        &:nth-of-type(1) {
+          top: 12px;
+          transform: rotate(45deg);
+        }
+
+        &:nth-of-type(2) {
+          bottom: 12px;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}
+
+.l-header-button__lines {
+  @include sp {
+    height: 25px;
+    position: relative;
+    width: 32px;
+  }
+
+  &::before {
+    background: $base-white;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.l-header-button__line {
+  @include sp {
+    background: $base-white;
+    display: block;
+    height: 2px;
+    position: absolute;
+    transition: 0.3s;
+    width: 100%;
+
+    &:nth-of-type(1) {
+      top: 0;
+    }
+
+    &:last-child {
+      bottom: 0;
+    }
+  }
+}
+
+.l-header-nav {
+  padding: 40px 40px 24px;
+  width: 100%;
+  @include pc {
+    display: none;
+  }
+}
+
+.l-header-navlist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  grid-column-gap: 36.2px;
+}
+
+.l-header-navlist__item {
+  font-size: 11px;
+  min-width: 100px;
+  white-space: nowrap;
+}
+
+.l-header-navblock {
+  & + & {
+    margin-top: 15px;
+  }
+}
+
+.l-header-navblock__head {
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+}
+
+.l-header-navblock__item {
+  line-height: 1.9;
+}
+
+.l-header-navblock__link {
+  &:hover,
+  &:focus {
+    color: $base-blue;
+  }
+}
