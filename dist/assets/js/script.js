@@ -167,7 +167,6 @@ $('.js-accordion-tab').on('click', function () {
 let stageW = 0; // 画面の幅
 
 let stageH = 0; // 画面の高さ
-// canvas要素の参照を取得
 
 const canvas = document.querySelector('.c-wave-canvas'); // 2Dの描画命令群を取得
 

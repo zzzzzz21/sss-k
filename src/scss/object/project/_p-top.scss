@@ -43,6 +43,10 @@
     left: 0;
     z-index: 1;
   }
+
+  @include sp {
+    display: none;
+  }
 }
 
 .p-top-content {
