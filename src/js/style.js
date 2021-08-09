@@ -4,6 +4,8 @@ let isSmartPhone;
 // ブレークポイント（px）
 const breakPoint = '768';
 // SP専用ヘッダーのハンバーガーボタン
+const header= document.querySelector('.js-header');
+// SP専用ヘッダーのハンバーガーボタン
 const headerToggleButton = document.querySelector('.js-header-button');
 // ヘッダーのグローバルナビゲーション
 const headerMenu = document.querySelector('.js-header-menu');
@@ -84,19 +86,33 @@ for (let i = 0; i < scrollTrigger.length; i++) {
  */
 function toggleMenu() {
     // ハンバーガーメニューの要素が隠れているかをaria-hiddenで調べる
-    var isHeaderMenuShow = headerMenu.getAttribute('aria-hidden');
+    const isHeaderMenuShow = headerMenu.getAttribute('aria-hidden');
+
+    // ハンバーガーメニューを押した時にwai-aria属性を設定する。グローバルメニューを閉じた時に処理もこちらで兼任する
+    $('.js-accordion').each(function() {
+        const el = $(this);
+        const tab = el.find('.js-accordion-tab');
+        const panel = el.find('.js-accordion-panel');
+        tab.attr('aria-selected', 'false');
+        panel.attr('aria-expanded', 'false');
+        panel.attr('aria-hidden', 'true');
+    });
+
+
     if (isHeaderMenuShow === 'true') {
+        // グローバルナビゲーションを開いた時の処理
+        header.classList.add('l-header--open');
         headerMenu.setAttribute('aria-hidden', 'false');
         headerToggleButton.setAttribute('aria-expanded', 'true');
-        // // ヘッダーのロゴを隠す
-        // headerCi.classList.add('l-header__logo--hide');
-        // htmlをスクロールできない様にする
-        // html.classList.add('l-html--fixed');
+
+
     } else {
+        // グローバルナビゲーションを閉じた時の処理
+        header.classList.remove('l-header--open');
         headerMenu.setAttribute('aria-hidden', 'true');
         headerToggleButton.setAttribute('aria-expanded', 'false');
-        // headerCi.classList.remove('l-header__logo--hide');
-        // html.classList.remove('l-html--fixed');
+
+
     }
 }
 
@@ -116,3 +132,33 @@ function setNavigationCurrent() {
         }
     }
 }
+
+/**
+ * カルーセル機能
+ *
+ */
+
+const swiper = new Swiper('.swiper-container', {
+    effect: 'fade',
+    loop: true,
+    autoplay: true,
+});
+
+/**
+ *　アコーディオンの開閉機能
+ *
+ */
+$('.js-accordion-tab').on('click', function() {
+    const tab = $(this);
+    const panel = tab.parent().find('.js-accordion-panel');
+    const expanded = (tab.attr('aria-selected') === 'true');
+    if (expanded) {
+        tab.attr('aria-selected', 'false');
+        panel.attr('aria-expanded', 'false');
+        panel.attr('aria-hidden', 'true');
+    } else {
+        tab.attr('aria-selected', 'true');
+        panel.attr('aria-expanded', 'true');
+        panel.attr('aria-hidden', 'false');
+    }
+});

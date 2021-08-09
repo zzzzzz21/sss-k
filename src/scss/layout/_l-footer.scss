@@ -1,29 +1,84 @@
 .l-footer {
+  position: relative;
+}
+
+.l-footer-top-button {
+  @include pc {
+    display: none;
+  }
+
+  @include sp {
+    top: -65px;
+    display: block;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.l-footer-top-button__link {
+  @include sp {
+    @include getArrow;
+    background: $c-to-top-background;
+    border-radius: 50%;
+    color: $base-white;
+    display: block;
+    font-size: 17px;
+    height: 50px;
+    margin: 0 auto;
+    padding-top: 14px;
+    text-align: center;
+    width: 50px;
+
+    &::before {
+      left: 0;
+      right: 0;
+      top: 8px;
+    }
+  }
 }
 
 .l-footer-copy {
   background: $base-blue;
   position: relative;
-  padding: 8px;
   text-align: center;
+
+  @include pc {
+    padding: 8px;
+  }
+
+  @include sp {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 46px;
+  }
 
   small {
     color: $base-white;
     font-size: 11px;
     letter-spacing: 0.06em;
+
+    @include sp {
+      font-size: 10px;
+    }
   }
 }
 
 .l-footer-nav {
   border-top: 1px solid $base-blue;
   padding: 40px 40px 24px;
+
+  @include sp {
+    display: none;
+    visibility: hidden;
+  }
 }
 
 .l-footer-nav-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  grid-column-gap: 36.2px;
+  grid-column-gap: 40px;
 }
 
 .l-footer-nav-list__item {
@@ -34,7 +89,7 @@
 
 .l-footer-nav-block {
   & + & {
-    margin-top: 15px;
+    margin-top: 20px;
   }
 }
 

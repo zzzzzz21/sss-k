@@ -1,7 +1,8 @@
 <% 
 	const d = jsonData;
 	const commonTitle = '株式会社サンエス工業';
-	const commonDescription = '';
+	const commonDescription = '株式会社サンエス工業は、空調機器製造販売、';
+	const domain = 'http://www.sss-k.co.jp/';
 -%>
 <!DOCTYPE html>
 <html lang="ja">
@@ -16,10 +17,11 @@
 	<% } -%>
 	<meta name="format-detection" content="telephone=no">
 	<meta property="og:title" content="<%- d.title %>｜<%- commonTitle %>">
-	<meta property="og:url" content="#TODO<%- d.url %>">
+	<meta property="og:url" content="<%- domain %>">
 	<meta property="og:site_name" content="<%- commonTitle %>">
 	<meta property="og:description" content="<%- commonDescription %>">
 	<meta name="description" content="<%- commonDescription %>">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="<%- d.path %>assets/css/style.css">
 </head>
 <body id="body">

@@ -7,8 +7,46 @@
   display: inline-flex;
   font-size: 14px;
   min-width: 284px;
+  padding-right: 18px;
+
+  @include sp {
+    margin: 0 auto;
+    width: calc(100% - 20px);
+  }
+
+  &::before {
+    background: $c-image-button-blue;
+    bottom: 0;
+    content: "";
+    height: calc(100% - 10px);
+    margin: auto;
+    position: absolute;
+    right: 7px;
+    top: 0;
+    width: 11px;
+  }
+
+  &::after {
+    right: 8px;
+  }
 }
 
 .c-image-button__image {
   font-size: 0;
+
+  @include sp {
+    width: 52%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.c-image-button__text {
+  flex: 1;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.4em;
 }

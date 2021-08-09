@@ -1,18 +1,68 @@
 .p-top-kv {
-  background: url(#{$IMG_PATH}top/kv1.jpg) center top / cover no-repeat;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
+  @include pc {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  @include sp {
+    position: relative;
+  }
+
+  .swiper-container {
+    font-size: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .swiper-slide {
+    img {
+      object-fit: cover;
+      width: 100%;
+
+      @include pc {
+        height: 100%;
+        object-position: center bottom;
+      }
+
+      @include sp {
+        height: 185px;
+      }
+    }
+  }
+}
+
+.p-top-content {
+  position: relative;
+  z-index: 2;
 }
 
 .p-top-lead {
   color: $base-white;
-  font-size: 26px;
   font-weight: 500;
+  left: 0;
+  letter-spacing: 0.28em;
+  margin: auto;
+  position: absolute;
+  right: 0;
   text-align: center;
-  text-shadow: 0px 0px 21px rgba($base-black, 0.16);
+  text-shadow: 0 0 5px $base-black, 0 0 5px $base-black;
+  z-index: 2;
+
+  @include pc {
+    font-size: 26px;
+    top: 104px;
+  }
+
+  @include sp {
+    bottom: 0;
+    font-size: 19px;
+    height: 1em;
+    line-height: 1;
+    top: 0;
+  }
 }
 
 .p-top-cards {
@@ -22,19 +72,28 @@
     justify-content: center;
     margin: 60px auto 48px;
   }
+
+  @include sp {
+    margin: 0 auto 27px;
+  }
 }
 
 .p-top-card {
-  border: 3px solid $base-blue;
-
+  background: $base-white;
   position: relative;
 
   @include pc {
+    border: 3px solid $base-blue;
     display: flex;
     flex-direction: column;
     height: 230px;
     padding: 36px;
     width: 250px;
+  }
+
+  @include sp {
+    border-bottom: 3px solid $base-blue;
+    padding: 28px 20px 35px;
   }
 
   &--wide {
@@ -48,16 +107,18 @@
     background: url(#{$IMG_PATH}common/icon-blue-curve.svg) left top / 100%
       no-repeat;
     content: "";
+    position: absolute;
 
     @include pc {
       bottom: 5px;
-      position: absolute;
-      right: 5px;
       height: 30px;
+      right: 5px;
       width: 30px;
     }
     @include sp {
+      bottom: 0;
       height: 25px;
+      right: 0;
       width: 25px;
     }
   }
@@ -69,19 +130,60 @@
   }
 }
 
-.p-top-card__link {
-  margin-top: auto;
-}
-
 .p-top-card__title {
   color: $p-top-card-title;
-  font-size: 21px;
   font-weight: 500;
   line-height: 1.2;
   text-align: center;
 
+  @include pc {
+    font-size: 21px;
+  }
+
+  @include sp {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+
   &--blue {
     color: $base-blue;
-    font-size: 32px;
+
+    @include pc {
+      font-size: 32px;
+    }
+
+    @include sp {
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.p-top-card__link {
+  @include pc {
+    margin-top: auto;
+  }
+}
+
+.p-top-require {
+  @include pc {
+    display: none;
+  }
+
+  @include sp {
+    margin: 25px auto 0;
+    width: calc(100% - 20px);
+  }
+}
+
+.p-top-require__link {
+  @include sp {
+    align-items: center;
+    background: $base-white;
+    border: 1px solid $base-blue;
+    display: flex;
+    font-size: 16px;
+    justify-content: center;
+    min-height: 45px;
   }
 }

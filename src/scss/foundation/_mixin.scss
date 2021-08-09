@@ -36,6 +36,7 @@
     position: absolute;
     width: 0;
     top: 0;
+    transition: transform 0.3s;
     @if ($direction == top) {
       border-width: 0 $valWidth * 1px $height * 1px $valWidth * 1px;
       border-color: transparent transparent $color transparent;
@@ -55,10 +56,10 @@
 
 // 矢印を作る getArrow(色, 矢印の方向, 幅, 高さ, ラインの厚さ)
 @mixin getArrow(
-  $color: #000,
-  $direction: bottom,
-  $width: 6,
-  $height: 6,
+  $color: $base-white,
+  $direction: top,
+  $width: 13,
+  $height: 13,
   $thick: 2
 ) {
   position: relative;
@@ -93,4 +94,26 @@
     transparent $transparentThick,
     $color $colorThick
   );
+}
+
+@mixin buttonAnimation {
+  @include pc {
+    &::before {
+      background: $base-white;
+      content: "";
+      height: 28px;
+      left: -100%;
+      position: absolute;
+      opacity: 0.6;
+      transform: rotate(45deg);
+      transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+      width: 100%;
+      z-index: 1;
+    }
+
+    &:hover::before {
+      left: 100%;
+      transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+  }
 }

@@ -1,7 +1,7 @@
 <% var d = jsonData; -%>
-<header class="l-header">
+<header class="l-header js-header">
     <h1 class="l-header-logo">
-        <a href="<%- d.path %>" class="l-header-ci"><img src="<%- d.path %>assets/images/common/icon-ci.svg" alt="株式会社サンエス工業"></a>
+        <a href="<%- d.path %>" class="l-header-logo__link"><img src="<%- d.path %>assets/images/common/icon-ci.svg" alt="株式会社サンエス工業" width="291" height="35"></a>
     </h1>
     <a href="<%- d.path %>＃TODO" class="l-header-require">
         <span class="l-header-require__text">お問い合わせ</span>
@@ -15,9 +15,13 @@
     <nav class="l-header-nav js-header-menu" id="aria-navigation" aria-label="グローバルナビゲーション">
         <ul class="l-header-nav-list">
             <li class="l-header-nav-list__item">
-                <div class="l-header-nav-block">
-                    <button type="button" class="l-header-nav-block__head">私たちの技術力</button>
-                    <ul class="l-header-nav-block__list">
+                <div class="l-header-nav-block js-accordion">
+                    <button 
+                        type="button" 
+                        id="js-accordion-tab-1" 
+                        class="l-header-nav-block__head js-accordion-tab"
+                    >私たちの技術力</button>
+                    <ul class="l-header-nav-block__list js-accordion-panel" id="js-accordion-panel-1">
                         <li class="l-header-nav-block__item">
                             <a href="#TODO" class="l-header-nav-block__link">- 快適な空気とは－技術解説</a>
                         </li>
@@ -28,10 +32,13 @@
                 </div>
             </li>
             <li class="l-header-nav-list__item">
-                <div class="l-header-nav-block">
-                    <button type="button" class="l-header-nav-block__head">消音事業部</button>
-
-                    <ul class="l-header-nav-block__list">
+                <div class="l-header-nav-block js-accordion">
+                    <button 
+                        type="button" 
+                        id="js-accordion-tab-2" 
+                        class="l-header-nav-block__head js-accordion-tab"
+                    >消音事業部</button>
+                    <ul class="l-header-nav-block__list js-accordion-panel" id="js-accordion-panel-2">
                         <li class="l-header-nav-block__item">
                             <a href="#TODO" class="l-header-nav-block__link">- 製品紹介</a>
                         </li>
@@ -42,9 +49,13 @@
                 </div>
             </li>
             <li class="l-header-nav-list__item">
-                <div class="l-header-nav-block">
-                    <h2 class="l-header-nav-block__head">空調部門</h2>
-                    <ul class="l-header-nav-block__list">
+                <div class="l-header-nav-block js-accordion">
+                    <button 
+                        type="button" 
+                        id="js-accordion-tab-3" 
+                        class="l-header-nav-block__head js-accordion-tab"
+                    >空調事業部</button>
+                    <ul class="l-header-nav-block__list js-accordion-panel" id="js-accordion-panel-3">
                         <li class="l-header-nav-block__item">
                             <a href="#TODO" class="l-header-nav-block__link">- 製品紹介</a>
                         </li>
@@ -55,9 +66,13 @@
                 </div>
             </li>
             <li class="l-header-nav-list__item">
-                <div class="l-header-nav-block">
-                    <h2 class="l-header-nav-block__head">ダクト部門</h2>
-                    <ul class="l-header-nav-block__list">
+                <div class="l-header-nav-block js-accordion">
+                    <button 
+                        type="button" 
+                        id="js-accordion-tab-4" 
+                        class="l-header-nav-block__head js-accordion-tab"
+                    >ダクト工事</button>
+                    <ul class="l-header-nav-block__list js-accordion-panel" id="js-accordion-panel-4">
                         <li class="l-header-nav-block__item">
                             <a href="#TODO" class="l-header-nav-block__link">- 製品紹介</a>
                         </li>
@@ -68,9 +83,13 @@
                 </div>
             </li>
             <li class="l-header-nav-list__item">
-                <div class="l-header-nav-block">
-                    <h2 class="l-header-nav-block__head">会社案内</h2>
-                    <ul class="l-header-nav-block__list">
+                <div class="l-header-nav-block js-accordion">
+                    <button 
+                        type="button" 
+                        id="js-accordion-tab-5"
+                        class="l-header-nav-block__head js-accordion-tab"
+                    >会社案内</button>
+                    <ul class="l-header-nav-block__list js-accordion-panel" id="js-accordion-panel-5">
                         <li class="l-header-nav-block__item">
                             <a href="#TODO" class="l-header-nav-block__link">- 企業理念・ごあいさつ</a>
                         </li>
@@ -90,9 +109,13 @@
                 </div>
             </li>
             <li class="l-header-nav-list__item">
-                <div class="l-header-nav-block">
-                    <h2 class="l-header-nav-block__head">採用情報</h2>
-                    <ul class="l-header-nav-block__list">
+                <div class="l-header-nav-block js-accordion">
+                    <button 
+                        type="button" 
+                        id="js-accordion-tab-6"
+                        class="l-header-nav-block__head js-accordion-tab"
+                    >採用情報</button>
+                    <ul class="l-header-nav-block__list js-accordion-panel" id="js-accordion-panel-6">
                         <li class="l-header-nav-block__item">
                             <a href="#TODO" class="l-header-nav-block__link">- 募集要項</a>
                         </li>
