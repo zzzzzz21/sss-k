@@ -1,6 +1,4 @@
 'use strict'
-// PC/SP判定フラグ
-let isSmartPhone;
 // ブレークポイント（px）
 const breakPoint = '768';
 // SP専用ヘッダーのハンバーガーボタン
@@ -9,8 +7,20 @@ const header= document.querySelector('.js-header');
 const headerToggleButton = document.querySelector('.js-header-button');
 // ヘッダーのグローバルナビゲーション
 const headerMenu = document.querySelector('.js-header-menu');
+// トップページのcanvasの要素を取得
+const canvas = document.querySelector('.c-wave-canvas');
+// 2Dの描画命令群を取得
+const context = canvas.getContext('2d');
+// PC/SP判定フラグ
+let isSmartPhone;
+ // 画面の幅
+let stageW = 0;
+ // 画面の高さ
+let stageH = 0;
 
 document.addEventListener('DOMContentLoaded', init);
+
+window.addEventListener('resize', resizeEvent);
 
 /**
  * ハンバーガーメニュボタンクリック時の処理
@@ -29,6 +39,15 @@ function init() {
     setHeaderWaiAria();
 }
 
+/**
+ * リサイズ時に実行するイベントをまとめる
+ *
+ */
+function resizeEvent() {
+    getDeviceWidth();
+    setHeaderWaiAria();
+}
+
 
 /**
  * デバイス幅でPCもしくはスマートフォンかどうかの判定
@@ -40,6 +59,7 @@ function getDeviceWidth() {
     } else {
         isSmartPhone = false;
     }
+
 }
 
 
@@ -80,6 +100,7 @@ for (let i = 0; i < scrollTrigger.length; i++) {
     })
 }
 
+
 /**
  * ハンバーガーメニューの開閉機能
  *
@@ -104,17 +125,14 @@ function toggleMenu() {
         header.classList.add('l-header--open');
         headerMenu.setAttribute('aria-hidden', 'false');
         headerToggleButton.setAttribute('aria-expanded', 'true');
-
-
     } else {
         // グローバルナビゲーションを閉じた時の処理
         header.classList.remove('l-header--open');
         headerMenu.setAttribute('aria-hidden', 'true');
         headerToggleButton.setAttribute('aria-expanded', 'false');
-
-
     }
 }
+
 
 /**
  * ナビゲーションのカレント機能
@@ -133,16 +151,17 @@ function setNavigationCurrent() {
     }
 }
 
+
 /**
  * カルーセル機能
  *
  */
-
 const swiper = new Swiper('.swiper-container', {
     effect: 'fade',
     loop: true,
     autoplay: true,
 });
+
 
 /**
  *　アコーディオンの開閉機能
@@ -164,78 +183,80 @@ $('.js-accordion-tab').on('click', function() {
 });
 
 
+
 /**
- *　トップページのアニメ描画
+ *　トップページのcanvasイベント
  *
  */
+if (canvas !== null) {
+    noise.seed(Math.random());
 
-let stageW = 0; // 画面の幅
-let stageH = 0; // 画面の高さ
+    resizeCanvas();
+    tick();
+    window.addEventListener('resize', resizeCanvas);
+}
 
 
-const canvas = document.querySelector('.c-wave-canvas');
-// 2Dの描画命令群を取得
-const context = canvas.getContext('2d');
-
-noise.seed(Math.random());
-
-resize();
-tick();
-window.addEventListener('resize', resize);
-
-/** エンターフレームのタイミングです。 */
+/**
+ *　エンターフレーム
+ *
+ */
 function tick() {
   requestAnimationFrame(tick);
   const time = Date.now() / 4000;
   draw(time);
 }
 
-/** 描画します。 */
+/**
+ *　canvasの描画イベント
+ *
+ */
 function draw(time) {
   // 画面をリセット
-  context.clearRect(0, 0, stageW, stageH);
-  context.lineWidth = 1;
+　context.clearRect(0, 0, stageW, stageH);
+　context.lineWidth = 1;
 
-  const amplitude = stageH / 2; // 振幅（縦幅)の大きさ
-  const lineNum = 150; // ラインの数
-  const segmentNum = 150; // 分割数
+  const amplitude = stageH / 1.2; // 振幅（縦幅)の大きさ
+  const lineNum = 100; // ラインの数
+  const segmentNum = 100; // 分割数
 
-  [...new Array(lineNum).keys()].forEach(j => {
+　[...new Array(lineNum).keys()].forEach(j => {
     const coefficient = 50 + j;
 
     context.beginPath();
-    if(59 > j) {
-        context.strokeStyle = `rgba(255,255,255, .15)`;
-    } else if(100 > j > 51) {
-        context.strokeStyle = `rgba(255,255,255, .3)`;
-    } else {
-        context.strokeStyle = `rgba(255,255,255, .4)`;
-    }
 
+    // ラインの透明度を操作する
+    const a = (Math.round(j / lineNum * 6) / 10);
+    context.strokeStyle = `rgba(255, 255, 255, ${a})`;
 
     [...new Array(segmentNum).keys()].forEach(i => {
 
-      const x = i / (segmentNum - 1) * stageW;
+    　const x = i / (segmentNum - 1) * stageW;
+    　const px = i / coefficient;
+    　const py = (j / 50 + time);
+    　const y = amplitude * noise.perlin2(px, py) + stageH / 2;
 
-      const px = i / coefficient;
-      const py = (j / 50 + time);
-      const y = amplitude * noise.perlin2(px, py) + stageH / 2;
-
-      if (i === 0) {
+    　if (i === 0) {
         context.moveTo(x, y);
-      } else {
+    　} else {
         context.lineTo(x, y);
-      }
+    　}
     });
+
     context.stroke();
   });
 }
 
 /** リサイズ時のイベントです。 */
-function resize() {
-  stageW = innerWidth * devicePixelRatio;
-  stageH = innerHeight * devicePixelRatio;
+function resizeCanvas() {
+  if(!isSmartPhone) {
+    stageW = innerWidth * devicePixelRatio;
+    stageH = innerHeight * devicePixelRatio;
+  
+  　canvas.width = stageW;
+  　canvas.height = stageH;
+  } else {
+      return false;
+  }
 
-  canvas.width = stageW;
-  canvas.height = stageH;
 }

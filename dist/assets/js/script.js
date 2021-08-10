@@ -1,6 +1,4 @@
-'use strict'; // PC/SP判定フラグ
-
-let isSmartPhone; // ブレークポイント（px）
+'use strict'; // ブレークポイント（px）
 
 const breakPoint = '768'; // SP専用ヘッダーのハンバーガーボタン
 
@@ -8,8 +6,19 @@ const header = document.querySelector('.js-header'); // SP専用ヘッダーの�
 
 const headerToggleButton = document.querySelector('.js-header-button'); // ヘッダーのグローバルナビゲーション
 
-const headerMenu = document.querySelector('.js-header-menu');
+const headerMenu = document.querySelector('.js-header-menu'); // トップページのcanvasの要素を取得
+
+const canvas = document.querySelector('.c-wave-canvas'); // 2Dの描画命令群を取得
+
+const context = canvas.getContext('2d'); // PC/SP判定フラグ
+
+let isSmartPhone; // 画面の幅
+
+let stageW = 0; // 画面の高さ
+
+let stageH = 0;
 document.addEventListener('DOMContentLoaded', init);
+window.addEventListener('resize', resizeEvent);
 /**
  * ハンバーガーメニュボタンクリック時の処理
  *
@@ -24,6 +33,16 @@ headerToggleButton.addEventListener('click', toggleMenu);
 function init() {
   getDeviceWidth();
   setNavigationCurrent();
+  setHeaderWaiAria();
+}
+/**
+ * リサイズ時に実行するイベントをまとめる
+ *
+ */
+
+
+function resizeEvent() {
+  getDeviceWidth();
   setHeaderWaiAria();
 }
 /**
@@ -160,53 +179,49 @@ $('.js-accordion-tab').on('click', function () {
   }
 });
 /**
- *　トップページのアニメ描画
+ *　トップページのcanvasイベント
  *
  */
 
-let stageW = 0; // 画面の幅
+if (canvas !== null) {
+  noise.seed(Math.random());
+  resizeCanvas();
+  tick();
+  window.addEventListener('resize', resizeCanvas);
+}
+/**
+ *　エンターフレーム
+ *
+ */
 
-let stageH = 0; // 画面の高さ
-
-const canvas = document.querySelector('.c-wave-canvas'); // 2Dの描画命令群を取得
-
-const context = canvas.getContext('2d');
-noise.seed(Math.random());
-resize();
-tick();
-window.addEventListener('resize', resize);
-/** エンターフレームのタイミングです。 */
 
 function tick() {
   requestAnimationFrame(tick);
   const time = Date.now() / 4000;
   draw(time);
 }
-/** 描画します。 */
+/**
+ *　canvasの描画イベント
+ *
+ */
 
 
 function draw(time) {
   // 画面をリセット
   context.clearRect(0, 0, stageW, stageH);
   context.lineWidth = 1;
-  const amplitude = stageH / 2; // 振幅（縦幅)の大きさ
+  const amplitude = stageH / 1.2; // 振幅（縦幅)の大きさ
 
-  const lineNum = 150; // ラインの数
+  const lineNum = 100; // ラインの数
 
-  const segmentNum = 150; // 分割数
+  const segmentNum = 100; // 分割数
 
   [...new Array(lineNum).keys()].forEach(j => {
     const coefficient = 50 + j;
-    context.beginPath();
+    context.beginPath(); // ラインの透明度を操作する
 
-    if (59 > j) {
-      context.strokeStyle = `rgba(255,255,255, .15)`;
-    } else if (100 > j > 51) {
-      context.strokeStyle = `rgba(255,255,255, .3)`;
-    } else {
-      context.strokeStyle = `rgba(255,255,255, .4)`;
-    }
-
+    const a = Math.round(j / lineNum * 6) / 10;
+    context.strokeStyle = `rgba(255, 255, 255, ${a})`;
     [...new Array(segmentNum).keys()].forEach(i => {
       const x = i / (segmentNum - 1) * stageW;
       const px = i / coefficient;
@@ -225,9 +240,13 @@ function draw(time) {
 /** リサイズ時のイベントです。 */
 
 
-function resize() {
-  stageW = innerWidth * devicePixelRatio;
-  stageH = innerHeight * devicePixelRatio;
-  canvas.width = stageW;
-  canvas.height = stageH;
+function resizeCanvas() {
+  if (!isSmartPhone) {
+    stageW = innerWidth * devicePixelRatio;
+    stageH = innerHeight * devicePixelRatio;
+    canvas.width = stageW;
+    canvas.height = stageH;
+  } else {
+    return false;
+  }
 }
