@@ -1,8 +1,10 @@
 'use strict'; // ブレークポイント（px）
 
-const breakPoint = '768'; // SP専用ヘッダーのハンバーガーボタン
+const breakPoint = '768'; // ヘッダー
 
-const header = document.querySelector('.js-header'); // SP専用ヘッダーのハンバーガーボタン
+const header = document.querySelector('.js-header'); // body
+
+const body = document.querySelector('.js-body'); // SP専用ヘッダーのハンバーガーボタン
 
 const headerToggleButton = document.querySelector('.js-header-button'); // ヘッダーのグローバルナビゲーション
 
@@ -43,7 +45,6 @@ function init() {
 
 function resizeEvent() {
   getDeviceWidth();
-  setHeaderWaiAria();
 }
 /**
  * デバイス幅でPCもしくはスマートフォンかどうかの判定
@@ -103,8 +104,7 @@ for (let i = 0; i < scrollTrigger.length; i++) {
 
 
 function toggleMenu() {
-  // ハンバーガーメニューの要素が隠れているかをaria-hiddenで調べる
-  const isHeaderMenuShow = headerMenu.getAttribute('aria-hidden'); // ハンバーガーメニューを押した時にwai-aria属性を設定する。グローバルメニューを閉じた時に処理もこちらで兼任する
+  let isHeaderMenuShow = headerMenu.getAttribute('aria-hidden'); // ハンバーガーメニューを押した時にwai-aria属性を設定する。グローバルメニューを閉じた時に処理もこちらで兼任する
 
   $('.js-accordion').each(function () {
     const el = $(this);
@@ -117,14 +117,16 @@ function toggleMenu() {
 
   if (isHeaderMenuShow === 'true') {
     // グローバルナビゲーションを開いた時の処理
-    header.classList.add('l-header--open');
+    scrollY = window.pageYOffset;
+    body.classList.add('l-body--open');
     headerMenu.setAttribute('aria-hidden', 'false');
     headerToggleButton.setAttribute('aria-expanded', 'true');
   } else {
     // グローバルナビゲーションを閉じた時の処理
-    header.classList.remove('l-header--open');
+    body.classList.remove('l-body--open');
     headerMenu.setAttribute('aria-hidden', 'true');
     headerToggleButton.setAttribute('aria-expanded', 'false');
+    window.scrollTo(0, scrollY);
   }
 }
 /**
@@ -209,15 +211,15 @@ function tick() {
 function draw(time) {
   // 画面をリセット
   context.clearRect(0, 0, stageW, stageH);
-  context.lineWidth = 1;
-  const amplitude = stageH / 1.2; // 振幅（縦幅)の大きさ
+  context.lineWidth = 500;
+  const amplitude = stageH / 2; // 縦幅の大きさ
 
-  const lineNum = 100; // ラインの数
+  const lineNum = 8; // ラインの数
 
   const segmentNum = 100; // 分割数
 
   [...new Array(lineNum).keys()].forEach(j => {
-    const coefficient = 50 + j;
+    const coefficient = 15 + j;
     context.beginPath(); // ラインの透明度を操作する
 
     const a = Math.round(j / lineNum * 6) / 10;
