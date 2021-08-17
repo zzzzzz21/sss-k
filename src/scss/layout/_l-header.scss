@@ -1,6 +1,20 @@
 .l-header {
   background: $base-white;
-  box-sizing: border-box;
+  @include sp {
+    padding: 14px 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+  }
+}
+
+.l-header--top {
+  .l-header-nav {
+    display: none;
+  }
+}
+
+.l-header-wrapper {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -13,10 +27,7 @@
   }
 
   @include sp {
-    padding: 14px 10px;
-    position: fixed;
-    width: 100%;
-    z-index: 3;
+    position: absolute;
   }
 }
 
@@ -79,6 +90,7 @@
     align-items: center;
     display: flex;
     justify-content: flex-end;
+    margin-left: auto;
     outline: none;
     position: relative;
     z-index: 3;
@@ -151,8 +163,12 @@
 }
 
 .l-header-nav {
-  display: none;
+  @include pc {
+    border-top: 1px solid $l-header-nav-border;
+    width: 100%;
+  }
   @include sp {
+    display: none;
     &[aria-hidden="false"] {
       background: $base-blue;
       color: $base-white;
@@ -171,15 +187,24 @@
 
 .l-header-nav-list {
   display: flex;
-  flex-direction: column;
-  grid-column-gap: 36.2px;
-  max-height: 100%;
-  overflow: auto;
-  padding: 0 25px;
+  @include pc {
+    align-items: center;
+    justify-content: center;
+  }
+  @include sp {
+    flex-direction: column;
+    grid-column-gap: 36.2px;
+    max-height: 100%;
+    overflow: auto;
+    padding: 0 25px;
+  }
 }
 
 .l-header-nav-list__item {
   white-space: nowrap;
+
+  @include pc {
+  }
 
   @include sp {
     display: inline-flex;

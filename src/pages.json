@@ -7,7 +7,16 @@
       "title": "トップ",
       "description": "トップ",
       "contents": "contents/_index",
-      "path": "./"
+      "path": "./",
+      "isTop": true
+    },
+    {
+      "url":"/company/",
+      "name": "index",
+      "title": "会社案内",
+      "description": "会社案内",
+      "contents": "contents/company/_index",
+      "path": "../"
     }
   ]
 }

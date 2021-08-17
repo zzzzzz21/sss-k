@@ -1,11 +1,13 @@
 <% var d = jsonData; -%>
-<header class="l-header js-header">
-    <h1 class="l-header-logo">
-        <a href="<%- d.path %>" class="l-header-logo__link"><img src="<%- d.path %>assets/images/common/icon-ci.svg" alt="株式会社サンエス工業" width="291" height="35"></a>
-    </h1>
-    <a href="<%- d.path %>＃TODO" class="l-header-require">
-        <span class="l-header-require__text">お問い合わせ</span>
-    </a>
+<header class="l-header js-header<% if (d.isTop) { -%> l-header--top<% } -%>">
+    <div class="l-header-wrapper">
+        <h1 class="l-header-logo">
+            <a href="<%- d.path %>" class="l-header-logo__link"><img src="<%- d.path %>assets/images/common/icon-ci.svg" alt="株式会社サンエス工業" width="291" height="35"></a>
+        </h1>
+        <a href="<%- d.path %>＃TODO" class="l-header-require">
+            <span class="l-header-require__text">お問い合わせ</span>
+        </a>
+    </div>
     <button class="l-header-button js-header-button"  aria-label="グローバルナビゲーション" aria-controls="aria-navigation">
         <span class="l-header-button__lines">
             <span class="l-header-button__line"></span>
