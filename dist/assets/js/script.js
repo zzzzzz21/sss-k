@@ -158,7 +158,8 @@ function setNavigationCurrent() {
 const swiper = new Swiper('.swiper-container', {
   effect: 'fade',
   loop: true,
-  autoplay: true
+  autoplay: true,
+  speed: 2000
 });
 /**
  *　アコーディオンの開閉機能
