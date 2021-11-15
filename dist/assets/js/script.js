@@ -212,7 +212,7 @@ function tick() {
 function draw(time) {
   // 画面をリセット
   context.clearRect(0, 0, stageW, stageH);
-  context.lineWidth = 500;
+  context.lineWidth = 300;
   const amplitude = stageH / 2; // 縦幅の大きさ
 
   const lineNum = 8; // ラインの数
@@ -223,7 +223,7 @@ function draw(time) {
     const coefficient = 15 + j;
     context.beginPath(); // ラインの透明度を操作する
 
-    const a = Math.round(j / lineNum * 6) / 10;
+    const a = Math.round(j / lineNum * 3) / 10;
     context.strokeStyle = `rgba(255, 255, 255, ${a})`;
     [...new Array(segmentNum).keys()].forEach(i => {
       const x = i / (segmentNum - 1) * stageW;
