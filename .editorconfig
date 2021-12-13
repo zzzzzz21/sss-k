@@ -1,4 +1,11 @@
+root = true
+
+[*]
 # 改行コード設定）
 end_of_line = lf
 # 文字コード設定
 charset = utf-8
+# インデントの大きさ
+ndent_size = 4
+# タブかスペースか
+indent_style = tab

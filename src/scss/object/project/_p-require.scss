@@ -1,0 +1,63 @@
+.p-require {
+	@include pc {
+		padding: 42px 0 50px;
+	}
+
+	@include sp {
+		padding: 32px 20px;
+	}
+}
+
+.p-require-lead {
+	@include pc {
+		font-size: 14px;
+		line-height: 2.1;
+		text-align: center;
+	}
+
+	@include sp {
+		font-size: 13px;
+		line-height: 1.7;
+	}
+}
+
+.p-require-content {
+	max-width: 680px;
+
+	@include pc {
+		margin: 60px auto 0;
+	}
+
+	@include sp {
+		margin: 25px auto 0;
+	}
+}
+
+.p-require-input {
+	@include pc {
+		margin-bottom: 65px;
+	}
+
+	@include sp {
+		margin-bottom: 35px;
+	}
+}
+
+.p-require-check {
+	display: flex;
+	justify-content: center;
+
+	@include pc {
+		margin-top: 18px;
+	}
+
+	@include sp {
+		margin-top: 38px;
+	}
+}
+
+.p-require-submit {
+	display: flex;
+	justify-content: center;
+	margin-top: 40px;
+}

@@ -1,0 +1,22 @@
+.c-simple-head {
+	align-items: center;
+	background: $base-blue;
+	color: $base-white;
+	display: flex;
+	flex-direction: column;
+	height: 100px;
+	justify-content: center;
+	text-align: center;
+
+	&.is-light {
+		background: $base-light-blue;
+	}
+}
+
+.c-simple-head-title {
+	font-size: 21px;
+}
+
+.c-simple-head-en {
+	font-size: 14px;
+}

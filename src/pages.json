@@ -17,6 +17,23 @@
       "description": "会社案内",
       "contents": "contents/company/_index",
       "path": "../"
+    },
+    {
+      "url":"/require/",
+      "name": "index",
+      "title": "お問い合わせフォーム",
+      "description": "お問い合わせフォーム",
+      "contents": "contents/require/_index",
+      "path": "../"
+    },
+		{
+      "url":"/recruit/",
+      "name": "require",
+      "title": "採用お問い合わせフォーム",
+      "description": "採用お問い合わせフォーム",
+      "contents": "contents/recruit/_require",
+      "path": "../",
+			"current": "recruit" 
     }
   ]
 }

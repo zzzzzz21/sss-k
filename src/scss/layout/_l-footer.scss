@@ -1,114 +1,173 @@
 .l-footer {
-  position: relative;
+	position: relative;
+}
+
+.l-footer-buttons {
+	@include sp {
+		background: $l-footer-buttons;
+		padding: 40px 0 20px;
+	}
+}
+
+.l-footer-top-require {
+	@include pc {
+		display: none;
+	}
+
+	@include sp {
+		margin: 0 auto 25px;
+		width: calc(100% - 20px);
+	}
+}
+
+.l-footer-top-require__link {
+	@include sp {
+		align-items: center;
+		background: $base-white;
+		border: 1px solid $base-blue;
+		display: flex;
+		font-size: 16px;
+		justify-content: center;
+		min-height: 45px;
+	}
 }
 
 .l-footer-top-button {
-  @include pc {
-    display: none;
-  }
+	display: block;
+	width: 100%;
 
-  @include sp {
-    top: -65px;
-    display: block;
-    position: absolute;
-    width: 100%;
-  }
+	@include pc {
+		position: absolute;
+		top: -57px;
+
+		&.is-top {
+			display: none;
+		}
+	}
 }
 
 .l-footer-top-button__link {
-  @include sp {
-    @include getArrow;
-    background: $c-to-top-background;
-    border-radius: 50%;
-    color: $base-white;
-    display: block;
-    font-size: 17px;
-    height: 50px;
-    margin: 0 auto;
-    padding-top: 14px;
-    text-align: center;
-    width: 50px;
+	@include getArrow;
+	background: $c-to-top-background;
+	border-radius: 50%;
+	color: $base-white;
+	display: block;
+	margin: 0 auto;
+	padding-top: 14px;
+	text-align: center;
 
-    &::before {
-      left: 0;
-      right: 0;
-      top: 8px;
-    }
-  }
+	@include pc {
+		font-size: 13px;
+		height: 38px;
+		width: 38px;
+	}
+
+	@include sp {
+		font-size: 17px;
+		height: 50px;
+		width: 50px;
+	}
+
+	&::before {
+		left: 0;
+		right: 0;
+		top: 8px;
+	}
 }
 
 .l-footer-copy {
-  background: $base-blue;
-  position: relative;
-  text-align: center;
+	background: $base-blue;
+	position: relative;
+	text-align: center;
 
-  @include pc {
-    padding: 8px;
-  }
+	@include pc {
+		padding: 8px;
+	}
 
-  @include sp {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    min-height: 46px;
-  }
+	@include sp {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		min-height: 46px;
+	}
 
-  small {
-    color: $base-white;
-    font-size: 11px;
-    letter-spacing: 0.06em;
+	small {
+		color: $base-white;
+		font-size: 11px;
+		letter-spacing: 0.06em;
 
-    @include sp {
-      font-size: 10px;
-    }
-  }
+		@include sp {
+			font-size: 10px;
+		}
+	}
 }
 
 .l-footer-nav {
-  border-top: 1px solid $base-blue;
-  padding: 40px 40px 24px;
+	border-top: 1px solid $base-blue;
+	padding: 34px 40px 24px;
 
-  @include sp {
-    display: none;
-    visibility: hidden;
-  }
+	@include sp {
+		display: none;
+		visibility: hidden;
+	}
 }
 
 .l-footer-nav-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  grid-column-gap: 40px;
+	color: $l-footer-nav;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .l-footer-nav-list__item {
-  font-size: 11px;
-  min-width: 100px;
-  white-space: nowrap;
+	font-size: 11px;
+	min-width: 120px;
+	white-space: nowrap;
+
+	&:nth-of-type(n + 2) {
+		margin-left: 45px;
+	}
 }
 
 .l-footer-nav-block {
-  & + & {
-    margin-top: 20px;
-  }
+	& + & {
+		margin-top: 20px;
+	}
 }
 
 .l-footer-nav-block__head {
-  border-bottom: 1px solid $l-footer-nav-head-border;
-  color: $l-footer-nav-head-text;
-  margin-bottom: 10px;
-  padding-bottom: 8px;
+	border-bottom: 1px solid $l-footer-nav;
+	display: flex;
+	font-size: 10px;
+	justify-content: space-between;
+	margin-bottom: 8px;
+}
+
+.l-footer-nav-block__wrapper {
+	display: flex;
+	min-width: 362px;
+	justify-content: space-between;
+}
+
+.l-footer-nav-block__content {
+	min-width: 90px;
+}
+
+.l-footer-nav-block__sub {
+	border-bottom: 1px solid $l-footer-nav-border;
+	margin-bottom: 16px;
 }
 
 .l-footer-nav-block__item {
-  line-height: 1.9;
+	line-height: 1.9;
+	padding-right: 8px;
 }
 
 .l-footer-nav-block__link {
-  color: $l-footer-nav-block-link;
+	color: $l-footer-nav;
 
-  &:hover,
-  &:focus {
-    color: $base-blue;
-  }
+	&:hover,
+	&:focus {
+		color: $base-blue;
+	}
 }

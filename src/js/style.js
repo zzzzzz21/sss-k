@@ -12,7 +12,10 @@ const headerMenu = document.querySelector('.js-header-menu');
 // トップページのcanvasの要素を取得
 const canvas = document.querySelector('.c-wave-canvas');
 // 2Dの描画命令群を取得
-const context = canvas.getContext('2d');
+if(canvas) {
+	var context = canvas.getContext('2d');
+}
+
 // PC/SP判定フラグ
 let isSmartPhone;
  // 画面の幅

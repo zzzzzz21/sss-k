@@ -1,33 +1,51 @@
 .l-body {
-  &--open {
-    @include sp {
-      position: fixed;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-    }
+	&--open {
+		@include sp {
+			position: fixed;
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+		}
 
-    @include sp {
-      .l-header-require {
-        display: block;
-      }
-    }
-  }
+		@include sp {
+			.l-header-require {
+				display: block;
+			}
+		}
+	}
 }
 .l-main {
-  @include sp {
-    padding-top: 54px;
-  }
+	@include sp {
+		padding-top: 54px;
+	}
 }
 
 .l-top {
-  @include pc {
-    padding: 135px 0 60px;
-    position: relative;
-  }
+	@include pc {
+		padding: 135px 0 60px;
+		position: relative;
+	}
 
-  @include sp {
-    background: $p-top-content-background;
-    padding-bottom: 90px;
-  }
+	@include sp {
+		background: $p-top-content-background;
+		padding-bottom: 90px;
+	}
+}
+
+.l-content {
+	&.is-beige {
+		background: $l-content-beige;
+	}
+
+	&.is-light-blue {
+		background: $l-content-light-blue;
+	}
+
+	@include pc {
+		padding-bottom: 57px;
+	}
+
+	@include sp {
+		padding-bottom: 50px;
+	}
 }

@@ -1,116 +1,128 @@
 <% var d = jsonData; -%>
-    <footer class="l-footer">
-        <div class="l-footer-top-button">
-            <a href="#body" class="l-footer-top-button__link">up</a>
-        </div>
-        <nav class="l-footer-nav">
-            <ul class="l-footer-nav-list">
-                <li class="l-footer-nav-list__item">
-                    <div class="l-footer-nav-block">
-                        <h2 class="l-footer-nav-block__head">私たちの技術力</h2>
-                        <ul class="l-footer-nav-block__list">
-                            <li class="l-footer-nav-block__item">
-                                <a href="#TODO" class="l-footer-nav-block__link">- 快適な空気とは</a>
-                            </li>
-                            <li class="l-footer-nav-block__item">
-                                <a href="#TODO" class="l-footer-nav-block__link">- こんな場所にもサンエスの技術</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="l-footer-nav-block">
-                        <h2 class="l-footer-nav-block__head">お問い合わせ</h2>
-                        <ul class="l-footer-nav-block__list">
-                            <li class="l-footer-nav-block__item">
-                                <a href="#TODO" class="l-footer-nav-block__link">- お問い合わせ</a>
-                            </li>
-                            <li class="l-footer-nav-block__item">
-                                <a href="#TODO" class="l-footer-nav-block__link">- プライバシーポリシー</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="l-footer-nav-list__item">
-                    <div class="l-footer-nav-block">
-                        <h2 class="l-footer-nav-block__head">消音部門</h2>
-                        <ul class="l-footer-nav-block__list">
-                            <li class="l-footer-nav-block__item">
-                                <a href="#TODO" class="l-footer-nav-block__link">- 製品紹介</a>
-                            </li>
-                            <li class="l-footer-nav-block__item">
-                                <a href="#TODO" class="l-footer-nav-block__link">- 導入事例</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="l-footer-nav-list__item">
-                    <div class="l-footer-nav-block">
-                        <h2 class="l-footer-nav-block__head">空調部門</h2>
-                        <ul class="l-footer-nav-block__list">
-                            <li class="l-footer-nav-block__item">
-                                <a href="#TODO" class="l-footer-nav-block__link">- 製品紹介</a>
-                            </li>
-                            <li class="l-footer-nav-block__item">
-                                <a href="#TODO" class="l-footer-nav-block__link">- 導入事例</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="l-footer-nav-list__item">
-                    <div class="l-footer-nav-block">
-                        <h2 class="l-footer-nav-block__head">ダクト部門</h2>
-                        <ul class="l-footer-nav-block__list">
-                            <li class="l-footer-nav-block__item">
-                                <a href="#TODO" class="l-footer-nav-block__link">- 製品紹介</a>
-                            </li>
-                            <li class="l-footer-nav-block__item">
-                                <a href="#TODO" class="l-footer-nav-block__link">- 導入事例</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="l-footer-nav-list__item">
-                    <div class="l-footer-nav-block">
-                        <h2 class="l-footer-nav-block__head">会社案内</h2>
-                        <ul class="l-footer-nav-block__list">
-                            <li class="l-footer-nav-block__item">
-                                <a href="#TODO" class="l-footer-nav-block__link">- 企業理念・ごあいさつ</a>
-                            </li>
-                            <li class="l-footer-nav-block__item">
-                                <a href="#TODO" class="l-footer-nav-block__link">- 会社概要</a>
-                            </li>
-                            <li class="l-footer-nav-block__item">
-                                <a href="#TODO" class="l-footer-nav-block__link">- 沿革</a>
-                            </li>
-                            <li class="l-footer-nav-block__item">
-                                <a href="#TODO" class="l-footer-nav-block__link">- 本社・工場所在地</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="l-footer-nav-list__item">
-                    <div class="l-footer-nav-block">
-                        <h2 class="l-footer-nav-block__head">採用情報</h2>
-                        <ul class="l-footer-nav-block__list">
-                            <li class="l-footer-nav-block__item">
-                                <a href="#TODO" class="l-footer-nav-block__link">- 募集要項</a>
-                            </li>
-                            <li class="l-footer-nav-block__item">
-                                <a href="#TODO" class="l-footer-nav-block__link">- よくある質問</a>
-                            </li>
-                            <li class="l-footer-nav-block__item">
-                                <a href="#TODO" class="l-footer-nav-block__link">- 採用お問い合わせ</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-        <p class="l-footer-copy"><small>Copyright© SAN-ESU INDUSTRY Co.,Ltd. All Rights Reserved.</small></p>
-    </footer>
-    </div><!-- .l-wrapper -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="<%- d.path %>assets/js/libs/perlin.js"></script>
-    <script src="<%- d.path %>assets/js/script.js"></script>
+	<footer class="l-footer">
+		<div class="l-footer-buttons">
+			<div class="l-footer-top-require"><a href="<%- d.path %>require" class="l-footer-top-require__link">お問い合わせ</a></div>
+			<div class="l-footer-top-button<% if (d.isTop) { -%> is-top<% } -%>">
+				<a href="#body" class="l-footer-top-button__link">up</a>
+			</div>
+		</div>
+		<nav class="l-footer-nav">
+			<ul class="l-footer-nav-list">
+				<li class="l-footer-nav-list__item">
+					<div class="l-footer-nav-block">
+						<h2 class="l-footer-nav-block__head">Introduction</h2>
+						<h3 class="l-footer-nav-block__sub">サンエス工業を語る</h3>
+						<ul class="l-footer-nav-block__list">
+							<li class="l-footer-nav-block__item">
+								<a href="#TODO" class="l-footer-nav-block__link">- 快適な空気を作る３つの要素</a>
+							</li>
+							<li class="l-footer-nav-block__item">
+								<a href="#TODO" class="l-footer-nav-block__link">- サンエスらしさって何だろう</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="l-footer-nav-list__item">
+					<div class="l-footer-nav-block">
+						<h2 class="l-footer-nav-block__head">Business Lineup<span>事業案内</span></h2>
+						<div class="l-footer-nav-block__wrapper">
+							<div class="l-footer-nav-block__content">
+								<h2 class="l-footer-nav-block__sub">消音部門</h2>
+								<ul class="l-footer-nav-block__list">
+									<li class="l-footer-nav-block__item">
+										<a href="#TODO" class="l-footer-nav-block__link">- 製品紹介</a>
+									</li>
+									<li class="l-footer-nav-block__item">
+										<a href="#TODO" class="l-footer-nav-block__link">- 導入事例</a>
+									</li>
+									<li class="l-footer-nav-block__item">
+										<a href="#TODO" class="l-footer-nav-block__link">- 導入実績</a>
+									</li>
+								</ul>
+							</div>
+							<div class="l-footer-nav-block__content">
+								<h2 class="l-footer-nav-block__sub">空調部門</h2>
+								<ul class="l-footer-nav-block__list">
+									<li class="l-footer-nav-block__item">
+										<a href="#TODO" class="l-footer-nav-block__link">- 製品紹介</a>
+									</li>
+									<li class="l-footer-nav-block__item">
+										<a href="#TODO" class="l-footer-nav-block__link">- 導入事例</a>
+									</li>
+									<li class="l-footer-nav-block__item">
+										<a href="#TODO" class="l-footer-nav-block__link">- 導入実績</a>
+									</li>
+								</ul>
+							</div>
+							<div class="l-footer-nav-block__content">
+								<h2 class="l-footer-nav-block__sub">ダクト部門</h2>
+								<ul class="l-footer-nav-block__list">
+									<li class="l-footer-nav-block__item">
+										<a href="#TODO" class="l-footer-nav-block__link">- 製品紹介</a>
+									</li>
+									<li class="l-footer-nav-block__item">
+										<a href="#TODO" class="l-footer-nav-block__link">- 導入事例</a>
+									</li>
+									<li class="l-footer-nav-block__item">
+										<a href="#TODO" class="l-footer-nav-block__link">- 導入実績</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="l-footer-nav-list__item">
+					<div class="l-footer-nav-block">
+						<h2 class="l-footer-nav-block__head">About us<span>会社案内</span></h2>
+						<h3 class="l-footer-nav-block__sub">企業情報</h3>
+						<ul class="l-footer-nav-block__list">
+							<li class="l-footer-nav-block__item">
+								<a href="#TODO" class="l-footer-nav-block__link">- ご挨拶・企業理念</a>
+							</li>
+							<li class="l-footer-nav-block__item">
+								<a href="#TODO" class="l-footer-nav-block__link">- 会社概要</a>
+							</li>
+							<li class="l-footer-nav-block__item">
+								<a href="#TODO" class="l-footer-nav-block__link">- 沿革</a>
+							</li>
+							<li class="l-footer-nav-block__item">
+								<a href="#TODO" class="l-footer-nav-block__link">- 事業拠点</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="l-footer-nav-list__item">
+					<div class="l-footer-nav-block">
+						<h2 class="l-footer-nav-block__sub">採用情報</h2>
+						<ul class="l-footer-nav-block__list">
+							<li class="l-footer-nav-block__item">
+								<a href="#TODO" class="l-footer-nav-block__link">- 募集要項</a>
+							</li>
+							<li class="l-footer-nav-block__item">
+								<a href="<%- d.path %>recruit/require.html" class="l-footer-nav-block__link">- 採用お問い合わせ</a>
+							</li>
+						</ul>
+					</div>
+					<div class="l-footer-nav-block">
+						<h2 class="l-footer-nav-block__sub">お問い合わせ</h2>
+						<ul class="l-footer-nav-block__list">
+							<li class="l-footer-nav-block__item">
+								<a href="<%- d.path %>require/" class="l-footer-nav-block__link">- お問い合わせ</a>
+							</li>
+							<li class="l-footer-nav-block__item">
+								<a href="#TODO" class="l-footer-nav-block__link">- プライバシーポリシー</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</nav>
+		<p class="l-footer-copy"><small>Copyright© SAN-ESU INDUSTRY Co.,Ltd. All Rights Reserved.</small></p>
+	</footer>
+	</div><!-- .l-wrapper -->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script src="<%- d.path %>assets/js/libs/perlin.js"></script>
+	<script src="<%- d.path %>assets/js/script.js"></script>
 </body>
 </html>

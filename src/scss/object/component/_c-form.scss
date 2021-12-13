@@ -1,0 +1,225 @@
+$form-item-height: 32px;
+
+.c-form {
+	font-size: 14px;
+}
+
+.c-input-block {
+	@include pc {
+		align-items: flex-start;
+		display: flex;
+	}
+
+	&:nth-of-type(n + 2) {
+		@include pc {
+			margin-top: 28px;
+		}
+
+		@include sp {
+			margin-top: 18px;
+		}
+	}
+}
+
+.c-input-head {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	min-height: $form-item-height;
+	@include pc {
+		width: 170px;
+	}
+
+	@include sp {
+		margin-bottom: 5px;
+	}
+}
+
+.c-input-name {
+	color: $base-blue;
+	@include pc {
+		font-size: 12px;
+	}
+
+	@include sp {
+		font-size: 18px;
+		font-weight: bold;
+		letter-spacing: 0.1em;
+	}
+}
+
+.c-input-label {
+	border: 1px solid $c-form-title-head-label;
+	color: $c-form-title-head-label;
+	font-size: 12px;
+	min-width: 40px;
+	text-align: center;
+}
+
+.c-input-content {
+	flex: 1;
+
+	@include pc {
+		margin-left: 10px;
+		min-height: $form-item-height;
+	}
+}
+
+.c-input-error {
+	color: $c-input-error;
+	display: none;
+	margin-top: -10px;
+	width: 100%;
+}
+
+.c-input-text,
+.c-input-area {
+	border: none;
+	padding: 5px 0 5px 10px;
+	width: 100%;
+
+	@include sp {
+		padding-left: 20px;
+	}
+
+	&::placeholder {
+		color: $c-input-placeholder;
+	}
+}
+
+.c-input-text {
+	min-height: $form-item-height;
+}
+
+.c-input-area {
+	@include pc {
+		min-height: 84px;
+	}
+
+	@include sp {
+		min-height: 134px;
+	}
+}
+
+.c-input-post {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.c-input-post-number {
+	margin: 0 8px;
+	min-height: $form-item-height;
+	width: 133px;
+}
+
+.c-input-post-select {
+	@include pc {
+		width: 133px;
+	}
+
+	@include sp {
+		display: block;
+		margin-top: 15px;
+		width: 100%;
+	}
+}
+
+.c-input-address {
+	@include pc {
+		margin-top: 10px;
+	}
+
+	@include sp {
+		margin-top: 15px;
+	}
+}
+
+.c-input-select {
+	border: none;
+	min-height: $form-item-height;
+	width: 100%;
+}
+
+.c-input-check {
+	align-items: center;
+	display: flex;
+
+	@include sp {
+		flex-direction: column-reverse;
+	}
+}
+
+.c-input-check-input {
+	overflow: hidden;
+
+	@include pc {
+		height: 18px;
+		width: 18px;
+	}
+
+	@include sp {
+		height: 36px;
+		width: 36px;
+	}
+}
+
+.c-input-check-label {
+	@include sp {
+		font-size: 18px;
+	}
+}
+
+.c-input-radio {
+	display: flex;
+	min-height: $form-item-height;
+
+	@include pc {
+		align-items: center;
+	}
+
+	@include sp {
+		flex-direction: column;
+		margin: 14px 0 0 14px;
+	}
+}
+
+.c-input-radio-input {
+	margin: 0;
+
+	@include pc {
+		height: 18px;
+		width: 18px;
+	}
+
+	@include sp {
+		height: 35px;
+		width: 35px;
+	}
+}
+
+.c-input-radio-item {
+	align-items: center;
+	display: flex;
+
+	&:nth-of-type(n + 2) {
+		@include pc {
+			margin-left: 10px;
+		}
+
+		@include sp {
+			margin-top: 24px;
+		}
+	}
+}
+
+.c-input-radio-label {
+	@include pc {
+		margin-left: 5px;
+	}
+
+	@include sp {
+		font-size: 14px;
+		margin-left: 10px;
+	}
+}

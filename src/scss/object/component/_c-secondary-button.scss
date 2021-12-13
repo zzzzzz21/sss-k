@@ -1,0 +1,21 @@
+.c-secondary-button {
+	@include buttonAnimation;
+	align-items: center;
+	background: $c-secondary-button;
+	border-radius: 5px;
+	color: $base-white;
+	display: flex;
+	font-size: 18px;
+	font-weight: bold;
+	justify-content: center;
+	min-height: 71px;
+	padding: 5px;
+
+	@include pc {
+		min-width: 195px;
+	}
+
+	@include sp {
+		width: 100%;
+	}
+}

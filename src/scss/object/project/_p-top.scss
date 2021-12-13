@@ -1,205 +1,182 @@
 .p-top-kv {
-  @include pc {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
+	@include pc {
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
 
-  @include sp {
-    position: relative;
-  }
+	@include sp {
+		position: relative;
+	}
 
-  .swiper-container {
-    font-size: 0;
-    height: 100%;
-    width: 100%;
-  }
+	.swiper-container {
+		font-size: 0;
+		height: 100%;
+		width: 100%;
+	}
 
-  .swiper-slide {
-    img {
-      object-fit: cover;
-      width: 100%;
+	.swiper-slide {
+		img {
+			object-fit: cover;
+			width: 100%;
 
-      @include pc {
-        height: 100%;
-        object-position: center bottom;
-      }
+			@include pc {
+				height: 100%;
+				object-position: center bottom;
+			}
 
-      @include sp {
-        height: 185px;
-      }
-    }
-  }
+			@include sp {
+				height: 185px;
+			}
+		}
+	}
 }
 
 .p-top-wave {
-  @include pc {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    opacity: 0.6;
-  }
+	@include pc {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		opacity: 0.6;
+	}
 
-  @include sp {
-    display: none;
-  }
+	@include sp {
+		display: none;
+	}
 }
 
 .p-top-content {
-  position: relative;
-  z-index: 2;
+	position: relative;
+	z-index: 2;
 }
 
 .p-top-lead {
-  color: $base-white;
-  font-weight: 500;
-  left: 0;
-  letter-spacing: 0.28em;
-  margin: auto;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  text-shadow: 0 0 5px $base-black, 0 0 5px $base-black;
-  z-index: 2;
+	color: $base-white;
+	font-weight: 500;
+	left: 0;
+	letter-spacing: 0.28em;
+	margin: auto;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	text-shadow: 0 0 5px $base-black, 0 0 5px $base-black;
+	z-index: 2;
 
-  @include pc {
-    font-size: 26px;
-    top: 104px;
-  }
+	@include pc {
+		font-size: 26px;
+		top: 104px;
+	}
 
-  @include sp {
-    bottom: 0;
-    font-size: 19px;
-    height: 1em;
-    line-height: 1;
-    top: 0;
-  }
+	@include sp {
+		bottom: 0;
+		font-size: 19px;
+		height: 1em;
+		line-height: 1;
+		top: 0;
+	}
 }
 
 .p-top-cards {
-  @include pc {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    margin: 60px auto 48px;
-  }
+	@include pc {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		margin: 60px auto 48px;
+	}
 
-  @include sp {
-    margin: 0 auto 27px;
-  }
+	@include sp {
+		margin: 0 auto 27px;
+	}
 }
 
 .p-top-card {
-  background: $base-white;
-  position: relative;
+	background: $base-white;
+	position: relative;
 
-  @include pc {
-    border: 3px solid $base-blue;
-    display: flex;
-    flex-direction: column;
-    height: 230px;
-    padding: 36px;
-    width: 250px;
-  }
+	@include pc {
+		border: 3px solid $base-blue;
+		display: flex;
+		flex-direction: column;
+		height: 230px;
+		padding: 36px;
+		width: 250px;
+	}
 
-  @include sp {
-    border-bottom: 3px solid $base-blue;
-    padding: 28px 20px 35px;
-  }
+	@include sp {
+		border-bottom: 3px solid $base-blue;
+		padding: 28px 20px 35px;
+	}
 
-  &--wide {
-    @include pc {
-      padding-left: 12px;
-      padding-right: 12px;
-    }
-  }
+	&--wide {
+		@include pc {
+			padding-left: 12px;
+			padding-right: 12px;
+		}
+	}
 
-  &::after {
-    background: url(#{$IMG_PATH}common/icon-blue-curve.svg) left top / 100%
-      no-repeat;
-    content: "";
-    position: absolute;
+	&::after {
+		background: url(#{$IMG_PATH}common/icon-blue-curve.svg) left top / 100%
+			no-repeat;
+		content: "";
+		position: absolute;
 
-    @include pc {
-      bottom: 5px;
-      height: 30px;
-      right: 5px;
-      width: 30px;
-    }
-    @include sp {
-      bottom: 0;
-      height: 25px;
-      right: 0;
-      width: 25px;
-    }
-  }
+		@include pc {
+			bottom: 5px;
+			height: 30px;
+			right: 5px;
+			width: 30px;
+		}
+		@include sp {
+			bottom: 0;
+			height: 25px;
+			right: 0;
+			width: 25px;
+		}
+	}
 
-  &:nth-of-type(2) {
-    @include pc {
-      margin: 0 30px;
-    }
-  }
+	&:nth-of-type(2) {
+		@include pc {
+			margin: 0 30px;
+		}
+	}
 }
 
 .p-top-card__title {
-  color: $p-top-card-title;
-  font-weight: 500;
-  line-height: 1.2;
-  text-align: center;
+	color: $p-top-card-title;
+	font-weight: 500;
+	line-height: 1.2;
+	text-align: center;
 
-  @include pc {
-    font-size: 21px;
-  }
+	@include pc {
+		font-size: 21px;
+	}
 
-  @include sp {
-    font-size: 28px;
-    margin-bottom: 25px;
-  }
+	@include sp {
+		font-size: 28px;
+		margin-bottom: 25px;
+	}
 
-  &--blue {
-    color: $base-blue;
+	&--blue {
+		color: $base-blue;
 
-    @include pc {
-      font-size: 32px;
-    }
+		@include pc {
+			font-size: 32px;
+		}
 
-    @include sp {
-      font-size: 34px;
-      margin-bottom: 20px;
-    }
-  }
+		@include sp {
+			font-size: 34px;
+			margin-bottom: 20px;
+		}
+	}
 }
 
 .p-top-card__link {
-  @include pc {
-    margin-top: auto;
-  }
-}
-
-.p-top-require {
-  @include pc {
-    display: none;
-  }
-
-  @include sp {
-    margin: 25px auto 0;
-    width: calc(100% - 20px);
-  }
-}
-
-.p-top-require__link {
-  @include sp {
-    align-items: center;
-    background: $base-white;
-    border: 1px solid $base-blue;
-    display: flex;
-    font-size: 16px;
-    justify-content: center;
-    min-height: 45px;
-  }
+	@include pc {
+		margin-top: auto;
+	}
 }
