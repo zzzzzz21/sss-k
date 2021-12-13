@@ -18,4 +18,15 @@
 	@include sp {
 		width: 100%;
 	}
+
+	&:disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
+	&.is-white {
+		border: 1px solid $c-secondary-button;
+		color: $c-secondary-button;
+		background: $base-white;
+	}
 }

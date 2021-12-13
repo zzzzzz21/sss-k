@@ -27,6 +27,30 @@
       "path": "../"
     },
 		{
+      "url":"/require/",
+      "name": "error",
+      "title": "お問い合わせフォーム（エラー）",
+      "description": "お問い合わせフォーム（エラー）",
+      "contents": "contents/require/_error",
+      "path": "../"
+    },
+		{
+      "url":"/require/",
+      "name": "confirm",
+      "title": "お問い合わせフォーム（確認）",
+      "description": "お問い合わせフォーム（確認）",
+      "contents": "contents/require/_confirm",
+      "path": "../"
+    },
+		{
+      "url":"/require/",
+      "name": "complete",
+      "title": "お問い合わせフォーム（完了）",
+      "description": "お問い合わせフォーム（完了）",
+      "contents": "contents/require/_complete",
+      "path": "../"
+    },
+		{
       "url":"/recruit/",
       "name": "require",
       "title": "採用お問い合わせフォーム",
@@ -34,6 +58,14 @@
       "contents": "contents/recruit/_require",
       "path": "../",
 			"current": "recruit" 
+    },
+		{
+      "url":"/privacy/",
+      "name": "index",
+      "title": "プライバシーポリシー",
+      "description": "プライバシーポリシー",
+      "contents": "contents/privacy/_index",
+      "path": "../"
     }
   ]
 }

@@ -188,6 +188,20 @@ $('.js-accordion-tab').on('click', function() {
     }
 });
 
+/**
+ *　送信ボタンの活性化/非活性化の判定
+ *
+ */
+$('.js-check-button').on('change', function() {
+	const target = this.dataset.target;
+	const targetElement = document.querySelector('.' + target);
+	if(this.checked) {
+		targetElement.disabled = false;
+	} else {
+		targetElement.disabled = true;
+	}
+})
+
 
 
 /**

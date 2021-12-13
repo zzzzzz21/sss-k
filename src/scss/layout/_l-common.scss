@@ -14,7 +14,20 @@
 		}
 	}
 }
+.l-wrapper {
+	@include pc {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+}
+
 .l-main {
+	@include pc {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+	}
 	@include sp {
 		padding-top: 54px;
 	}
@@ -42,6 +55,7 @@
 	}
 
 	@include pc {
+		flex: 1;
 		padding-bottom: 57px;
 	}
 
