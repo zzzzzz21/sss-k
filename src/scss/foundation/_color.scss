@@ -8,8 +8,9 @@
 
 $palette-000: #000;
 $palette-0B5398: #0b5398;
+$palette-6BCCFF: #6bccff;
 $palette-67BEF9: #67bef9;
-$palette-67D8F9: #67d8f9;
+$palette-67D8F9: #242627;
 $palette-64645F: #64645f;
 $palette-707070: #707070;
 $palette-7E7E5B: #7e7e5b;
@@ -28,7 +29,7 @@ $base-black: $palette-000;
 $base-white: $palette-FFF;
 $base-nav-color: $palette-FFF;
 $base-blue: $palette-0B5398;
-$base-light-blue: $palette-67D8F9;
+$base-light-blue: $palette-67BEF9;
 
 $lead-background: $palette-000;
 $c-philosophy-list-border: $palette-000;
@@ -65,3 +66,4 @@ $c-secondary-button: $palette-F3B533;
 
 $c-pc-header-nav-list__head: $palette-878782;
 $c-pc-header-nav-border: $palette-EBEBE6;
+$c-pc-header-nav-hover: $palette-6BCCFF;

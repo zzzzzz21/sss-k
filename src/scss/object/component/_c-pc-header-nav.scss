@@ -96,5 +96,9 @@
 
 	.c-pc-header-nav-block__link {
 		color: inherit;
+
+		&:hover {
+			color: $c-pc-header-nav-hover;
+		}
 	}
 }
