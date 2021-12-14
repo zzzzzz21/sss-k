@@ -4,7 +4,7 @@
 		<h1 class="l-header-logo">
 			<a href="<%- d.path %>" class="l-header-logo__link"><img src="<%- d.path %>assets/images/common/icon-ci.svg" alt="株式会社サンエス工業" width="291" height="35"></a>
 		</h1>
-		<a href="<%- d.path %>require" class="l-header-require<% if (d.isTop) { -%> is-top<% } -%>">
+		<a href="<%- d.path %>contact/" class="l-header-require<% if (d.isTop) { -%> is-top<% } -%>">
 			<span class="l-header-require__text">お問い合わせ</span>
 		</a>
 	</div>
@@ -13,46 +13,46 @@
 		<ul class="c-pc-header-nav-list">
 			<li class="c-pc-header-nav-list__item">
 				<div class="c-pc-header-nav-list__wrapper">
-					<a href="#TODO" class="c-pc-header-nav-list__head">サンエス工業を語る</a>
+					<a href="<%- d.path %>introduction/" class="c-pc-header-nav-list__head<% if (d.current === 'introduction') { -%> is-current<% } -%>">サンエス工業を語る</a>
 					<div class="c-pc-header-nav-block">
 						<div class="c-pc-header-nav-block__text">
-							<a href="#TODO" class="c-pc-header-nav-block__link">快適な空気を作る３つの要素</a>
+							<a href="<%- d.path %>introduction/" class="c-pc-header-nav-block__link">快適な空気を作る３つの要素</a>
 						</div>
 						<div class="c-pc-header-nav-block__text">
-							<a href="#TODO" class="c-pc-header-nav-block__link">サンエスらしさって何だろう</a>
+							<a href="<%- d.path %>introduction/02/" class="c-pc-header-nav-block__link">サンエスらしさって何だろう</a>
 						</div>
 					</div>
 				</div>
 			</li>
 			<li class="c-pc-header-nav-list__item">
 				<div class="c-pc-header-nav-list__wrapper">
-					<a href="#TODO" class="c-pc-header-nav-list__head">Business Lineup</a>
+					<a href="<%- d.path %>business/silencer/" class="c-pc-header-nav-list__head<% if (d.current === 'business') { -%> is-current<% } -%>">Business Lineup</a>
 					<div class="c-pc-header-nav-block">
 						<div class="c-pc-header-nav-block-item">
 							<div class="c-pc-header-nav-block-item__title">消音部門</div>
 							<div class="c-pc-header-nav-block-item__inner">
 								<div class="c-pc-header-nav-block__text">
-									<a href="#TODO" class="c-pc-header-nav-block__link">部門紹介</a>
+									<a href="<%- d.path %>business/silencer/" class="c-pc-header-nav-block__link">部門紹介</a>
 								</div>
 								<div class="c-pc-header-nav-block__text">
-									<a href="#TODO" class="c-pc-header-nav-block__link">製品紹介</a>
+									<a href="<%- d.path %>business/silencer/products.html" class="c-pc-header-nav-block__link">製品紹介</a>
 								</div>
 								<div class="c-pc-header-nav-block__text">
-									<a href="#TODO" class="c-pc-header-nav-block__link">導入実績</a>
+									<a href="<%- d.path %>business/silencer/works.html" class="c-pc-header-nav-block__link">導入実績</a>
 								</div>
 							</div>
 						</div>
 						<div class="c-pc-header-nav-block-item">
-							<div class="c-pc-header-nav-block-item__title">消音部門</div>
+							<div class="c-pc-header-nav-block-item__title">空調部門</div>
 							<div class="c-pc-header-nav-block-item__inner">
 								<div class="c-pc-header-nav-block__text">
-									<a href="#TODO" class="c-pc-header-nav-block__link">部門紹介</a>
+									<a href="<%- d.path %>business/air-conditioning/" class="c-pc-header-nav-block__link">部門紹介</a>
 								</div>
 								<div class="c-pc-header-nav-block__text">
-									<a href="#TODO" class="c-pc-header-nav-block__link">製品紹介</a>
+									<a href="<%- d.path %>business/air-conditioning/products.html" class="c-pc-header-nav-block__link">製品紹介</a>
 								</div>
 								<div class="c-pc-header-nav-block__text">
-									<a href="#TODO" class="c-pc-header-nav-block__link">導入実績</a>
+									<a href="<%- d.path %>business/air-conditioning/works.html" class="c-pc-header-nav-block__link">導入実績</a>
 								</div>
 							</div>
 						</div>
@@ -60,13 +60,13 @@
 							<div class="c-pc-header-nav-block-item__title">ダクト部門</div>
 							<div class="c-pc-header-nav-block-item__inner">
 								<div class="c-pc-header-nav-block__text">
-									<a href="#TODO" class="c-pc-header-nav-block__link">部門紹介</a>
+									<a href="<%- d.path %>business/duct/" class="c-pc-header-nav-block__link">部門紹介</a>
 								</div>
 								<div class="c-pc-header-nav-block__text">
-									<a href="#TODO" class="c-pc-header-nav-block__link">製品紹介</a>
+									<a href="<%- d.path %>business/duct/products.html" class="c-pc-header-nav-block__link">製品紹介</a>
 								</div>
 								<div class="c-pc-header-nav-block__text">
-									<a href="#TODO" class="c-pc-header-nav-block__link">導入実績</a>
+									<a href="<%- d.path %>business/duct/works.html" class="c-pc-header-nav-block__link">導入実績</a>
 								</div>
 							</div>
 						</div>
@@ -75,32 +75,32 @@
 			</li>
 			<li class="c-pc-header-nav-list__item">
 				<div class="c-pc-header-nav-list__wrapper">
-					<a href="#TODO" class="c-pc-header-nav-list__head">About us</a>
+					<a href="<%- d.path %>company/" class="c-pc-header-nav-list__head<% if (d.current === 'company') { -%> is-current<% } -%>">About us</a>
 					<div class="c-pc-header-nav-block">
 						<div class="c-pc-header-nav-block__text">
-							<a href="#TODO" class="c-pc-header-nav-block__link">ご挨拶・企業理念</a>
+							<a href="<%- d.path %>company/" class="c-pc-header-nav-block__link">ご挨拶・企業理念</a>
 						</div>
 						<div class="c-pc-header-nav-block__text">
-							<a href="#TODO" class="c-pc-header-nav-block__link">企業概要</a>
+							<a href="<%- d.path %>company/about.html" class="c-pc-header-nav-block__link">企業概要</a>
 						</div>
 						<div class="c-pc-header-nav-block__text">
-							<a href="#TODO" class="c-pc-header-nav-block__link">沿革</a>
+							<a href="<%- d.path %>company/history.html" class="c-pc-header-nav-block__link">沿革</a>
 						</div>
 						<div class="c-pc-header-nav-block__text">
-							<a href="#TODO" class="c-pc-header-nav-block__link">事業拠点</a>
+							<a href="<%- d.path %>company/locations.html" class="c-pc-header-nav-block__link">事業拠点</a>
 						</div>
 					</div>
 				</div>
 			</li>
 			<li class="c-pc-header-nav-list__item">
 				<div class="c-pc-header-nav-list__wrapper">
-					<a href="#TODO" class="c-pc-header-nav-list__head<% if (d.current === 'recruit') { -%> is-current<% } -%>">採用情報</a>
+					<a href="<%- d.path %>recruit/" class="c-pc-header-nav-list__head<% if (d.current === 'recruit') { -%> is-current<% } -%>">採用情報</a>
 					<div class="c-pc-header-nav-block">
 						<div class="c-pc-header-nav-block__text">
-							<a href="#TODO" class="c-pc-header-nav-block__link">募集要項</a>
+							<a href="<%- d.path %>recruit/" class="c-pc-header-nav-block__link">募集要項</a>
 						</div>
 						<div class="c-pc-header-nav-block__text">
-							<a href="<%- d.path %>recruit/require.html" class="c-pc-header-nav-block__link">採用お問い合わせ</a>
+							<a href="<%- d.path %>contact-recruit/" class="c-pc-header-nav-block__link">採用お問い合わせ</a>
 						</div>
 					</div>
 				</div>
@@ -132,10 +132,10 @@
 						aria-expanded="false"
 						aria-hidden="true">
 						<div class="c-sp-header-nav-block__item">
-							<a href="#TODO" class="c-sp-header-nav-block__link">- 快適な空気を作る３つの要素</a>
+							<a href="<%- d.path %>introduction/" class="c-sp-header-nav-block__link">- 快適な空気を作る３つの要素</a>
 						</div>
 						<div class="c-sp-header-nav-block__item">
-							<a href="#TODO" class="c-sp-header-nav-block__link">- サンエスらしさって何だろう</a>
+							<a href="<%- d.path %>introduction/02/" class="c-sp-header-nav-block__link">- サンエスらしさって何だろう</a>
 						</div>
 					</div>
 				</div>
@@ -157,13 +157,13 @@
 							aria-expanded="false"
 							aria-hidden="true">
 							<div class="c-sp-header-nav-block__item">
-								<a href="#TODO" class="c-sp-header-nav-block__link">- 部門紹介</a>
+								<a href="<%- d.path %>business/silencer/" class="c-sp-header-nav-block__link">- 部門紹介</a>
 							</div>
 							<div class="c-sp-header-nav-block__item">
-								<a href="#TODO" class="c-sp-header-nav-block__link">- 製品紹介</a>
+								<a href="<%- d.path %>business/silencer/products.html" class="c-sp-header-nav-block__link">- 製品紹介</a>
 							</div>
 							<div class="c-sp-header-nav-block__item">
-								<a href="#TODO" class="c-sp-header-nav-block__link">- 導入実績</a>
+								<a href="<%- d.path %>business/silencer/works.html" class="c-sp-header-nav-block__link">- 導入実績</a>
 							</div>
 						</div>
 					</div>
@@ -181,13 +181,13 @@
 							aria-expanded="false"
 							aria-hidden="true">
 							<div class="c-sp-header-nav-block__item">
-								<a href="#TODO" class="c-sp-header-nav-block__link">- 部門紹介</a>
+								<a href="<%- d.path %>business/air-conditioning/" class="c-sp-header-nav-block__link">- 部門紹介</a>
 							</div>
 							<div class="c-sp-header-nav-block__item">
-								<a href="#TODO" class="c-sp-header-nav-block__link">- 製品紹介</a>
+								<a href="<%- d.path %>business/air-conditioning/products.html" class="c-sp-header-nav-block__link">- 製品紹介</a>
 							</div>
 							<div class="c-sp-header-nav-block__item">
-								<a href="#TODO" class="c-sp-header-nav-block__link">- 導入実績</a>
+								<a href="<%- d.path %>business/air-conditioning/works.html" class="c-sp-header-nav-block__link">- 導入実績</a>
 							</div>
 						</div>
 					</div>
@@ -205,13 +205,13 @@
 							aria-expanded="false"
 							aria-hidden="true">
 							<div class="c-sp-header-nav-block__item">
-								<a href="#TODO" class="c-sp-header-nav-block__link">- 部門紹介</a>
+								<a href="<%- d.path %>business/duct/" class="c-sp-header-nav-block__link">- 部門紹介</a>
 							</div>
 							<div class="c-sp-header-nav-block__item">
-								<a href="#TODO" class="c-sp-header-nav-block__link">- 製品紹介</a>
+								<a href="<%- d.path %>business/duct/products.html" class="c-sp-header-nav-block__link">- 製品紹介</a>
 							</div>
 							<div class="c-sp-header-nav-block__item">
-								<a href="#TODO" class="c-sp-header-nav-block__link">- 導入実績</a>
+								<a href="<%- d.path %>business/duct/works.html" class="c-sp-header-nav-block__link">- 導入実績</a>
 							</div>
 						</div>
 					</div>
@@ -233,16 +233,16 @@
 						aria-expanded="false"
 						aria-hidden="true">
 						<div class="c-sp-header-nav-block__item">
-							<a href="#TODO" class="c-sp-header-nav-block__link">- ご挨拶・企業理念</a>
+							<a href="<%- d.path %>company/" class="c-sp-header-nav-block__link">- ご挨拶・企業理念</a>
 						</div>
 						<div class="c-sp-header-nav-block__item">
-							<a href="#TODO" class="c-sp-header-nav-block__link">- 会社概要</a>
+							<a href="<%- d.path %>company/about.html" class="c-sp-header-nav-block__link">- 会社概要</a>
 						</div>
 						<div class="c-sp-header-nav-block__item">
-							<a href="#TODO" class="c-sp-header-nav-block__link">- 沿革</a>
+							<a href="<%- d.path %>company/history.html" class="c-sp-header-nav-block__link">- 沿革</a>
 						</div>
 						<div class="c-sp-header-nav-block__item">
-							<a href="#TODO" class="c-sp-header-nav-block__link">- 事業拠点</a>
+							<a href="<%- d.path %>company/locations.html" class="c-sp-header-nav-block__link">- 事業拠点</a>
 						</div>
 					</div>
 				</div>
@@ -262,10 +262,10 @@
 						aria-expanded="false"
 						aria-hidden="true">
 						<div class="c-sp-header-nav-block__item">
-							<a href="#TODO" class="c-sp-header-nav-block__link">- 募集要項</a>
+							<a href="<%- d.path %>recruit/" class="c-sp-header-nav-block__link">- 募集要項</a>
 						</div>
 						<div class="c-sp-header-nav-block__item">
-							<a href="<%- d.path %>recruit/require.html" class="c-sp-header-nav-block__link">- 採用お問い合わせ</a>
+							<a href="<%- d.path %>contact-recruit/" class="c-sp-header-nav-block__link">- 採用お問い合わせ</a>
 						</div>
 					</div>
 				</div>

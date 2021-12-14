@@ -52,7 +52,7 @@
 		{
 			"url": "/introduction/02/",
 			"name": "index",
-			"title": "サンエスらしさって",
+			"title": "サンエスらしさって何だろう",
 			"contents": "contents/introduction/02/_index",
 			"path": "../../",
 			"current": "introduction"
@@ -186,6 +186,14 @@
 			"name": "complete",
 			"title": "お問い合わせ 完了",
 			"contents": "contents/contact-recruit/_complete",
+			"path": "../",
+			"current": "recruit"
+		},
+		{
+			"url": "/recruit/",
+			"name": "index",
+			"title": "採用情報",
+			"contents": "contents/recruit/_index",
 			"path": "../",
 			"current": "recruit"
 		},
