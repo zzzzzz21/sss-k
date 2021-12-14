@@ -7,7 +7,14 @@
 			"title": "トップ",
 			"contents": "contents/_index",
 			"path": "./",
-			"isTop": true
+			"isTop": true,
+			"css": [
+				"https://unpkg.com/swiper/swiper-bundle.min.css"
+			],
+			"script": [
+				"https://unpkg.com/swiper/swiper-bundle.min.js",
+				"./assets/js/libs/perlin.js"
+			]
 		},
 		{
 			"url": "/company/",
@@ -141,7 +148,10 @@
 			"name": "error",
 			"title": "お問い合わせフォーム（エラー）",
 			"contents": "contents/contact/_error",
-			"path": "../"
+			"path": "../",
+			"script": [
+				"https://yubinbango.github.io/yubinbango/yubinbango.js"
+			]
 		},
 		{
 			"url": "/contact/",
@@ -163,7 +173,10 @@
 			"title": "採用お問い合わせ",
 			"contents": "contents/contact-recruit/_index",
 			"path": "../",
-			"current": "recruit"
+			"current": "recruit",
+			"script": [
+				"https://yubinbango.github.io/yubinbango/yubinbango.js"
+			]
 		},
 		{
 			"url": "/contact-recruit/",
@@ -171,7 +184,10 @@
 			"title": "お問い合わせフォーム（エラー）",
 			"contents": "contents/contact-recruit/_error",
 			"path": "../",
-			"current": "recruit"
+			"current": "recruit",
+			"script": [
+				"https://yubinbango.github.io/yubinbango/yubinbango.js"
+			]
 		},
 		{
 			"url": "/contact-recruit/",

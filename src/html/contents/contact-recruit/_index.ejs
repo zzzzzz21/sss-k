@@ -20,7 +20,9 @@
 			あらためて担当者よりご連絡を差し上げます。<br>
 			なお、お問い合わせの内容によりましては、お答えしかねる場合がございますので、予めご了承ください。
 		</p>
-		<form class="p-require-content">
+		<script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
+		<form class="p-require-content h-adr">
+			<span class="p-country-name" style="display:none;">Japan</span>
 			<div class="p-require-input">
 				<div class="c-input">
 					<div class="c-input-block">
@@ -119,15 +121,17 @@
 								<span class="c-input-post-mark">〒</span>
 								<span class="c-input-post-number">
 									<input type="text" 
-										class="c-input-text" 
+										class="c-input-text p-postal-code" 
 										name="postal-code" 
 										autocomplete="postal-code" 
+										size="8"
+										maxlength="8"
 										placeholder="例）110-0005"
 										aria-required="true"
 										required  />
 								</span>
 								<span class="c-input-post-select">
-									<select name="prefecture" class="c-input-select">
+									<select name="prefecture" class="c-input-select p-region">
 										<% for (let i = 0; i < prefectures.length; i++) { %>
 										<option value="<%= prefectures[i] %>"><%= prefectures[i] %></option>
 										<% } %>
@@ -135,7 +139,7 @@
 								</span>
 							</div>
 							<div class="c-input-address">
-								<input class="c-input-text"
+								<input class="c-input-text p-region p-locality p-street-address"
 									type="text"
 									name="address-level1"
 									autocomplete="address-level1"
@@ -144,7 +148,7 @@
 									required  />
 							</div>
 							<div class="c-input-address">
-								<input class="c-input-text"
+								<input class="c-input-text p-extended-address"
 									type="text"
 									name="address-line2"
 									autocomplete="address-line2"

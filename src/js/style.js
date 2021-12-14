@@ -161,12 +161,17 @@ function setNavigationCurrent() {
  * カルーセル機能
  *
  */
-const swiper = new Swiper('.swiper-container', {
-    effect: 'fade',
-    loop: true,
-    autoplay: true,
-    speed: 2000
-});
+// カルーセルの動作フラグ
+const swiperInit = document.querySelector('.swiper-init');
+if(swiperInit) {
+	const swiper = new Swiper('.swiper-container', {
+		effect: 'fade',
+		loop: true,
+		autoplay: true,
+		speed: 2000
+	});
+	
+}
 
 
 /**

@@ -156,18 +156,24 @@ function setNavigationCurrent() {
  * カルーセル機能
  *
  */
+// カルーセルの動作フラグ
 
 
-const swiper = new Swiper('.swiper-container', {
-  effect: 'fade',
-  loop: true,
-  autoplay: true,
-  speed: 2000
-});
+const swiperInit = document.querySelector('.swiper-init');
+
+if (swiperInit) {
+  const swiper = new Swiper('.swiper-container', {
+    effect: 'fade',
+    loop: true,
+    autoplay: true,
+    speed: 2000
+  });
+}
 /**
  *　アコーディオンの開閉機能
  *
  */
+
 
 $('.js-accordion-tab').on('click', function () {
   const tab = $(this);

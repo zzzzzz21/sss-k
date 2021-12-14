@@ -21,7 +21,7 @@
 	<meta property="og:site_name" content="<%- commonTitle %>">
 	<meta property="og:description" content="<%- d.title %>。<%- commonDescription %>">
 	<meta name="description" content="<%- commonDescription %>">
-	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<% if(d.css) { -%><% for(var i=0; i < d.css.length;i++) { -%><link rel="stylesheet" href="<%- d.css[i] -%>"><% } -%><% } -%>
 	<link rel="stylesheet" href="<%- d.path %>assets/css/style.css">
 </head>
 <body id="body" class="l-body js-body">
