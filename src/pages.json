@@ -1,71 +1,200 @@
 {
-  "pages": [
-    {
-      "url":"/",
-      "name": "index",
-      "ogtype": "website",
-      "title": "トップ",
-      "description": "トップ",
-      "contents": "contents/_index",
-      "path": "./",
-      "isTop": true
-    },
-    {
-      "url":"/company/",
-      "name": "index",
-      "title": "会社案内",
-      "description": "会社案内",
-      "contents": "contents/company/_index",
-      "path": "../"
-    },
-    {
-      "url":"/require/",
-      "name": "index",
-      "title": "お問い合わせフォーム",
-      "description": "お問い合わせフォーム",
-      "contents": "contents/require/_index",
-      "path": "../"
-    },
+	"pages": [
 		{
-      "url":"/require/",
-      "name": "error",
-      "title": "お問い合わせフォーム（エラー）",
-      "description": "お問い合わせフォーム（エラー）",
-      "contents": "contents/require/_error",
-      "path": "../"
-    },
+			"url": "/",
+			"name": "index",
+			"ogtype": "website",
+			"title": "トップ",
+			"contents": "contents/_index",
+			"path": "./",
+			"isTop": true
+		},
 		{
-      "url":"/require/",
-      "name": "confirm",
-      "title": "お問い合わせフォーム（確認）",
-      "description": "お問い合わせフォーム（確認）",
-      "contents": "contents/require/_confirm",
-      "path": "../"
-    },
+			"url": "/company/",
+			"name": "index",
+			"title": "ごあいさつ・企業理念",
+			"contents": "contents/company/_index",
+			"path": "../",
+			"current": "company"
+		},
 		{
-      "url":"/require/",
-      "name": "complete",
-      "title": "お問い合わせフォーム（完了）",
-      "description": "お問い合わせフォーム（完了）",
-      "contents": "contents/require/_complete",
-      "path": "../"
-    },
+			"url": "/company/",
+			"name": "about",
+			"title": "会社概要",
+			"contents": "contents/company/_about",
+			"path": "../",
+			"current": "company"
+		},
 		{
-      "url":"/recruit/",
-      "name": "require",
-      "title": "採用お問い合わせフォーム",
-      "description": "採用お問い合わせフォーム",
-      "contents": "contents/recruit/_require",
-      "path": "../",
-			"current": "recruit" 
-    },
+			"url": "/company/",
+			"name": "history",
+			"title": "沿革",
+			"contents": "contents/company/_history",
+			"path": "../",
+			"current": "company"
+		},
 		{
-      "url":"/privacy/",
-      "name": "index",
-      "title": "プライバシーポリシー",
-      "description": "プライバシーポリシー",
-      "contents": "contents/privacy/_index",
-      "path": "../"
-    }
-  ]
+			"url": "/company/",
+			"name": "locations",
+			"title": "事業拠点",
+			"contents": "contents/company/_locations",
+			"path": "../",
+			"current": "company"
+		},
+		{
+			"url": "/introduction/",
+			"name": "index",
+			"title": "快適な空気を作る３つの要素",
+			"contents": "contents/introduction/_index",
+			"path": "../",
+			"current": "introduction"
+		},
+		{
+			"url": "/introduction/02/",
+			"name": "index",
+			"title": "サンエスらしさって",
+			"contents": "contents/introduction/02/_index",
+			"path": "../../",
+			"current": "introduction"
+		},
+		{
+			"url": "/business/silencer/",
+			"name": "index",
+			"title": "消音部門（Index）",
+			"contents": "contents/business/silencer/_index",
+			"path": "../../",
+			"current": "business"
+		},
+		{
+			"url": "/business/silencer/",
+			"name": "products",
+			"title": "消音部門 製品紹介",
+			"contents": "contents/business/silencer/_products",
+			"path": "../../",
+			"current": "business"
+		},
+		{
+			"url": "/business/silencer/",
+			"name": "works",
+			"title": "消音部門 導入実績",
+			"contents": "contents/business/silencer/_works",
+			"path": "../../",
+			"current": "business"
+		},
+		{
+			"url": "/business/air-conditioning/",
+			"name": "index",
+			"title": "空調部門（Index）",
+			"contents": "contents/business/air-conditioning/_index",
+			"path": "../../",
+			"current": "business"
+		},
+		{
+			"url": "/business/air-conditioning/",
+			"name": "products",
+			"title": "空調部門 製品紹介",
+			"contents": "contents/business/air-conditioning/_products",
+			"path": "../../",
+			"current": "business"
+		},
+		{
+			"url": "/business/air-conditioning/",
+			"name": "works",
+			"title": "空調部門 導入実績",
+			"contents": "contents/business/air-conditioning/_works",
+			"path": "../../",
+			"current": "business"
+		},
+		{
+			"url": "/business/duct/",
+			"name": "index",
+			"title": "ダクト部門（Index）",
+			"contents": "contents/business/duct/_index",
+			"path": "../../",
+			"current": "business"
+		},
+		{
+			"url": "/business/duct/",
+			"name": "products",
+			"title": "ダクト部門 製品紹介",
+			"contents": "contents/business/duct/_products",
+			"path": "../../",
+			"current": "business"
+		},
+		{
+			"url": "/business/duct/",
+			"name": "works",
+			"title": "ダクト部門 導入実績",
+			"contents": "contents/business/duct/_works",
+			"path": "../../",
+			"current": "business"
+		},
+		{
+			"url": "/contact/",
+			"name": "index",
+			"title": "お問い合わせ",
+			"contents": "contents/contact/_index",
+			"path": "../"
+		},
+		{
+			"url": "/contact/",
+			"name": "error",
+			"title": "お問い合わせフォーム（エラー）",
+			"contents": "contents/contact/_error",
+			"path": "../"
+		},
+		{
+			"url": "/contact/",
+			"name": "confirm",
+			"title": "お問い合わせ 確認",
+			"contents": "contents/contact/_confirm",
+			"path": "../"
+		},
+		{
+			"url": "/contact/",
+			"name": "complete",
+			"title": "お問い合わせ 完了",
+			"contents": "contents/contact/_complete",
+			"path": "../"
+		},
+		{
+			"url": "/contact-recruit/",
+			"name": "index",
+			"title": "採用お問い合わせ",
+			"contents": "contents/contact-recruit/_index",
+			"path": "../",
+			"current": "recruit"
+		},
+		{
+			"url": "/contact-recruit/",
+			"name": "error",
+			"title": "お問い合わせフォーム（エラー）",
+			"contents": "contents/contact-recruit/_error",
+			"path": "../",
+			"current": "recruit"
+		},
+		{
+			"url": "/contact-recruit/",
+			"name": "confirm",
+			"title": "お問い合わせ 確認",
+			"contents": "contents/contact-recruit/_confirm",
+			"path": "../",
+			"current": "recruit"
+		},
+		{
+			"url": "/contact-recruit/",
+			"name": "complete",
+			"title": "お問い合わせ 完了",
+			"contents": "contents/contact-recruit/_complete",
+			"path": "../",
+			"current": "recruit"
+		},
+		{
+			"url": "/privacy/",
+			"name": "index",
+			"title": "プライバシーポリシー",
+			"contents": "contents/privacy/_index",
+			"path": "../"
+		}
+	]
 }

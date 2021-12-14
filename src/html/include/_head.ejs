@@ -1,13 +1,13 @@
 <% 
 	const d = jsonData;
-	const commonTitle = '株式会社サンエス工業';
-	const commonDescription = '株式会社サンエス工業は、空調機器製造販売、';
-	const domain = 'http://www.sss-k.co.jp/';
+	const commonTitle = '株式会社サンエス工業｜空調機器製造販売';
+	const commonDescription = '株式会社サンエス工業は、昭和49年創業の空調機器及び消音機器の製造メーカーです。';
+	const domain = 'http://www.sss-k.co.jp';
 -%>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-	<title><%- d.title %> | <%- commonTitle %></title>
+	<title><% if (!d.isTop) { -%><%- d.title %> | <% } -%><%- commonTitle %></title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 	<% if (d.ogtype) { -%>
@@ -16,10 +16,10 @@
 		<meta property="og:type" content="article">
 	<% } -%>
 	<meta name="format-detection" content="telephone=no">
-	<meta property="og:title" content="<%- d.title %>｜<%- commonTitle %>">
-	<meta property="og:url" content="<%- domain %>">
+	<meta property="og:title" content="<% if (!d.isTop) { -%><%- d.title %> | <% } -%><%- commonTitle %>">
+	<meta property="og:url" content="<%- domain %><%- d.url %><%- d.name %>.html">
 	<meta property="og:site_name" content="<%- commonTitle %>">
-	<meta property="og:description" content="<%- commonDescription %>">
+	<meta property="og:description" content="<%- d.title %>。<%- commonDescription %>">
 	<meta name="description" content="<%- commonDescription %>">
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="<%- d.path %>assets/css/style.css">
