@@ -65,6 +65,15 @@ $form-item-height: 32px;
 	}
 }
 
+.c-input-content-confirm {
+	display: flex;
+	padding-top: 5px;
+
+	&.is-small {
+		font-size: 13px;
+	}
+}
+
 .c-input-error {
 	color: $c-input-error;
 	margin-top: 0;
@@ -88,6 +97,12 @@ $form-item-height: 32px;
 
 .c-input-text {
 	min-height: $form-item-height;
+
+	&[readonly="readonly"] {
+		appearance: none;
+		background: transparent;
+		padding-left: 0;
+	}
 }
 
 .c-input-area {

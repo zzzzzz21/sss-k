@@ -29,7 +29,7 @@
 			<header class="l-header js-header">
 				<div class="l-header-wrapper">
 					<h1 class="l-header-logo">
-						<a href="../" class="l-header-logo__link"><img src="../assets/images/common/icon-ci.svg" alt="株式会社サンエス工業" width="291" height="35"></a>
+						<a href="../" class="l-header-logo__link"><img src="../assets/images/common/icon-ci.png" alt="株式会社サンエス工業" width="291" height="35"></a>
 					</h1>
 					<a href="../contact/" class="l-header-require">
 						<span class="l-header-require__text">お問い合わせ</span>
@@ -265,7 +265,6 @@
 													<label for="form-matter4" class="c-input-radio-label">中途採用</label>
 												</div>
 											</div>
-											<p class="c-input-error">※必須です</p>
 										</div>
 									</div>
 									<div class="c-input-block">
@@ -288,7 +287,6 @@
 													<label for="form-matter7" class="c-input-radio-label">茨城工場</label>
 												</div>
 											</div>
-											<p class="c-input-error">※必須です</p>
 										</div>
 									</div>
 									<div class="c-input-block">
@@ -298,7 +296,6 @@
 										</label>
 										<div class="c-input-content">
 											<input class="c-input-text" id="form-name" type="text" name="name" autocomplete="name" aria-required="true" required />
-											<p class="c-input-error">※必須です</p>
 										</div>
 									</div>
 									<div class="c-input-block">
@@ -308,7 +305,6 @@
 										</label>
 										<div class="c-input-content">
 											<input class="c-input-text" id="form-tel" type="tel" name="tel" autocomplete="tel" aria-required="true" required />
-											<p class="c-input-error">※必須です</p>
 										</div>
 									</div>
 									<div class="c-input-block">
@@ -318,18 +314,18 @@
 										</label>
 										<div class="c-input-content">
 											<input class="c-input-text" id="form-email" type="email" name="email" autocomplete="email" aria-required="true" required />
-											<p class="c-input-error">※必須です</p>
 										</div>
 									</div>
 									<div class="c-input-block">
 										<div class="c-input-head">
 											<span class="c-input-name">ご住所</span>
+											<span class="c-input-label">必須</span>
 										</div>
 										<div class="c-input-content">
 											<div class="c-input-post">
 												<span class="c-input-post-mark">〒</span>
 												<span class="c-input-post-number">
-													<input type="text" class="c-input-text" name="postal-code" autocomplete="postal-code" placeholder="例）110-0005" />
+													<input type="text" class="c-input-text" name="postal-code" autocomplete="postal-code" placeholder="例）110-0005" aria-required="true" required />
 												</span>
 												<span class="c-input-post-select">
 													<select name="prefecture" class="c-input-select">
@@ -384,19 +380,20 @@
 												</span>
 											</div>
 											<div class="c-input-address">
-												<input class="c-input-text" type="text" name="address-level1" autocomplete="address-level1" placeholder="例）東京都台東区上野５-１５-１４" />
+												<input class="c-input-text" type="text" name="address-level1" autocomplete="address-level1" placeholder="例）東京都台東区上野５-１５-１４" aria-required="true" required />
 											</div>
 											<div class="c-input-address">
-												<input class="c-input-text" type="text" name="address-line2" autocomplete="address-line2" placeholder="例）ミヤギビル1F" />
+												<input class="c-input-text" type="text" name="address-line2" autocomplete="address-line2" placeholder="例）ミヤギビル1F" aria-required="true" required />
 											</div>
 										</div>
 									</div>
 									<div class="c-input-block">
 										<label for="form-require" class="c-input-head">
 											<span class="c-input-name">お問い合わせ内容</span>
+											<span class="c-input-label">必須</span>
 										</label>
 										<div class="c-input-content">
-											<textarea class="c-input-area" id="form-require" name="require" aria-multiline="true">
+											<textarea class="c-input-area" id="form-require" name="require" aria-multiline="true" aria-required="true" required>
 </textarea>
 										</div>
 									</div>
@@ -406,13 +403,13 @@
 							<div class="p-require-check">
 								<div class="c-input-check">
 									<span class="c-input-check-line">
-										<input type="checkbox" name="agree" id="form-agree" class="c-input-check-input">
+										<input type="checkbox" name="agree" id="form-agree" class="c-input-check-input js-check-button" data-target="js-require-confirm">
 									</span>
 									<label for="form-agree" class="c-input-check-label">同意する</label>
 								</div>
 							</div>
 							<div class="p-require-submit">
-								<button type="button" class="c-secondary-button">送　信</button>
+								<button type="button" class="c-secondary-button js-require-confirm" disabled>送　信</button>
 							</div>
 						</form>
 					</div>

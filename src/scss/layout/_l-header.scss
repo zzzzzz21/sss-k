@@ -34,18 +34,20 @@
 .l-header-logo {
 	font-size: 0;
 	position: relative;
-
-	img {
-		@include sp {
-			width: 225px;
-		}
-	}
 }
 
 .l-header-logo__link {
 	@include pc {
+		display: block;
 		height: 35px;
 		width: 291px;
+
+		img {
+			width: 100%;
+			@include sp {
+				width: 225px;
+			}
+		}
 	}
 }
 

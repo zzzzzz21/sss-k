@@ -29,7 +29,7 @@
 			<header class="l-header js-header">
 				<div class="l-header-wrapper">
 					<h1 class="l-header-logo">
-						<a href="../" class="l-header-logo__link"><img src="../assets/images/common/icon-ci.svg" alt="株式会社サンエス工業" width="291" height="35"></a>
+						<a href="../" class="l-header-logo__link"><img src="../assets/images/common/icon-ci.png" alt="株式会社サンエス工業" width="291" height="35"></a>
 					</h1>
 					<a href="../contact/" class="l-header-require">
 						<span class="l-header-require__text">お問い合わせ</span>
@@ -255,16 +255,7 @@
 											<span class="c-input-label">必須</span>
 										</span>
 										<div class="c-input-content">
-											<div class="c-input-radio">
-												<div class="c-input-radio-item">
-													<input type="radio" name="matter" id="form-matter1" value="まずは相談したい" class="c-input-radio-input">
-													<label for="form-matter1" class="c-input-radio-label">まずは相談したい</label>
-												</div>
-												<div class="c-input-radio-item">
-													<input type="radio" name="matter" id="form-matter2" value="製品についてのお問い合わせ" class="c-input-radio-input">
-													<label for="form-matter2" class="c-input-radio-label">製品についてのお問い合わせ</label>
-												</div>
-											</div>
+											<span class="c-input-content-confirm">まずは相談したい</span>
 										</div>
 									</div>
 									<div class="c-input-block">
@@ -272,8 +263,7 @@
 											<span class="c-input-name">その他お問い合わせ</span>
 										</label>
 										<div class="c-input-content">
-											<textarea class="c-input-area" id="form-other" name="require" aria-multiline="true">
-</textarea>
+											<span id="form-other" class="c-input-content-confirm is-small">その他お問い合わせその他お問い合わせその他お問い合わせその他お問い合わせその他お問い合わせ</span>
 										</div>
 									</div>
 									<div class="c-input-block">
@@ -282,7 +272,7 @@
 											<span class="c-input-label">必須</span>
 										</label>
 										<div class="c-input-content">
-											<input class="c-input-text" id="form-name" type="text" name="organization" autocomplete="organization" aria-required="true" required />
+											<input class="c-input-text" id="form-name" type="text" name="organization" autocomplete="organization" aria-required="true" required readonly="readonly" value="会社会社会社会社会社会社会社" />
 										</div>
 									</div>
 									<div class="c-input-block">
@@ -290,7 +280,7 @@
 											<span class="c-input-name">部署名</span>
 										</label>
 										<div class="c-input-content">
-											<input class="c-input-text" id="form-department" type="text" name="department" />
+											<input class="c-input-text" id="form-department" type="text" name="department" readonly="readonly" value="部署名部署名部署名部署名部署名" />
 										</div>
 									</div>
 									<div class="c-input-block">
@@ -299,7 +289,7 @@
 											<span class="c-input-label">必須</span>
 										</label>
 										<div class="c-input-content">
-											<input class="c-input-text" id="form-person" type="text" name="organization-title" autocomplete="organization-title" aria-required="true" required />
+											<input class="c-input-text" id="form-person" type="text" name="organization-title" autocomplete="organization-title" aria-required="true" required readonly="readonly" value="ご担当者名ご担当者名ご担当者名" />
 										</div>
 									</div>
 									<div class="c-input-block">
@@ -308,7 +298,7 @@
 											<span class="c-input-label">必須</span>
 										</label>
 										<div class="c-input-content">
-											<input class="c-input-text" id="form-tel" type="tel" name="tel" autocomplete="tel" aria-required="true" required />
+											<input class="c-input-text" id="form-tel" type="tel" name="tel" autocomplete="tel" aria-required="true" required readonly="readonly" value="01233456789" />
 										</div>
 									</div>
 									<div class="c-input-block">
@@ -317,7 +307,7 @@
 											<span class="c-input-label">必須</span>
 										</label>
 										<div class="c-input-content">
-											<input class="c-input-text" id="form-email" type="email" name="email" autocomplete="email" aria-required="true" required />
+											<input class="c-input-text" id="form-email" type="email" name="email" autocomplete="email" aria-required="true" required readonly="readonly" value="info@tmail.com" />
 										</div>
 									</div>
 									<div class="c-input-block">
@@ -328,65 +318,14 @@
 											<div class="c-input-post">
 												<span class="c-input-post-mark">〒</span>
 												<span class="c-input-post-number">
-													<input type="text" class="c-input-text" name="postal-code" autocomplete="postal-code" placeholder="例）110-0005" />
-												</span>
-												<span class="c-input-post-select">
-													<select name="prefecture" class="c-input-select">
-														<option value="北海道">北海道</option>
-														<option value="青森県">青森県</option>
-														<option value="岩手県">岩手県</option>
-														<option value="宮城県">宮城県</option>
-														<option value="秋田県">秋田県</option>
-														<option value="山形県">山形県</option>
-														<option value="福島県">福島県</option>
-														<option value="茨城県">茨城県</option>
-														<option value="栃木県">栃木県</option>
-														<option value="群馬県">群馬県</option>
-														<option value="埼玉県">埼玉県</option>
-														<option value="千葉県">千葉県</option>
-														<option value="東京都">東京都</option>
-														<option value="神奈川県">神奈川県</option>
-														<option value="新潟県">新潟県</option>
-														<option value="富山県">富山県</option>
-														<option value="石川県">石川県</option>
-														<option value="福井県">福井県</option>
-														<option value="山梨県">山梨県</option>
-														<option value="長野県">長野県</option>
-														<option value="岐阜県">岐阜県</option>
-														<option value="静岡県">静岡県</option>
-														<option value="愛知県">愛知県</option>
-														<option value="三重県">三重県</option>
-														<option value="滋賀県">滋賀県</option>
-														<option value="京都府">京都府</option>
-														<option value="大阪府">大阪府</option>
-														<option value="兵庫県">兵庫県</option>
-														<option value="奈良県">奈良県</option>
-														<option value="和歌山県">和歌山県</option>
-														<option value="鳥取県">鳥取県</option>
-														<option value="島根県">島根県</option>
-														<option value="岡山県">岡山県</option>
-														<option value="広島県">広島県</option>
-														<option value="山口県">山口県</option>
-														<option value="徳島県">徳島県</option>
-														<option value="香川県">香川県</option>
-														<option value="愛媛県">愛媛県</option>
-														<option value="高知県">高知県</option>
-														<option value="福岡県">福岡県</option>
-														<option value="佐賀県">佐賀県</option>
-														<option value="長崎県">長崎県</option>
-														<option value="熊本県">熊本県</option>
-														<option value="大分県">大分県</option>
-														<option value="宮崎県">宮崎県</option>
-														<option value="鹿児島県">鹿児島県</option>
-														<option value="沖縄県">沖縄県</option>
-													</select>
+													<input type="text" class="c-input-text" name="postal-code" autocomplete="postal-code" placeholder="例）110-0005" readonly="readonly" value="110-0005" />
 												</span>
 											</div>
 											<div class="c-input-address">
-												<input class="c-input-text" type="text" name="address-level1" autocomplete="address-level1" placeholder="例）東京都台東区上野５-１５-１４" />
+												<input class="c-input-text" type="text" name="address-level1" autocomplete="address-level1" readonly="readonly" value="東京都台東区上野５-１５-１４" />
 											</div>
 											<div class="c-input-address">
-												<input class="c-input-text" type="text" name="address-line2" autocomplete="address-line2" placeholder="例）ミヤギビル1F" />
+												<input class="c-input-text" type="text" name="address-line2" autocomplete="address-line2" readonly="readonly" value="ミヤギビル1F" />
 											</div>
 										</div>
 									</div>

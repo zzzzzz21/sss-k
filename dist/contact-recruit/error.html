@@ -29,7 +29,7 @@
 			<header class="l-header js-header">
 				<div class="l-header-wrapper">
 					<h1 class="l-header-logo">
-						<a href="../" class="l-header-logo__link"><img src="../assets/images/common/icon-ci.svg" alt="株式会社サンエス工業" width="291" height="35"></a>
+						<a href="../" class="l-header-logo__link"><img src="../assets/images/common/icon-ci.png" alt="株式会社サンエス工業" width="291" height="35"></a>
 					</h1>
 					<a href="../contact/" class="l-header-require">
 						<span class="l-header-require__text">お問い合わせ</span>
@@ -240,6 +240,186 @@
 			</header>
 			<main class="l-main">
 				<div class="l-content is-light-blue">
+					<div class="c-simple-head is-light">
+						<h1 class="c-simple-head-title">採用お問い合わせフォーム</h1>
+						<p class="c-simple-head-en">Contact Us</p>
+					</div>
+					<div class="p-require">
+						<p class="p-require-lead"> 新卒採用・中途採用ついてお問い合わせは、<br> 下記入力フォームに必要事項をご入力の上「送信」ボタンを押してください。<br> あらためて担当者よりご連絡を差し上げます。<br> なお、お問い合わせの内容によりましては、お答えしかねる場合がございますので、予めご了承ください。 </p>
+						<form class="p-require-content">
+							<div class="p-require-input">
+								<div class="c-input">
+									<div class="c-input-block">
+										<span class="c-input-head">
+											<span class="c-input-name">お問い合わせ項目</span>
+											<span class="c-input-label">必須</span>
+										</span>
+										<div class="c-input-content">
+											<div class="c-input-radio">
+												<div class="c-input-radio-item">
+													<input type="radio" name="recruit-matter" id="form-matter3" value="新卒採用" class="c-input-radio-input">
+													<label for="form-matter3" class="c-input-radio-label">新卒採用</label>
+												</div>
+												<div class="c-input-radio-item">
+													<input type="radio" name="recruit-matter" id="form-matter4" value="中途採用" class="c-input-radio-input">
+													<label for="form-matter4" class="c-input-radio-label">中途採用</label>
+												</div>
+											</div>
+											<p class="c-input-error">※お問い合わせ項目を選択してください。</p>
+										</div>
+									</div>
+									<div class="c-input-block">
+										<span class="c-input-head">
+											<span class="c-input-name">お問い合わせ拠点</span>
+											<span class="c-input-label">必須</span>
+										</span>
+										<div class="c-input-content">
+											<div class="c-input-radio">
+												<div class="c-input-radio-item">
+													<input type="radio" name="recruit-base" id="form-matter5" value="本社" class="c-input-radio-input">
+													<label for="form-matter5" class="c-input-radio-label">本社</label>
+												</div>
+												<div class="c-input-radio-item">
+													<input type="radio" name="recruit-base" id="form-matter6" value="東北支店" class="c-input-radio-input">
+													<label for="form-matter6" class="c-input-radio-label">東北支店</label>
+												</div>
+												<div class="c-input-radio-item">
+													<input type="radio" name="recruit-base" id="form-matter7" value="茨城工場" class="c-input-radio-input">
+													<label for="form-matter7" class="c-input-radio-label">茨城工場</label>
+												</div>
+											</div>
+											<p class="c-input-error">※お問い合わせ拠点を選択してください。</p>
+										</div>
+									</div>
+									<div class="c-input-block">
+										<label for="form-name" class="c-input-head">
+											<span class="c-input-name">お名前</span>
+											<span class="c-input-label">必須</span>
+										</label>
+										<div class="c-input-content">
+											<input class="c-input-text" id="form-name" type="text" name="name" autocomplete="name" aria-required="true" required />
+											<p class="c-input-error">※お名前を入力してください。</p>
+										</div>
+									</div>
+									<div class="c-input-block">
+										<label for="form-tel" class="c-input-head">
+											<span class="c-input-name">お電話番号</span>
+											<span class="c-input-label">必須</span>
+										</label>
+										<div class="c-input-content">
+											<input class="c-input-text" id="form-tel" type="tel" name="tel" autocomplete="tel" aria-required="true" required />
+											<p class="c-input-error">※お電話番号を入力してください。</p>
+										</div>
+									</div>
+									<div class="c-input-block">
+										<label for="form-email" class="c-input-head">
+											<span class="c-input-name">メールアドレス</span>
+											<span class="c-input-label">必須</span>
+										</label>
+										<div class="c-input-content">
+											<input class="c-input-text" id="form-email" type="email" name="email" autocomplete="email" aria-required="true" required />
+											<p class="c-input-error">※メールアドレスを入力してください。</p>
+										</div>
+									</div>
+									<div class="c-input-block">
+										<div class="c-input-head">
+											<span class="c-input-name">ご住所</span>
+											<span class="c-input-label">必須</span>
+										</div>
+										<div class="c-input-content">
+											<div class="c-input-post">
+												<span class="c-input-post-mark">〒</span>
+												<span class="c-input-post-number">
+													<input type="text" class="c-input-text" name="postal-code" autocomplete="postal-code" placeholder="例）110-0005" />
+												</span>
+												<span class="c-input-post-select">
+													<select name="prefecture" class="c-input-select">
+														<option value="北海道">北海道</option>
+														<option value="青森県">青森県</option>
+														<option value="岩手県">岩手県</option>
+														<option value="宮城県">宮城県</option>
+														<option value="秋田県">秋田県</option>
+														<option value="山形県">山形県</option>
+														<option value="福島県">福島県</option>
+														<option value="茨城県">茨城県</option>
+														<option value="栃木県">栃木県</option>
+														<option value="群馬県">群馬県</option>
+														<option value="埼玉県">埼玉県</option>
+														<option value="千葉県">千葉県</option>
+														<option value="東京都">東京都</option>
+														<option value="神奈川県">神奈川県</option>
+														<option value="新潟県">新潟県</option>
+														<option value="富山県">富山県</option>
+														<option value="石川県">石川県</option>
+														<option value="福井県">福井県</option>
+														<option value="山梨県">山梨県</option>
+														<option value="長野県">長野県</option>
+														<option value="岐阜県">岐阜県</option>
+														<option value="静岡県">静岡県</option>
+														<option value="愛知県">愛知県</option>
+														<option value="三重県">三重県</option>
+														<option value="滋賀県">滋賀県</option>
+														<option value="京都府">京都府</option>
+														<option value="大阪府">大阪府</option>
+														<option value="兵庫県">兵庫県</option>
+														<option value="奈良県">奈良県</option>
+														<option value="和歌山県">和歌山県</option>
+														<option value="鳥取県">鳥取県</option>
+														<option value="島根県">島根県</option>
+														<option value="岡山県">岡山県</option>
+														<option value="広島県">広島県</option>
+														<option value="山口県">山口県</option>
+														<option value="徳島県">徳島県</option>
+														<option value="香川県">香川県</option>
+														<option value="愛媛県">愛媛県</option>
+														<option value="高知県">高知県</option>
+														<option value="福岡県">福岡県</option>
+														<option value="佐賀県">佐賀県</option>
+														<option value="長崎県">長崎県</option>
+														<option value="熊本県">熊本県</option>
+														<option value="大分県">大分県</option>
+														<option value="宮崎県">宮崎県</option>
+														<option value="鹿児島県">鹿児島県</option>
+														<option value="沖縄県">沖縄県</option>
+													</select>
+												</span>
+											</div>
+											<div class="c-input-address">
+												<input class="c-input-text" type="text" name="address-level1" autocomplete="address-level1" placeholder="例）東京都台東区上野５-１５-１４" />
+											</div>
+											<div class="c-input-address">
+												<input class="c-input-text" type="text" name="address-line2" autocomplete="address-line2" placeholder="例）ミヤギビル1F" />
+											</div>
+											<p class="c-input-error">※ご住所を入力してください。</p>
+										</div>
+									</div>
+									<div class="c-input-block">
+										<label for="form-require" class="c-input-head">
+											<span class="c-input-name">お問い合わせ内容</span>
+											<span class="c-input-label">必須</span>
+										</label>
+										<div class="c-input-content">
+											<textarea class="c-input-area" id="form-require" name="require" aria-multiline="true">
+</textarea>
+											<p class="c-input-error">※お問い合わせ内容を入力してください。</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<p class="p-require-lead"> 当社プライバシーポリシーに同意頂ける場合は<br>「同意する」にチェックを付け「送信」ボタンをクリックしてください。 </p>
+							<div class="p-require-check">
+								<div class="c-input-check">
+									<span class="c-input-check-line">
+										<input type="checkbox" name="agree" id="form-agree" class="c-input-check-input js-check-button" data-target="js-require-confirm">
+									</span>
+									<label for="form-agree" class="c-input-check-label">同意する</label>
+								</div>
+							</div>
+							<div class="p-require-submit">
+								<button type="button" class="c-secondary-button js-require-confirm" disabled>送　信</button>
+							</div>
+						</form>
+					</div>
 				</div>
 			</main>
 			<footer class="l-footer">

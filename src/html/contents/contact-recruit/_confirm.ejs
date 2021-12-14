@@ -1,12 +1,145 @@
-<% 
-	const d = jsonData;
-	const prefectures = ["北海道","青森県","岩手県","宮城県","秋田県","山形県","福島県",
-	"茨城県","栃木県","群馬県","埼玉県","千葉県","東京都","神奈川県",
-	"新潟県","富山県","石川県","福井県","山梨県","長野県","岐阜県",
-	"静岡県","愛知県","三重県","滋賀県","京都府","大阪府","兵庫県",
-	"奈良県","和歌山県","鳥取県","島根県","岡山県","広島県","山口県",
-	"徳島県","香川県","愛媛県","高知県","福岡県","佐賀県","長崎県",
-	"熊本県","大分県","宮崎県","鹿児島県","沖縄県"]
--%>
+<% const d = jsonData; -%>
 <div class="l-content is-light-blue">
+	<div class="c-simple-head is-light">
+		<h1 class="c-simple-head-title">採用お問い合わせフォーム</h1>
+		<p class="c-simple-head-en">Contact Us</p>
+	</div>
+	<div class="p-require">
+		<p class="p-require-lead">
+			新卒採用・中途採用ついてお問い合わせは、<br>
+			下記入力フォームに必要事項をご入力の上「送信」ボタンを押してください。<br>
+			あらためて担当者よりご連絡を差し上げます。<br>
+			なお、お問い合わせの内容によりましては、お答えしかねる場合がございますので、予めご了承ください。
+		</p>
+		<form class="p-require-content">
+			<div class="p-require-input">
+				<div class="c-input">
+					<div class="c-input-block">
+						<span class="c-input-head">
+							<span class="c-input-name">お問い合わせ項目</span>
+							<span class="c-input-label">必須</span>
+						</span>
+						<div class="c-input-content">
+							<span class="c-input-content-confirm">新卒採用</span>
+						</div>
+					</div>
+					<div class="c-input-block">
+						<span class="c-input-head">
+							<span class="c-input-name">お問い合わせ拠点</span>
+							<span class="c-input-label">必須</span>
+						</span>
+						<div class="c-input-content">
+							<span class="c-input-content-confirm">本社</span>
+						</div>
+					</div>
+
+					<div class="c-input-block">
+						<label for="form-name" class="c-input-head">
+							<span class="c-input-name">お名前</span>
+							<span class="c-input-label">必須</span>
+						</label>
+						<div class="c-input-content">
+							<input class="c-input-text"
+								id="form-name"
+								type="text"
+								name="name"
+								autocomplete="name"
+								aria-required="true"
+								required
+								readonly="readonly"
+								value="お名前お名前お名前お名前" />
+						</div>
+					</div>
+					<div class="c-input-block">
+						<label for="form-tel" class="c-input-head">
+							<span class="c-input-name">お電話番号</span>
+							<span class="c-input-label">必須</span>
+						</label>
+						<div class="c-input-content">
+							<input class="c-input-text"
+								id="form-tel"
+								type="tel"
+								name="tel"
+								autocomplete="tel"
+								aria-required="true"
+								required
+								readonly="readonly"
+								value="01203456789" />
+						</div>
+					</div>
+					<div class="c-input-block">
+						<label for="form-email" class="c-input-head">
+							<span class="c-input-name">メールアドレス</span>
+							<span class="c-input-label">必須</span>
+						</label>
+						<div class="c-input-content">
+							<input class="c-input-text"
+							id="form-email"
+							type="email"
+							name="email"
+							autocomplete="email"
+							aria-required="true"
+							required
+							readonly="readonly"
+							value="info@tmail.com" />
+						</div>
+					</div>
+					<div class="c-input-block">
+						<div class="c-input-head">
+							<span class="c-input-name">ご住所</span>
+							<span class="c-input-label">必須</span>
+						</div>
+						<div class="c-input-content">
+							<div class="c-input-post">
+								<span class="c-input-post-mark">〒</span>
+								<span class="c-input-post-number">
+									<input type="text" 
+										class="c-input-text" 
+										name="postal-code" 
+										aria-required="true"
+										required
+										readonly="readonly"
+										value="110-0005" />
+								</span>
+							</div>
+							<div class="c-input-address">
+								<input class="c-input-text"
+									type="text"
+									name="address-level1"
+									aria-required="true"
+									required
+									autocomplete="address-level1"
+									readonly="readonly"
+									value="東京都台東区上野５-１５-１４"  />
+							</div>
+							<div class="c-input-address">
+								<input class="c-input-text"
+									type="text"
+									name="address-line2"
+									aria-required="true"
+									required
+									autocomplete="address-line2"
+									readonly="readonly"
+									value="例）ミヤギビル1F" />
+							</div>
+						</div>
+					</div>
+					<div class="c-input-block">
+						<label for="form-require" class="c-input-head">
+							<span class="c-input-name">お問い合わせ内容</span>
+							<span class="c-input-label">必須</span>
+						</label>
+						<div class="c-input-content">
+							<span id="form-require" class="c-input-content-confirm is-small">お問い合わせ内容お問い合わせ内容お問い合わせ内容お問い合わせ内容</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="p-require-submit">
+				<button type="button" class="c-secondary-button is-white">修　正</button>
+				<button type="button" class="c-secondary-button">送　信</button>
+			</div>
+		</form>
+	</div>
 </div>
