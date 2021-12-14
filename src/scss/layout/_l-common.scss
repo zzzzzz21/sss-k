@@ -47,6 +47,12 @@
 		background: $l-content-light-blue;
 	}
 
+	&.is-no-pb {
+		@include pc {
+			padding-bottom: 0;
+		}
+	}
+
 	@include pc {
 		min-height: calc(100vh - 381px);
 		padding-bottom: 57px;
