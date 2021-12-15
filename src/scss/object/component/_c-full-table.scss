@@ -15,13 +15,17 @@
 }
 
 .c-full-table-dl {
-	align-items: center;
 	display: flex;
 
 	@include pc {
+		align-items: center;
 		justify-content: center;
 		padding: 20px 0;
 		width: 780px;
+	}
+
+	@include sp {
+		flex-direction: column;
 	}
 }
 
@@ -34,12 +38,21 @@
 		font-size: 12px;
 		width: 170px;
 	}
+
+	@include sp {
+		font-size: 13px;
+	}
 }
 
 .c-full-table-dd {
 	line-height: 2.1;
+
 	@include pc {
 		flex: 1;
 		font-size: 14px;
+	}
+
+	@include sp {
+		font-size: 13px;
 	}
 }

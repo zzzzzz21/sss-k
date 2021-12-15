@@ -35,8 +35,8 @@
 }
 
 .p-recruit-block {
-	@include pc {
-		&:nth-of-type(n + 2) {
+	&:nth-of-type(n + 2) {
+		@include pc {
 			margin-top: 70px;
 		}
 	}
@@ -53,6 +53,10 @@
 
 .p-recruit-title {
 	@include pc {
+		margin-bottom: 51px;
+	}
+
+	@include sp {
 		margin-bottom: 51px;
 	}
 }

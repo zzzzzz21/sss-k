@@ -1,24 +1,20 @@
 .c-box-title {
 	align-items: center;
-	background: url("../images/common/bg_box-title2.jpg") left top/100% no-repeat;
+	background: url("../images/common/bg_box-title1.png") left top/100% no-repeat;
 	color: $base-white;
 	display: flex;
 	flex-direction: column;
+	height: 220px;
 	justify-content: center;
 	position: relative;
+	width: 220px;
 
-	&.is-transparent {
-		background-image: url("../images/common/bg_box-title1.png");
+	&.is-type2 {
+		background-image: url("../images/common/bg_box-title2.jpg");
 	}
 
-	@include pc {
-		height: 220px;
-		width: 220px;
-	}
-
-	@include sp {
-		height: 270px;
-		width: 274px;
+	&.is-type3 {
+		background-image: url("../images/common/bg_box-title3.png");
 	}
 
 	&.is-link {

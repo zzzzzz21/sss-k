@@ -14,8 +14,10 @@
 	text-align: center;
 
 	a {
+		transition: opacity 0.3s;
+
 		&:hover {
-			text-decoration: underline;
+			opacity: 0.3;
 		}
 	}
 }
@@ -31,8 +33,9 @@
 
 .c-inner-nav-text {
 	letter-spacing: 0.1em;
+	transition: opacity 0.3s;
 
 	&:hover {
-		text-decoration: underline;
+		opacity: 0.3;
 	}
 }
