@@ -1,0 +1,27 @@
+.c-label-title {
+	background: $base-blue;
+	color: $base-white;
+	display: inline-flex;
+	min-width: 200px;
+	justify-content: center;
+
+	@include pc {
+		font-size: 18px;
+		letter-spacing: 0.1em;
+		line-height: 1.65;
+	}
+
+	@include sp {
+		font-size: 18px;
+		line-height: 1.65;
+	}
+
+	&.is-light-blue {
+		background: $base-light-blue;
+	}
+
+	&.is-full {
+		padding: 0.29em;
+		width: 100%;
+	}
+}

@@ -1,0 +1,38 @@
+.c-inner-nav {
+	color: $base-blue;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.c-inner-nav-list {
+	display: flex;
+}
+
+.c-inner-nav-head {
+	letter-spacing: 0.1em;
+	margin: 0 0 10px;
+	text-align: center;
+
+	a {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.c-inner-nav-item {
+	line-height: 1;
+	padding: 0 15px;
+
+	&:nth-of-type(n + 2) {
+		border-left: 1px solid $base-blue;
+	}
+}
+
+.c-inner-nav-text {
+	letter-spacing: 0.1em;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}

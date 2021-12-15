@@ -208,7 +208,7 @@
 		{
 			"url": "/recruit/",
 			"name": "index",
-			"title": "採用情報",
+			"title": "募集要項",
 			"contents": "contents/recruit/_index",
 			"path": "../",
 			"current": "recruit"
