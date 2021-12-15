@@ -1,0 +1,29 @@
+.c-business-nav {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+
+	@include pc {
+		height: 378px;
+		margin-top: 110px;
+		padding-top: 50px;
+	}
+}
+
+.c-business-inner {
+	align-items: center;
+	background: rgba($base-white, 0.85);
+	display: flex;
+	justify-content: center;
+	width: 100%;
+
+	@include pc {
+		min-height: 260px;
+	}
+
+	& > *:nth-of-type(n + 2) {
+		@include pc {
+			margin-left: 60px;
+		}
+	}
+}

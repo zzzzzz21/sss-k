@@ -1,0 +1,23 @@
+.c-business-head {
+	align-items: center;
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+
+	@include pc {
+		height: 220px;
+		margin-bottom: 64px;
+	}
+
+	&.is-type1 {
+		@include pc {
+			background-image: url("../images/business/business-head1.jpg");
+		}
+		@include sp {
+			background-image: url("../images/business/business-head1_sp.jpg");
+		}
+	}
+}
