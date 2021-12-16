@@ -1,0 +1,58 @@
+.c-full-table {
+}
+
+.c-full-table-item {
+	border-bottom: 1px solid $c-full-table-item-border;
+	display: flex;
+
+	&:last-child {
+		border-bottom: none;
+	}
+
+	@include pc {
+		justify-content: center;
+	}
+}
+
+.c-full-table-dl {
+	display: flex;
+
+	@include pc {
+		align-items: center;
+		justify-content: center;
+		padding: 20px 0;
+		width: 780px;
+	}
+
+	@include sp {
+		flex-direction: column;
+	}
+}
+
+.c-full-table-dt {
+	color: $base-blue;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+
+	@include pc {
+		font-size: 12px;
+		width: 170px;
+	}
+
+	@include sp {
+		font-size: 13px;
+	}
+}
+
+.c-full-table-dd {
+	line-height: 2.1;
+
+	@include pc {
+		flex: 1;
+		font-size: 14px;
+	}
+
+	@include sp {
+		font-size: 13px;
+	}
+}

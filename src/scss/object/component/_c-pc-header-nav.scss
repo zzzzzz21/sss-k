@@ -1,8 +1,9 @@
 .c-pc-header-nav {
 	@include pc {
-		border-top: 1px solid $c-pc-header-nav-border;
+		border-top: 1px solid $base-border;
 		position: relative;
 		width: 100%;
+		z-index: 1;
 	}
 	@include sp {
 		display: none;

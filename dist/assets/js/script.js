@@ -236,18 +236,18 @@ function tick() {
 function draw(time) {
   // 画面をリセット
   context.clearRect(0, 0, stageW, stageH);
-  context.lineWidth = 300;
-  const amplitude = stageH / 2; // 縦幅の大きさ
+  context.lineWidth = 16;
+  const amplitude = stageH / 1.6; // 縦幅の大きさ
 
-  const lineNum = 8; // ラインの数
+  const lineNum = 128; // ラインの数
 
   const segmentNum = 100; // 分割数
 
   [...new Array(lineNum).keys()].forEach(j => {
-    const coefficient = 15 + j;
+    const coefficient = 50 + j;
     context.beginPath(); // ラインの透明度を操作する
 
-    const a = Math.round(j / lineNum * 3) / 10;
+    const a = Math.round(j / lineNum * 6) / 10;
     context.strokeStyle = `rgba(255, 255, 255, ${a})`;
     [...new Array(segmentNum).keys()].forEach(i => {
       const x = i / (segmentNum - 1) * stageW;

@@ -1,3 +1,186 @@
-<div class="l-content is-light-blue">
-recruit
+<% 
+	const d = jsonData;
+	const informations = [
+	{
+		'title': '新卒採用情報',
+		'titleClass': 'is-light-blue',
+		'id': 'recruit-section-1',
+		'bases': [
+			{
+				title: '本　社',
+				id: 'recruit-block-1-1',
+				list: [
+					{
+						'title': '募集職種',
+						'text': '技能職（当社工場でのダクト製作、建築現場での空調機器類の据付とダクトの取付）'
+					},
+					{
+						'title': '応募資格',
+						'text': '高校卒業見込み者・既卒者可（卒業後概ね３年以内）<br>普通自動車免許必須（ＡＴ限定不可）<small>※誕生日等の都合で取得が遅れる場合は応相談</small>'
+					},
+					{
+						'title': '雇用形態',
+						'text': '正社員（試用期間3ヵ月）'
+					}
+				]
+			},
+			{
+				title: '東北支店',
+				id: 'recruit-block-1-2',
+				list: [
+					{
+						'title': '募集職種',
+						'text': '技能職（当社工場でのダクト製作、建築現場での空調機器類の据付とダクトの取付）'
+					},
+					{
+						'title': '応募資格',
+						'text': '高校卒業見込み者・既卒者可（卒業後概ね３年以内）<br>普通自動車免許必須（ＡＴ限定不可）<small>※誕生日等の都合で取得が遅れる場合は応相談</small>'
+					},
+					{
+						'title': '雇用形態',
+						'text': '正社員（試用期間3ヵ月）'
+					}
+				]
+			},
+			{
+				title: '茨城工場',
+				id: 'recruit-block-1-3',
+				list: [
+					{
+						'title': '募集職種',
+						'text': '技能職（当社工場でのダクト製作、建築現場での空調機器類の据付とダクトの取付）'
+					},
+					{
+						'title': '応募資格',
+						'text': '高校卒業見込み者・既卒者可（卒業後概ね３年以内）<br>普通自動車免許必須（ＡＴ限定不可）<small>※誕生日等の都合で取得が遅れる場合は応相談</small>'
+					},
+					{
+						'title': '雇用形態',
+						'text': '正社員（試用期間3ヵ月）'
+					}
+				]
+			}
+		]
+	},
+		{
+		'title': '中途採用情報',
+		'titleClass': '',
+		'id': 'recruit-section-2',
+		'bases': [
+			{
+				title: '本　社',
+				id: 'recruit-block-2-1',
+				list: [
+				{
+					'title': '募集職種',
+					'text': '技能職（当社工場でのダクト製作、建築現場での空調機器類の据付とダクトの取付）'
+				},
+				{
+					'title': '応募資格',
+					'text': '高校卒業見込み者・既卒者可（卒業後概ね３年以内）<br>普通自動車免許必須（ＡＴ限定不可）<small>※誕生日等の都合で取得が遅れる場合は応相談</small>'
+				},
+				{
+					'title': '雇用形態',
+					'text': '正社員（試用期間3ヵ月）'
+				}
+				]
+			},
+			{
+				title: '東北支店',
+				id: 'recruit-block-2-2',
+				list: [
+					{
+						'title': '募集職種',
+						'text': '技能職（当社工場でのダクト製作、建築現場での空調機器類の据付とダクトの取付）'
+					},
+					{
+						'title': '応募資格',
+						'text': '高校卒業見込み者・既卒者可（卒業後概ね３年以内）<br>普通自動車免許必須（ＡＴ限定不可）<small>※誕生日等の都合で取得が遅れる場合は応相談</small>'
+					},
+					{
+						'title': '雇用形態',
+						'text': '正社員（試用期間3ヵ月）'
+					}
+				]
+			},
+						{
+				title: '茨城工場',
+				id: 'recruit-block-2-3',
+				list: [
+					{
+						'title': '募集職種',
+						'text': '技能職（当社工場でのダクト製作、建築現場での空調機器類の据付とダクトの取付）'
+					},
+					{
+						'title': '応募資格',
+						'text': '高校卒業見込み者・既卒者可（卒業後概ね３年以内）<br>普通自動車免許必須（ＡＴ限定不可）<small>※誕生日等の都合で取得が遅れる場合は応相談</small>'
+					},
+					{
+						'title': '雇用形態',
+						'text': '正社員（試用期間3ヵ月）'
+					}
+				]
+			}
+		]
+	}
+
+	]
+-%>
+<div class="l-content">
+	<div class="c-visual-head is-recruit">
+		<h1 class="c-box-title is-type3">
+			<span class="c-box-title-text">採用情報</span>
+			<span class="c-box-title-bottom">募集要項</span>
+		</h1>
+	</div>
+	<div class="p-recruit">
+		<div class="p-recruit-nav">
+			<% for (let information of informations) { %>
+			<div class="p-recruit-nav-item">
+				<div class="c-inner-nav">
+					<div class="c-inner-nav-head"><a href="#<%= information.id %>"><%= information.title %></a></div>
+					<ul class="c-inner-nav-list">
+						<% for (let base of information.bases ) { %>
+						<li class="c-inner-nav-item">
+							<a href="#<%= base.id %>" class="c-inner-nav-text"><%= base.title %></a>
+						</li>
+						<% } %>
+					</ul>
+				</div>
+			</div>
+			<% } %>
+		</div>
+		<% for (let information of informations) { %>
+		<section class="p-recruit-section" id="<%= information.id %>">
+			<h2 class="p-recruit-title">
+				<span class="c-label-title is-full <%= information.titleClass %>"><%= information.title %></span>
+			</h2>
+			<% for (let base of information.bases ) { %>
+			<section class="p-recruit-block" id="<%= base.id %>">
+				<h3 class="p-recruit-headline">
+					<span class="c-label-title <%= information.titleClass %>"><%= base.title %></sapn>
+				</h3>
+				<div class="p-recruit-content">
+					<div class="c-full-table">
+						<% for (let item of base.list) { %>
+						<div class="c-full-table-item">
+							<dl class="c-full-table-dl">
+								<dt class="c-full-table-dt"><%= item.title %></dt>
+								<dd class="c-full-table-dd"><%- item.text %></dd>
+							</dl>
+						</div>
+						<% } %>
+					</div>
+				</div>
+				<div class="p-recruit-button">
+					<a href="./contact-recruit/" class="c-secondary-button is-large">
+						採用お問い合わせはこちら
+						<span class="c-secondary-button-en">Recruitment Contact</span>
+					</a>
+				</div>
+			</section>
+			<% } %>
+		</section>
+		<% } %>
+	</div>
 </div>

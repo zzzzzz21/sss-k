@@ -215,7 +215,6 @@ $('.js-check-button').on('change', function() {
  */
 if (canvas !== null) {
     noise.seed(Math.random());
-
     resizeCanvas();
     tick();
     window.addEventListener('resize', resizeCanvas);
@@ -227,9 +226,9 @@ if (canvas !== null) {
  *
  */
 function tick() {
-  requestAnimationFrame(tick);
-  const time = Date.now() / 4000;
-  draw(time);
+	requestAnimationFrame(tick);
+	const time = Date.now() / 4000;
+	draw(time);
 }
 
 /**
@@ -237,51 +236,45 @@ function tick() {
  *
  */
 function draw(time) {
-  // 画面をリセット
-　context.clearRect(0, 0, stageW, stageH);
-　context.lineWidth = 300;
+	// 画面をリセット
+	context.clearRect(0, 0, stageW, stageH);
+	context.lineWidth = 16;
+	const amplitude = stageH / 1.6; // 縦幅の大きさ
 
-  const amplitude = stageH / 2; // 縦幅の大きさ
-  const lineNum = 8; // ラインの数
-  const segmentNum = 100; // 分割数
+	const lineNum = 128; // ラインの数
 
-　[...new Array(lineNum).keys()].forEach(j => {
-    const coefficient = 15 + j;
+	const segmentNum = 100; // 分割数
 
-    context.beginPath();
+	[...new Array(lineNum).keys()].forEach(j => {
+		const coefficient = 50 + j;
+		context.beginPath(); // ラインの透明度を操作する
 
-    // ラインの透明度を操作する
-    const a = (Math.round(j / lineNum * 3) / 10);
-    context.strokeStyle = `rgba(255, 255, 255, ${a})`;
+		const a = Math.round(j / lineNum * 6) / 10;
+		context.strokeStyle = `rgba(255, 255, 255, ${a})`;
+		[...new Array(segmentNum).keys()].forEach(i => {
+			const x = i / (segmentNum - 1) * stageW;
+			const px = i / coefficient;
+			const py = j / 50 + time;
+			const y = amplitude * noise.perlin2(px, py) + stageH / 2;
 
-    [...new Array(segmentNum).keys()].forEach(i => {
-
-    　const x = i / (segmentNum - 1) * stageW;
-    　const px = i / coefficient;
-    　const py = (j / 50 + time);
-    　const y = amplitude * noise.perlin2(px, py) + stageH / 2;
-
-    　if (i === 0) {
-        context.moveTo(x, y);
-    　} else {
-        context.lineTo(x, y);
-    　}
-    });
-
-    context.stroke();
-  });
+			if (i === 0) {
+				context.moveTo(x, y);
+			} else {
+				context.lineTo(x, y);
+			}
+		});
+		context.stroke();
+	});
 }
 
 /** リサイズ時のイベントです。 */
 function resizeCanvas() {
-  if(!isSmartPhone) {
-    stageW = innerWidth * devicePixelRatio;
-    stageH = innerHeight * devicePixelRatio;
-  
-  　canvas.width = stageW;
-  　canvas.height = stageH;
-  } else {
-      return false;
-  }
-
+	if (!isSmartPhone) {
+		stageW = innerWidth * devicePixelRatio;
+		stageH = innerHeight * devicePixelRatio;
+		canvas.width = stageW;
+		canvas.height = stageH;
+	} else {
+		return false;
+	}
 }

@@ -1,0 +1,48 @@
+.c-box-title {
+	align-items: center;
+	background: url("../images/common/bg_box-title1.png") left top/100% no-repeat;
+	color: $base-white;
+	display: flex;
+	flex-direction: column;
+	height: 220px;
+	justify-content: center;
+	position: relative;
+	width: 220px;
+
+	&.is-type2 {
+		background-image: url("../images/common/bg_box-title2.jpg");
+	}
+
+	&.is-type3 {
+		background-image: url("../images/common/bg_box-title3.png");
+	}
+
+	&.is-link {
+		@include pc {
+			transition: opacity 0.3s;
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+	}
+}
+
+.c-box-title-text {
+	font-weight: normal;
+	letter-spacing: 0.05em;
+
+	@include pc {
+		font-size: 34px;
+	}
+}
+
+.c-box-title-bottom {
+	bottom: 10px;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+
+	@include pc {
+		font-size: 14px;
+	}
+}
