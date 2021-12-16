@@ -245,8 +245,12 @@ $post = (isset($_SESSION['post']) ? $_SESSION['post'] : '');
 					</ul>
 				</nav>
 			</header>
-			<main class="l-main">
-				<div class="l-content is-light-blue">
+			<main class="l-main"> <?php
+$get['recruit_matter'] = '';
+$get['recruit_base'] = '';
+if(isset($_GET['recruit_matter'])) $get['recruit_matter'] =  $_GET['recruit_matter'];
+if(isset($_GET['recruit_base'])) $get['recruit_base'] =  $_GET['recruit_base'];
+?> <div class="l-content is-light-blue">
 					<div class="c-simple-head is-light">
 						<h1 class="c-simple-head-title">採用お問い合わせフォーム</h1>
 						<p class="c-simple-head-en">Contact Us</p>
@@ -267,11 +271,11 @@ $post = (isset($_SESSION['post']) ? $_SESSION['post'] : '');
 										<div class="c-input-content">
 											<div class="c-input-radio">
 												<div class="c-input-radio-item">
-													<input type="radio" name="recruit_matter" id="form-matter3" value="新卒採用" class="c-input-radio-input" <?php if(isset($post['recruit_matter']) && $post['recruit_matter'] == '新卒採用') echo 'checked'; ?>>
+													<input type="radio" name="recruit_matter" id="form-matter3" value="新卒採用" class="c-input-radio-input" <?php if((isset($post['recruit_matter']) && $post['recruit_matter'] == '新卒採用' ) || $get['recruit_matter'] == '新卒採用' ) echo 'checked'; ?>>
 													<label for="form-matter3" class="c-input-radio-label">新卒採用</label>
 												</div>
 												<div class="c-input-radio-item">
-													<input type="radio" name="recruit_matter" id="form-matter4" value="中途採用" class="c-input-radio-input" <?php if(isset($post['recruit_matter']) && $post['recruit_matter'] == '中途採用') echo 'checked'; ?>>
+													<input type="radio" name="recruit_matter" id="form-matter4" value="中途採用" class="c-input-radio-input" <?php if((isset($post['recruit_matter']) && $post['recruit_matter'] == '新卒採用' ) || $get['recruit_matter'] == '中途採用' ) echo 'checked'; ?>>
 													<label for="form-matter4" class="c-input-radio-label">中途採用</label>
 												</div>
 											</div> <?php if(isset($res['err']['recruit_matter'])): ?> <?php echo '<p class="c-input-error">'.$res['err']['recruit_matter'][0].'</p>'; ?> <?php endif ?>
@@ -285,15 +289,15 @@ $post = (isset($_SESSION['post']) ? $_SESSION['post'] : '');
 										<div class="c-input-content">
 											<div class="c-input-radio">
 												<div class="c-input-radio-item">
-													<input type="radio" name="recruit_base" id="form-matter5" value="本社" class="c-input-radio-input" <?php if(isset($post['recruit_base']) && $post['recruit_base'] == '本社') echo 'checked'; ?>>
+													<input type="radio" name="recruit_base" id="form-matter5" value="本社" class="c-input-radio-input" <?php if((isset($post['recruit_base']) && $post['recruit_base'] == '本社' ) || $get['recruit_base'] == '本社' ) echo 'checked'; ?>>
 													<label for="form-matter5" class="c-input-radio-label">本社</label>
 												</div>
 												<div class="c-input-radio-item">
-													<input type="radio" name="recruit_base" id="form-matter6" value="東北支店" class="c-input-radio-input" <?php if(isset($post['recruit_base']) && $post['recruit_base'] == '東北支店') echo 'checked'; ?>>
+													<input type="radio" name="recruit_base" id="form-matter6" value="東北支店" class="c-input-radio-input" <?php if((isset($post['recruit_base']) && $post['recruit_base'] == '東北支店' ) || $get['recruit_base'] == '東北支店' ) echo 'checked'; ?>>
 													<label for="form-matter6" class="c-input-radio-label">東北支店</label>
 												</div>
 												<div class="c-input-radio-item">
-													<input type="radio" name="recruit_base" id="form-matter7" value="茨城工場" class="c-input-radio-input" <?php if(isset($post['recruit_base']) && $post['recruit_base'] == '茨城工場') echo 'checked'; ?>>
+													<input type="radio" name="recruit_base" id="form-matter7" value="茨城工場" class="c-input-radio-input" <?php if((isset($post['recruit_base']) && $post['recruit_base'] == '東北支店' ) || $get['recruit_base'] == '東北支店' ) echo 'checked'; ?>>
 													<label for="form-matter7" class="c-input-radio-label">茨城工場</label>
 												</div>
 											</div> <?php if(isset($res['err']['recruit_base'])): ?> <?php echo '<p class="c-input-error">'.$res['err']['recruit_base'][0].'</p>'; ?> <?php endif ?>
