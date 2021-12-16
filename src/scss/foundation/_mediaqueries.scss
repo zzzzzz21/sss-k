@@ -6,19 +6,25 @@
 
 // ********************　PC(と大きいタブレット)とSP(と小さいタブレット)を分ける場合(ブレイクポイントは1つ) ********************
 @mixin sp {
-  @media screen and (max-width: 768px) {
-    @content;
-  }
+	@media screen and (max-width: 768px) {
+		@content;
+	}
 }
 
 @mixin tablet {
-  @media screen and (min-width: 769px) and (max-width: 1024px) {
-    @content;
-  }
+	@media screen and (min-width: 769px) and (max-width: 1024px) {
+		@content;
+	}
 }
 
 @mixin pc {
-  @media screen and (min-width: 769px) {
-    @content;
-  }
+	@media screen and (min-width: 769px) {
+		@content;
+	}
+}
+
+@mixin fullDevice {
+	@media screen and (min-width: 1024px) {
+		@content;
+	}
 }

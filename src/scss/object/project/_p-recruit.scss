@@ -1,3 +1,13 @@
+.js-recruit {
+	&.is-fixed {
+		.p-recruit-nav {
+			position: fixed;
+			top: 0;
+			z-index: 1;
+		}
+	}
+}
+
 .p-recruit {
 	@include pc {
 		padding-bottom: 130px;
@@ -6,7 +16,9 @@
 
 .p-recruit-nav {
 	align-items: center;
+	background: $base-white;
 	display: flex;
+	width: 100%;
 
 	@include pc {
 		height: 83px;

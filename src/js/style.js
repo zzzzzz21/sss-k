@@ -11,6 +11,8 @@ const headerToggleButton = document.querySelector('.js-header-button');
 const headerMenu = document.querySelector('.js-header-menu');
 // トップページのcanvasの要素を取得
 const canvas = document.querySelector('.c-wave-canvas');
+// 募集要項ページのタグを取得
+const recruit = document.querySelector('.js-recruit');
 // 2Dの描画命令群を取得
 if(canvas) {
 	var context = canvas.getContext('2d');
@@ -93,7 +95,15 @@ for (let i = 0; i < scrollTrigger.length; i++) {
         const rect = targetElement.getBoundingClientRect().top;
         const offset = window.pageYOffset;
         // ヘッダーがトップ固定の場合はヘッダーの高さを入れる。
-        const gap = 0;
+        let gap = 0;
+				if(isSmartPhone) {
+					const headerHeight = document.querySelector('.js-header');
+					gap = headerHeight.clientHeight;
+				}
+				if(recruit) {
+					const recruitNav = document.querySelector('.js-recruit-nav');
+					gap += recruitNav.clientHeight;
+				}
         // 目的の要素の位置
         const target = rect + offset - gap;
         // behaviorでスピードを調整する。
@@ -205,9 +215,58 @@ $('.js-check-button').on('change', function() {
 	} else {
 		targetElement.disabled = true;
 	}
-})
+});
+
+/**
+ * スクロールした時に追従する機能
+ *
+ */
+if(recruit) {
+	getDeviceWidth();
+	const recruitElement = document.querySelector('.js-recruit');
+	/** リクルートページを囲むelement */
+	const recruitWrapperElement = document.querySelector('.js-recruit-wrapper');
+	/** リクルートページ内ナビゲーションのelement */
+	const recruitNavElement = document.querySelector('.js-recruit-nav');
+	/** リクルートページ内ナビゲーションのelementの高さ */
+	const recruitNavElementHeight = recruitNavElement.clientHeight;
+	/** ヘッダーの高さ */
+	const headerHeight = document.querySelector('.l-header').clientHeight;
+	/** リクルートページ内のナビゲーションの高さ */
+	let addHeightToWrapper = recruitNavElementHeight;
+	/** ビジュアル付きタイトルの高さ */
+	const titleHeight = document.querySelector('.c-visual-head').clientHeight;
+	/** ナビゲーションの固定開始位置の初期値 */
+	let targetHeight;
+	/** スクロール量を測るための初期値 */
+	let scrollHeigit;
+	/** ナビゲーションの固定位置の初期値 */
+	let addTopToNav;
+
+	/** スマートフォンの時はナビゲーションの固定位置と固定開始タイミングを調整する */
+	if(isSmartPhone) {
+		targetHeight = titleHeight;
+		addTopToNav = headerHeight;
+		// addHeightToWrapper = recruitNavElementHeight + headerHeight;
+	} else {
+		targetHeight = headerHeight + titleHeight;
+		addTopToNav = 0;
+	}
 
 
+	window.addEventListener('scroll', function() {
+		scrollHeigit = window.pageYOffset;
+		if(scrollHeigit > targetHeight) {
+			recruitWrapperElement.setAttribute('style',`padding-top:${addHeightToWrapper}px ` );
+			recruitNavElement.setAttribute('style', `top:${addTopToNav}px` );
+			recruitElement.classList.add('is-fixed');
+		} else {
+			recruitWrapperElement.setAttribute('style',`padding-top: 0 ` );
+			recruitNavElement.setAttribute('style',`top: 0 ` );
+			recruitElement.classList.remove('is-fixed');
+		}
+	});
+}
 
 /**
  *　トップページのcanvasイベント
