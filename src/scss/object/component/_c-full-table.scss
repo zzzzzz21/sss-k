@@ -2,7 +2,6 @@
 }
 
 .c-full-table-item {
-	border-bottom: 1px solid $c-full-table-item-border;
 	display: flex;
 
 	&:last-child {
@@ -10,7 +9,13 @@
 	}
 
 	@include pc {
+		border-bottom: 1px solid $base-border;
 		justify-content: center;
+	}
+
+	@include sp {
+		border-bottom: 1px solid $c-full-table-item-border-sp;
+		padding: 24px 20px 8px;
 	}
 }
 
@@ -41,18 +46,23 @@
 
 	@include sp {
 		font-size: 13px;
+		margin-bottom: 16px;
 	}
 }
 
 .c-full-table-dd {
-	line-height: 2.1;
-
 	@include pc {
 		flex: 1;
 		font-size: 14px;
+		line-height: 2.1;
 	}
 
 	@include sp {
 		font-size: 13px;
+		line-height: 1.8;
+	}
+
+	small {
+		font-size: 0.8em;
 	}
 }

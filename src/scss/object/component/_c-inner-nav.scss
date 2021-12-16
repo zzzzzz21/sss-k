@@ -6,6 +6,10 @@
 
 .c-inner-nav-list {
 	display: flex;
+
+	@include sp {
+		justify-content: center;
+	}
 }
 
 .c-inner-nav-head {
@@ -13,12 +17,16 @@
 	margin: 0 0 10px;
 	text-align: center;
 
-	a {
-		transition: opacity 0.3s;
+	@include pc {
+		margin: 0 0 10px;
+	}
 
-		&:hover {
-			opacity: 0.3;
-		}
+	@include sp {
+		margin: 0 0 15px;
+	}
+
+	a {
+		@include hoverOpacity;
 	}
 }
 
@@ -32,10 +40,6 @@
 }
 
 .c-inner-nav-text {
+	@include hoverOpacity;
 	letter-spacing: 0.1em;
-	transition: opacity 0.3s;
-
-	&:hover {
-		opacity: 0.3;
-	}
 }

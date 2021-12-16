@@ -7,14 +7,16 @@
 .p-recruit-nav {
 	align-items: center;
 	display: flex;
-	justify-content: center;
 
 	@include pc {
 		height: 83px;
+		justify-content: center;
 	}
 
 	@include sp {
+		min-height: 198px;
 		flex-direction: column;
+		padding: 25px 0;
 	}
 }
 
@@ -23,6 +25,16 @@
 		@include pc {
 			margin-left: 166px;
 		}
+
+		@include sp {
+			border-top: 1px solid $p-recruit-nav-item-border;
+			padding-top: 18px;
+			margin-top: 20px;
+		}
+	}
+
+	@include sp {
+		width: 100%;
 	}
 }
 
@@ -31,6 +43,10 @@
 		@include pc {
 			margin-top: 87px;
 		}
+
+		@include sp {
+			margin-top: 44px;
+		}
 	}
 }
 
@@ -38,6 +54,10 @@
 	&:nth-of-type(n + 2) {
 		@include pc {
 			margin-top: 70px;
+		}
+
+		@include sp {
+			margin-top: 44px;
 		}
 	}
 }
@@ -49,6 +69,11 @@
 	@include pc {
 		margin-top: 32px;
 	}
+
+	@include sp {
+		margin: 24px auto 0;
+		width: 260px;
+	}
 }
 
 .p-recruit-title {
@@ -57,7 +82,7 @@
 	}
 
 	@include sp {
-		margin-bottom: 51px;
+		margin-bottom: 20px;
 	}
 }
 
@@ -65,5 +90,9 @@
 	@include pc {
 		margin: 0 auto;
 		width: 780px;
+	}
+
+	@include sp {
+		padding: 0 20px;
 	}
 }

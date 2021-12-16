@@ -17,6 +17,7 @@ $palette-7E7E5B: #7e7e5b;
 $palette-878782: #878782;
 $palette-AAAAA5: #aaaaa5;
 $palette-C3C3BE: #c3c3be;
+$palette-EAEAE5: #eaeae5;
 $palette-EBEBE6: #ebebe6;
 $palette-E8F9FE: #e8f9fe;
 $palette-9E9E9E: #9e9e9e;
@@ -25,6 +26,7 @@ $palette-F5F5F0: #f5f5f0;
 $palette-FF0000: #ff0000;
 $palette-FFF: #fff;
 
+// Base color
 $base-black: $palette-000;
 $base-white: $palette-FFF;
 $base-nav-color: $palette-FFF;
@@ -32,20 +34,7 @@ $base-blue: $palette-0B5398;
 $base-light-blue: $palette-67BEF9;
 $base-border: $palette-EBEBE6;
 
-$lead-background: $palette-000;
-$c-philosophy-list-border: $palette-000;
-$c-basic-table-border: $palette-000;
-$c-top-button-background: $palette-000;
-$l-header-ci__text-color: $palette-000;
-$l-header-ci__logo-color: $palette-000;
-$c-history-triangle: $palette-000;
-$l-header-button-close: $palette-000;
-$c-to-top-background: $palette-C3C3BE;
-$c-button-blue: $palette-67BEF9;
-
-$p-top-content-background: $palette-F5F5F0;
-$p-top-card-title: $palette-64645F;
-
+// Layout
 $l-header-button-line: $palette-AAAAA5;
 $l-header-require: $palette-C3C3BE;
 
@@ -53,19 +42,28 @@ $l-footer-nav: $palette-64645F;
 $l-footer-nav-border: $palette-F5F5F0;
 $l-footer-buttons: $palette-F5F5F0;
 
-$c-form-title-head-label: $palette-FF0000;
+$l-content-beige: $palette-EBEBE6;
+$l-content-light-blue: $palette-E8F9FE;
 
+// Project
+$p-top-content-background: $palette-F5F5F0;
+$p-top-card-title: $palette-64645F;
+
+$p-recruit-nav-item-border: $palette-EAEAE5;
+
+// Component
+$c-to-top-background: $palette-C3C3BE;
+
+$c-form-title-head-label: $palette-FF0000;
 $c-input-check-line: $palette-7E7E5B;
 $c-input-error: $palette-FF0000;
 $c-input-placeholder: $palette-9E9E9E;
-
-$l-content-beige: $palette-EBEBE6;
-$l-content-light-blue: $palette-E8F9FE;
 
 $c-secondary-button: $palette-F3B533;
 
 $c-pc-header-nav-list__head: $palette-878782;
 $c-pc-header-nav-hover: $palette-6BCCFF;
 
-$c-full-table-item-border: $palette-EBEBE6;
+$c-full-table-item-border-sp: $palette-EAEAE5;
+
 $c-lead-block-title: $palette-64645F;

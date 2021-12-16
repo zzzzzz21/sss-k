@@ -37,16 +37,23 @@
 }
 
 .l-header-logo__link {
+	display: block;
+
 	@include pc {
-		display: block;
 		height: 35px;
 		width: 291px;
 
 		img {
 			width: 100%;
-			@include sp {
-				width: 225px;
-			}
+		}
+	}
+
+	@include sp {
+		height: auto;
+		width: 220px;
+
+		img {
+			width: 100%;
 		}
 	}
 }

@@ -1,35 +1,35 @@
 .c-button {
-  @include getTriangle;
-  @include buttonAnimation;
-  align-items: center;
-  background: $c-button-blue;
-  color: $base-white;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
+	@include getTriangle;
+	@include buttonAnimation;
+	align-items: center;
+	background: $base-light-blue;
+	color: $base-white;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
 
-  @include pc {
-    font-size: 14px;
-    min-height: 28px;
-  }
+	@include pc {
+		font-size: 14px;
+		min-height: 28px;
+	}
 
-  @include sp {
-    font-size: 18px;
-    min-height: 46px;
-  }
+	@include sp {
+		font-size: 18px;
+		min-height: 46px;
+	}
 
-  & + & {
-    @include pc {
-      margin-top: 10px;
-    }
-    @include sp {
-      margin-top: 30px;
-    }
-  }
+	& + & {
+		@include pc {
+			margin-top: 10px;
+		}
+		@include sp {
+			margin-top: 30px;
+		}
+	}
 
-  &--high {
-    @include pc {
-      height: 104px;
-    }
-  }
+	&--high {
+		@include pc {
+			height: 104px;
+		}
+	}
 }
