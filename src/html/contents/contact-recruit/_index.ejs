@@ -1,4 +1,10 @@
-<% 
+<?php
+$get['recruit_matter'] = '';
+$get['recruit_base'] = '';
+if(isset($_GET['recruit_matter'])) $get['recruit_matter'] =  $_GET['recruit_matter'];
+if(isset($_GET['recruit_base'])) $get['recruit_base'] =  $_GET['recruit_base'];
+?>
+<%
 	const d = jsonData;
 	const prefectures = ["北海道","青森県","岩手県","宮城県","秋田県","山形県","福島県",
 	"茨城県","栃木県","群馬県","埼玉県","千葉県","東京都","神奈川県",
@@ -21,7 +27,8 @@
 			なお、お問い合わせの内容によりましては、お答えしかねる場合がございますので、予めご了承ください。
 		</p>
 		<script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
-		<form class="p-require-content h-adr">
+		<form class="p-require-content h-adr" method="post" action="confirm.php">
+			<input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
 			<span class="p-country-name" style="display:none;">Japan</span>
 			<div class="p-require-input">
 				<div class="c-input">
@@ -33,14 +40,17 @@
 						<div class="c-input-content">
 							<div class="c-input-radio">
 								<div class="c-input-radio-item">
-									<input type="radio" name="recruit-matter" id="form-matter3" value="新卒採用" class="c-input-radio-input">
+									<input type="radio" name="recruit_matter" id="form-matter3" value="新卒採用" class="c-input-radio-input" <?php if((isset($post['recruit_matter']) && $post['recruit_matter'] == '新卒採用' ) || $get['recruit_matter'] == '新卒採用' ) echo 'checked'; ?>>
 									<label for="form-matter3" class="c-input-radio-label">新卒採用</label>
 								</div>
 								<div class="c-input-radio-item">
-									<input type="radio" name="recruit-matter" id="form-matter4" value="中途採用" class="c-input-radio-input">
+									<input type="radio" name="recruit_matter" id="form-matter4" value="中途採用" class="c-input-radio-input" <?php if((isset($post['recruit_matter']) && $post['recruit_matter'] == '新卒採用' ) || $get['recruit_matter'] == '中途採用' ) echo 'checked'; ?>>
 									<label for="form-matter4" class="c-input-radio-label">中途採用</label>
 								</div>
 							</div>
+                            <?php if(isset($res['err']['recruit_matter'])): ?>
+                            <?php echo '<p class="c-input-error">'.$res['err']['recruit_matter'][0].'</p>'; ?>
+                            <?php endif ?>
 						</div>
 					</div>
 					<div class="c-input-block">
@@ -51,18 +61,21 @@
 						<div class="c-input-content">
 							<div class="c-input-radio">
 								<div class="c-input-radio-item">
-									<input type="radio" name="recruit-base" id="form-matter5" value="本社" class="c-input-radio-input">
+									<input type="radio" name="recruit_base" id="form-matter5" value="本社" class="c-input-radio-input" <?php if((isset($post['recruit_base']) && $post['recruit_base'] == '本社' ) || $get['recruit_base'] == '本社' ) echo 'checked'; ?>>
 									<label for="form-matter5" class="c-input-radio-label">本社</label>
 								</div>
 								<div class="c-input-radio-item">
-									<input type="radio" name="recruit-base" id="form-matter6" value="東北支店" class="c-input-radio-input">
+									<input type="radio" name="recruit_base" id="form-matter6" value="東北支店" class="c-input-radio-input" <?php if((isset($post['recruit_base']) && $post['recruit_base'] == '東北支店' ) || $get['recruit_base'] == '東北支店' ) echo 'checked'; ?>>
 									<label for="form-matter6" class="c-input-radio-label">東北支店</label>
 								</div>
 								<div class="c-input-radio-item">
-									<input type="radio" name="recruit-base" id="form-matter7" value="茨城工場" class="c-input-radio-input">
+									<input type="radio" name="recruit_base" id="form-matter7" value="茨城工場" class="c-input-radio-input" <?php if((isset($post['recruit_base']) && $post['recruit_base'] == '東北支店' ) || $get['recruit_base'] == '東北支店' ) echo 'checked'; ?>>
 									<label for="form-matter7" class="c-input-radio-label">茨城工場</label>
 								</div>
 							</div>
+                            <?php if(isset($res['err']['recruit_base'])): ?>
+                            <?php echo '<p class="c-input-error">'.$res['err']['recruit_base'][0].'</p>'; ?>
+                            <?php endif ?>
 						</div>
 					</div>
 
@@ -78,7 +91,11 @@
 								name="name"
 								autocomplete="name"
 								aria-required="true"
+								value="<?php if(isset($post['name'])) echo $post['name']; ?>"
 								required />
+                            <?php if(isset($res['err']['name'])): ?>
+                            <?php echo '<p class="c-input-error">'.$res['err']['name'][0].'</p>'; ?>
+                            <?php endif ?>
 						</div>
 					</div>
 					<div class="c-input-block">
@@ -93,7 +110,11 @@
 								name="tel"
 								autocomplete="tel"
 								aria-required="true"
+								value="<?php if(isset($post['tel'])) echo $post['tel']; ?>"
 								required />
+                            <?php if(isset($res['err']['tel'])): ?>
+                            <?php echo '<p class="c-input-error">'.$res['err']['tel'][0].'</p>'; ?>
+                            <?php endif ?>
 						</div>
 					</div>
 					<div class="c-input-block">
@@ -108,7 +129,11 @@
 							name="email"
 							autocomplete="email"
 							aria-required="true"
+							value="<?php if(isset($post['email'])) echo $post['email']; ?>"
 							required />
+                            <?php if(isset($res['err']['email'])): ?>
+                            <?php echo '<p class="c-input-error">'.$res['err']['email'][0].'</p>'; ?>
+                            <?php endif ?>
 						</div>
 					</div>
 					<div class="c-input-block">
@@ -120,20 +145,21 @@
 							<div class="c-input-post">
 								<span class="c-input-post-mark">〒</span>
 								<span class="c-input-post-number">
-									<input type="text" 
-										class="c-input-text p-postal-code" 
-										name="postal-code" 
-										autocomplete="postal-code" 
+									<input type="text"
+										class="c-input-text p-postal-code"
+										name="postal_code"
+										autocomplete="postal-code"
 										size="8"
 										maxlength="8"
 										placeholder="例）110-0005"
 										aria-required="true"
+										value="<?php if(isset($post['postal_code'])) echo $post['postal_code']; ?>"
 										required  />
 								</span>
 								<span class="c-input-post-select">
 									<select name="prefecture" class="c-input-select p-region">
 										<% for (let i = 0; i < prefectures.length; i++) { %>
-										<option value="<%= prefectures[i] %>"><%= prefectures[i] %></option>
+										<option value="<%= prefectures[i] %>" <?php if(isset($post['prefecture']) && $post['prefecture'] == '<%= prefectures[i] %>' ) echo 'selected'; ?>><%= prefectures[i] %></option>
 										<% } %>
 									</select>
 								</span>
@@ -141,21 +167,32 @@
 							<div class="c-input-address">
 								<input class="c-input-text p-region p-locality p-street-address"
 									type="text"
-									name="address-level1"
+									name="address_level1"
 									autocomplete="address-level1"
 									placeholder="例）東京都台東区上野５-１５-１４"
 									aria-required="true"
+									value="<?php if(isset($post['address_level1'])) echo $post['address_level1']; ?>"
 									required  />
 							</div>
 							<div class="c-input-address">
 								<input class="c-input-text p-extended-address"
 									type="text"
-									name="address-line2"
+									name="address_line2"
 									autocomplete="address-line2"
 									placeholder="例）ミヤギビル1F"
 									aria-required="true"
-									required  />
+									value="<?php if(isset($post['address_line2'])) echo $post['address_line2']; ?>"
+									  />
 							</div>
+                            <?php if(isset($res['err']['postal_code'])): ?>
+                            <?php echo '<p class="c-input-error">'.$res['err']['postal_code'][0].'</p>'; ?>
+                            <?php endif ?>
+                            <?php if(isset($res['err']['prefecture'])): ?>
+                            <?php echo '<p class="c-input-error">'.$res['err']['prefecture'][0].'</p>'; ?>
+                            <?php endif ?>
+                            <?php if(isset($res['err']['address_level1'])): ?>
+                            <?php echo '<p class="c-input-error">'.$res['err']['address_level1'][0].'</p>'; ?>
+                            <?php endif ?>
 						</div>
 					</div>
 					<div class="c-input-block">
@@ -166,10 +203,11 @@
 						<div class="c-input-content">
 							<textarea class="c-input-area"
 										id="form-require"
-										name="require"
+										name="content"
 										aria-multiline="true"
 										aria-required="true"
 										required>
+								<?php if(isset($post['content'])) echo $post['content']; ?>
 							</textarea>
 						</div>
 					</div>
@@ -189,7 +227,7 @@
 			</div>
 
 			<div class="p-require-submit">
-				<button type="button" class="c-secondary-button js-require-confirm" disabled>送　信</button>
+				<button type="submit" class="c-secondary-button js-require-confirm" disabled>送　信</button>
 			</div>
 		</form>
 	</div>

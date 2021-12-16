@@ -1,15 +1,23 @@
+<?php
+session_start();
+$toke_byte = substr(base_convert(hash('sha256', uniqid()), 16, 36), 0, 16);
+$csrf_token = bin2hex($toke_byte);
+$_SESSION['csrf_token'] = $csrf_token;
+$res = (isset($_SESSION['res']) ? $_SESSION['res'] : '');
+$post = (isset($_SESSION['post']) ? $_SESSION['post'] : '');
+?>
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
-		<title>募集要項 | 株式会社サンエス工業｜空調機器製造販売</title>
+		<title>採用お問い合わせ | 株式会社サンエス工業｜空調機器製造販売</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 		<meta property="og:type" content="article">
 		<meta name="format-detection" content="telephone=no">
-		<meta property="og:title" content="募集要項 | 株式会社サンエス工業｜空調機器製造販売">
-		<meta property="og:url" content="http://www.sss-k.co.jp/recruit/index.html">
+		<meta property="og:title" content="採用お問い合わせ | 株式会社サンエス工業｜空調機器製造販売">
+		<meta property="og:url" content="http://www.sss-k.co.jp/contact-recruit/index.html">
 		<meta property="og:site_name" content="株式会社サンエス工業｜空調機器製造販売">
-		<meta property="og:description" content="募集要項。株式会社サンエス工業は、昭和49年創業の空調機器及び消音機器の製造メーカーです。">
+		<meta property="og:description" content="採用お問い合わせ。株式会社サンエス工業は、昭和49年創業の空調機器及び消音機器の製造メーカーです。">
 		<meta name="description" content="株式会社サンエス工業は、昭和49年創業の空調機器及び消音機器の製造メーカーです。">
 		<link rel="stylesheet" href="../assets/css/style.css">
 	</head>
@@ -237,245 +245,188 @@
 					</ul>
 				</nav>
 			</header>
-			<main class="l-main">
-				<div class="l-content">
-					<div class="c-visual-head is-recruit">
-						<h1 class="c-box-title is-type3">
-							<span class="c-box-title-text">採用情報</span>
-							<span class="c-box-title-bottom">募集要項</span>
-						</h1>
+			<main class="l-main"> <?php
+$get['recruit_matter'] = '';
+$get['recruit_base'] = '';
+if(isset($_GET['recruit_matter'])) $get['recruit_matter'] =  $_GET['recruit_matter'];
+if(isset($_GET['recruit_base'])) $get['recruit_base'] =  $_GET['recruit_base'];
+?> <div class="l-content is-light-blue">
+					<div class="c-simple-head is-light">
+						<h1 class="c-simple-head-title">採用お問い合わせフォーム</h1>
+						<p class="c-simple-head-en">Contact Us</p>
 					</div>
-					<div class="p-recruit">
-						<div class="p-recruit-nav">
-							<div class="p-recruit-nav-item">
-								<div class="c-inner-nav">
-									<div class="c-inner-nav-head"><a href="#recruit-section-1">新卒採用情報</a></div>
-									<ul class="c-inner-nav-list">
-										<li class="c-inner-nav-item">
-											<a href="#recruit-block-1-1" class="c-inner-nav-text">本社</a>
-										</li>
-										<li class="c-inner-nav-item">
-											<a href="#recruit-block-1-2" class="c-inner-nav-text">東北支店</a>
-										</li>
-										<li class="c-inner-nav-item">
-											<a href="#recruit-block-1-3" class="c-inner-nav-text">茨城工場</a>
-										</li>
-									</ul>
+					<div class="p-require">
+						<p class="p-require-lead"> 新卒採用・中途採用ついてお問い合わせは、<br> 下記入力フォームに必要事項をご入力の上「送信」ボタンを押してください。<br> あらためて担当者よりご連絡を差し上げます。<br> なお、お問い合わせの内容によりましては、お答えしかねる場合がございますので、予めご了承ください。 </p>
+						<script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
+						<form class="p-require-content h-adr" method="post" action="confirm.php">
+							<input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
+							<span class="p-country-name" style="display:none;">Japan</span>
+							<div class="p-require-input">
+								<div class="c-input">
+									<div class="c-input-block">
+										<span class="c-input-head">
+											<span class="c-input-name">お問い合わせ項目</span>
+											<span class="c-input-label">必須</span>
+										</span>
+										<div class="c-input-content">
+											<div class="c-input-radio">
+												<div class="c-input-radio-item">
+													<input type="radio" name="recruit_matter" id="form-matter3" value="新卒採用" class="c-input-radio-input" <?php if((isset($post['recruit_matter']) && $post['recruit_matter'] == '新卒採用' ) || $get['recruit_matter'] == '新卒採用' ) echo 'checked'; ?>>
+													<label for="form-matter3" class="c-input-radio-label">新卒採用</label>
+												</div>
+												<div class="c-input-radio-item">
+													<input type="radio" name="recruit_matter" id="form-matter4" value="中途採用" class="c-input-radio-input" <?php if((isset($post['recruit_matter']) && $post['recruit_matter'] == '新卒採用' ) || $get['recruit_matter'] == '中途採用' ) echo 'checked'; ?>>
+													<label for="form-matter4" class="c-input-radio-label">中途採用</label>
+												</div>
+											</div> <?php if(isset($res['err']['recruit_matter'])): ?> <?php echo '<p class="c-input-error">'.$res['err']['recruit_matter'][0].'</p>'; ?> <?php endif ?>
+										</div>
+									</div>
+									<div class="c-input-block">
+										<span class="c-input-head">
+											<span class="c-input-name">お問い合わせ拠点</span>
+											<span class="c-input-label">必須</span>
+										</span>
+										<div class="c-input-content">
+											<div class="c-input-radio">
+												<div class="c-input-radio-item">
+													<input type="radio" name="recruit_base" id="form-matter5" value="本社" class="c-input-radio-input" <?php if((isset($post['recruit_base']) && $post['recruit_base'] == '本社' ) || $get['recruit_base'] == '本社' ) echo 'checked'; ?>>
+													<label for="form-matter5" class="c-input-radio-label">本社</label>
+												</div>
+												<div class="c-input-radio-item">
+													<input type="radio" name="recruit_base" id="form-matter6" value="東北支店" class="c-input-radio-input" <?php if((isset($post['recruit_base']) && $post['recruit_base'] == '東北支店' ) || $get['recruit_base'] == '東北支店' ) echo 'checked'; ?>>
+													<label for="form-matter6" class="c-input-radio-label">東北支店</label>
+												</div>
+												<div class="c-input-radio-item">
+													<input type="radio" name="recruit_base" id="form-matter7" value="茨城工場" class="c-input-radio-input" <?php if((isset($post['recruit_base']) && $post['recruit_base'] == '東北支店' ) || $get['recruit_base'] == '東北支店' ) echo 'checked'; ?>>
+													<label for="form-matter7" class="c-input-radio-label">茨城工場</label>
+												</div>
+											</div> <?php if(isset($res['err']['recruit_base'])): ?> <?php echo '<p class="c-input-error">'.$res['err']['recruit_base'][0].'</p>'; ?> <?php endif ?>
+										</div>
+									</div>
+									<div class="c-input-block">
+										<label for="form-name" class="c-input-head">
+											<span class="c-input-name">お名前</span>
+											<span class="c-input-label">必須</span>
+										</label>
+										<div class="c-input-content">
+											<input class="c-input-text" id="form-name" type="text" name="name" autocomplete="name" aria-required="true" value="<?php if(isset($post['name'])) echo $post['name']; ?>" required /> <?php if(isset($res['err']['name'])): ?> <?php echo '<p class="c-input-error">'.$res['err']['name'][0].'</p>'; ?> <?php endif ?>
+										</div>
+									</div>
+									<div class="c-input-block">
+										<label for="form-tel" class="c-input-head">
+											<span class="c-input-name">お電話番号</span>
+											<span class="c-input-label">必須</span>
+										</label>
+										<div class="c-input-content">
+											<input class="c-input-text" id="form-tel" type="tel" name="tel" autocomplete="tel" aria-required="true" value="<?php if(isset($post['tel'])) echo $post['tel']; ?>" required /> <?php if(isset($res['err']['tel'])): ?> <?php echo '<p class="c-input-error">'.$res['err']['tel'][0].'</p>'; ?> <?php endif ?>
+										</div>
+									</div>
+									<div class="c-input-block">
+										<label for="form-email" class="c-input-head">
+											<span class="c-input-name">メールアドレス</span>
+											<span class="c-input-label">必須</span>
+										</label>
+										<div class="c-input-content">
+											<input class="c-input-text" id="form-email" type="email" name="email" autocomplete="email" aria-required="true" value="<?php if(isset($post['email'])) echo $post['email']; ?>" required /> <?php if(isset($res['err']['email'])): ?> <?php echo '<p class="c-input-error">'.$res['err']['email'][0].'</p>'; ?> <?php endif ?>
+										</div>
+									</div>
+									<div class="c-input-block">
+										<div class="c-input-head">
+											<span class="c-input-name">ご住所</span>
+											<span class="c-input-label">必須</span>
+										</div>
+										<div class="c-input-content">
+											<div class="c-input-post">
+												<span class="c-input-post-mark">〒</span>
+												<span class="c-input-post-number">
+													<input type="text" class="c-input-text p-postal-code" name="postal_code" autocomplete="postal-code" size="8" maxlength="8" placeholder="例）110-0005" aria-required="true" value="<?php if(isset($post['postal_code'])) echo $post['postal_code']; ?>" required />
+												</span>
+												<span class="c-input-post-select">
+													<select name="prefecture" class="c-input-select p-region">
+														<option value="北海道" <?php if(isset($post['prefecture']) && $post['prefecture'] == '北海道' ) echo 'selected'; ?>>北海道</option>
+														<option value="青森県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '青森県' ) echo 'selected'; ?>>青森県</option>
+														<option value="岩手県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '岩手県' ) echo 'selected'; ?>>岩手県</option>
+														<option value="宮城県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '宮城県' ) echo 'selected'; ?>>宮城県</option>
+														<option value="秋田県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '秋田県' ) echo 'selected'; ?>>秋田県</option>
+														<option value="山形県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '山形県' ) echo 'selected'; ?>>山形県</option>
+														<option value="福島県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '福島県' ) echo 'selected'; ?>>福島県</option>
+														<option value="茨城県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '茨城県' ) echo 'selected'; ?>>茨城県</option>
+														<option value="栃木県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '栃木県' ) echo 'selected'; ?>>栃木県</option>
+														<option value="群馬県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '群馬県' ) echo 'selected'; ?>>群馬県</option>
+														<option value="埼玉県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '埼玉県' ) echo 'selected'; ?>>埼玉県</option>
+														<option value="千葉県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '千葉県' ) echo 'selected'; ?>>千葉県</option>
+														<option value="東京都" <?php if(isset($post['prefecture']) && $post['prefecture'] == '東京都' ) echo 'selected'; ?>>東京都</option>
+														<option value="神奈川県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '神奈川県' ) echo 'selected'; ?>>神奈川県</option>
+														<option value="新潟県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '新潟県' ) echo 'selected'; ?>>新潟県</option>
+														<option value="富山県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '富山県' ) echo 'selected'; ?>>富山県</option>
+														<option value="石川県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '石川県' ) echo 'selected'; ?>>石川県</option>
+														<option value="福井県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '福井県' ) echo 'selected'; ?>>福井県</option>
+														<option value="山梨県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '山梨県' ) echo 'selected'; ?>>山梨県</option>
+														<option value="長野県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '長野県' ) echo 'selected'; ?>>長野県</option>
+														<option value="岐阜県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '岐阜県' ) echo 'selected'; ?>>岐阜県</option>
+														<option value="静岡県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '静岡県' ) echo 'selected'; ?>>静岡県</option>
+														<option value="愛知県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '愛知県' ) echo 'selected'; ?>>愛知県</option>
+														<option value="三重県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '三重県' ) echo 'selected'; ?>>三重県</option>
+														<option value="滋賀県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '滋賀県' ) echo 'selected'; ?>>滋賀県</option>
+														<option value="京都府" <?php if(isset($post['prefecture']) && $post['prefecture'] == '京都府' ) echo 'selected'; ?>>京都府</option>
+														<option value="大阪府" <?php if(isset($post['prefecture']) && $post['prefecture'] == '大阪府' ) echo 'selected'; ?>>大阪府</option>
+														<option value="兵庫県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '兵庫県' ) echo 'selected'; ?>>兵庫県</option>
+														<option value="奈良県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '奈良県' ) echo 'selected'; ?>>奈良県</option>
+														<option value="和歌山県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '和歌山県' ) echo 'selected'; ?>>和歌山県</option>
+														<option value="鳥取県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '鳥取県' ) echo 'selected'; ?>>鳥取県</option>
+														<option value="島根県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '島根県' ) echo 'selected'; ?>>島根県</option>
+														<option value="岡山県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '岡山県' ) echo 'selected'; ?>>岡山県</option>
+														<option value="広島県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '広島県' ) echo 'selected'; ?>>広島県</option>
+														<option value="山口県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '山口県' ) echo 'selected'; ?>>山口県</option>
+														<option value="徳島県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '徳島県' ) echo 'selected'; ?>>徳島県</option>
+														<option value="香川県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '香川県' ) echo 'selected'; ?>>香川県</option>
+														<option value="愛媛県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '愛媛県' ) echo 'selected'; ?>>愛媛県</option>
+														<option value="高知県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '高知県' ) echo 'selected'; ?>>高知県</option>
+														<option value="福岡県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '福岡県' ) echo 'selected'; ?>>福岡県</option>
+														<option value="佐賀県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '佐賀県' ) echo 'selected'; ?>>佐賀県</option>
+														<option value="長崎県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '長崎県' ) echo 'selected'; ?>>長崎県</option>
+														<option value="熊本県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '熊本県' ) echo 'selected'; ?>>熊本県</option>
+														<option value="大分県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '大分県' ) echo 'selected'; ?>>大分県</option>
+														<option value="宮崎県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '宮崎県' ) echo 'selected'; ?>>宮崎県</option>
+														<option value="鹿児島県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '鹿児島県' ) echo 'selected'; ?>>鹿児島県</option>
+														<option value="沖縄県" <?php if(isset($post['prefecture']) && $post['prefecture'] == '沖縄県' ) echo 'selected'; ?>>沖縄県</option>
+													</select>
+												</span>
+											</div>
+											<div class="c-input-address">
+												<input class="c-input-text p-region p-locality p-street-address" type="text" name="address_level1" autocomplete="address-level1" placeholder="例）東京都台東区上野５-１５-１４" aria-required="true" value="<?php if(isset($post['address_level1'])) echo $post['address_level1']; ?>" required />
+											</div>
+											<div class="c-input-address">
+												<input class="c-input-text p-extended-address" type="text" name="address_line2" autocomplete="address-line2" placeholder="例）ミヤギビル1F" aria-required="true" value="<?php if(isset($post['address_line2'])) echo $post['address_line2']; ?>" />
+											</div> <?php if(isset($res['err']['postal_code'])): ?> <?php echo '<p class="c-input-error">'.$res['err']['postal_code'][0].'</p>'; ?> <?php endif ?> <?php if(isset($res['err']['prefecture'])): ?> <?php echo '<p class="c-input-error">'.$res['err']['prefecture'][0].'</p>'; ?> <?php endif ?> <?php if(isset($res['err']['address_level1'])): ?> <?php echo '<p class="c-input-error">'.$res['err']['address_level1'][0].'</p>'; ?> <?php endif ?>
+										</div>
+									</div>
+									<div class="c-input-block">
+										<label for="form-require" class="c-input-head">
+											<span class="c-input-name">お問い合わせ内容</span>
+											<span class="c-input-label">必須</span>
+										</label>
+										<div class="c-input-content">
+											<textarea class="c-input-area" id="form-require" name="content" aria-multiline="true" aria-required="true" required>
+<?php if(isset($post['content'])) echo $post['content']; ?>
+</textarea>
+										</div>
+									</div>
 								</div>
 							</div>
-							<div class="p-recruit-nav-item">
-								<div class="c-inner-nav">
-									<div class="c-inner-nav-head"><a href="#recruit-section-2">中途採用情報</a></div>
-									<ul class="c-inner-nav-list">
-										<li class="c-inner-nav-item">
-											<a href="#recruit-block-2-1" class="c-inner-nav-text">本社</a>
-										</li>
-										<li class="c-inner-nav-item">
-											<a href="#recruit-block-2-2" class="c-inner-nav-text">東北支店</a>
-										</li>
-										<li class="c-inner-nav-item">
-											<a href="#recruit-block-2-3" class="c-inner-nav-text">茨城工場</a>
-										</li>
-									</ul>
+							<p class="p-require-lead"> 当社プライバシーポリシーに同意頂ける場合は<br>「同意する」にチェックを付け「送信」ボタンをクリックしてください。 </p>
+							<div class="p-require-check">
+								<div class="c-input-check">
+									<span class="c-input-check-line">
+										<input type="checkbox" name="agree" id="form-agree" class="c-input-check-input js-check-button" data-target="js-require-confirm">
+									</span>
+									<label for="form-agree" class="c-input-check-label">同意する</label>
 								</div>
 							</div>
-						</div>
-						<section class="p-recruit-section" id="recruit-section-1">
-							<h2 class="p-recruit-title">
-								<span class="c-label-title is-full is-light-blue">新卒採用情報</span>
-							</h2>
-							<section class="p-recruit-block" id="recruit-block-1-1">
-								<h3 class="p-recruit-headline">
-									<span class="c-label-title is-light-blue">本社</sapn>
-								</h3>
-								<div class="p-recruit-content">
-									<div class="c-full-table">
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">募集職種</dt>
-												<dd class="c-full-table-dd">技能職（当社工場でのダクト製作、建築現場での空調機器類の据付とダクトの取付）</dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">応募資格</dt>
-												<dd class="c-full-table-dd">高校卒業見込み者・既卒者可（卒業後概ね３年以内）<br>普通自動車免許必須（ＡＴ限定不可）<small>※誕生日等の都合で取得が遅れる場合は応相談</small></dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">雇用形態</dt>
-												<dd class="c-full-table-dd">正社員（試用期間3ヵ月）</dd>
-											</dl>
-										</div>
-									</div>
-								</div>
-								<div class="p-recruit-button">
-									<a href="../contact-recruit/?recruit_matter=新卒採用&recruit_base=本社" class="c-secondary-button is-large"> 採用お問い合わせはこちら <span class="c-secondary-button-en">Recruitment Contact</span>
-									</a>
-								</div>
-							</section>
-							<section class="p-recruit-block" id="recruit-block-1-2">
-								<h3 class="p-recruit-headline">
-									<span class="c-label-title is-light-blue">東北支店</sapn>
-								</h3>
-								<div class="p-recruit-content">
-									<div class="c-full-table">
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">募集職種</dt>
-												<dd class="c-full-table-dd">技能職（当社工場でのダクト製作、建築現場での空調機器類の据付とダクトの取付）</dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">応募資格</dt>
-												<dd class="c-full-table-dd">高校卒業見込み者・既卒者可（卒業後概ね３年以内）<br>普通自動車免許必須（ＡＴ限定不可）<small>※誕生日等の都合で取得が遅れる場合は応相談</small></dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">雇用形態</dt>
-												<dd class="c-full-table-dd">正社員（試用期間3ヵ月）</dd>
-											</dl>
-										</div>
-									</div>
-								</div>
-								<div class="p-recruit-button">
-									<a href="../contact-recruit/?recruit_matter=新卒採用&recruit_base=東北支店" class="c-secondary-button is-large"> 採用お問い合わせはこちら <span class="c-secondary-button-en">Recruitment Contact</span>
-									</a>
-								</div>
-							</section>
-							<section class="p-recruit-block" id="recruit-block-1-3">
-								<h3 class="p-recruit-headline">
-									<span class="c-label-title is-light-blue">茨城工場</sapn>
-								</h3>
-								<div class="p-recruit-content">
-									<div class="c-full-table">
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">募集職種</dt>
-												<dd class="c-full-table-dd">技能職（当社工場でのダクト製作、建築現場での空調機器類の据付とダクトの取付）</dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">応募資格</dt>
-												<dd class="c-full-table-dd">高校卒業見込み者・既卒者可（卒業後概ね３年以内）<br>普通自動車免許必須（ＡＴ限定不可）<small>※誕生日等の都合で取得が遅れる場合は応相談</small></dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">雇用形態</dt>
-												<dd class="c-full-table-dd">正社員（試用期間3ヵ月）</dd>
-											</dl>
-										</div>
-									</div>
-								</div>
-								<div class="p-recruit-button">
-									<a href="../contact-recruit/?recruit_matter=新卒採用&recruit_base=茨城工場" class="c-secondary-button is-large"> 採用お問い合わせはこちら <span class="c-secondary-button-en">Recruitment Contact</span>
-									</a>
-								</div>
-							</section>
-						</section>
-						<section class="p-recruit-section" id="recruit-section-2">
-							<h2 class="p-recruit-title">
-								<span class="c-label-title is-full ">中途採用情報</span>
-							</h2>
-							<section class="p-recruit-block" id="recruit-block-2-1">
-								<h3 class="p-recruit-headline">
-									<span class="c-label-title ">本社</sapn>
-								</h3>
-								<div class="p-recruit-content">
-									<div class="c-full-table">
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">募集職種</dt>
-												<dd class="c-full-table-dd">技能職（当社工場でのダクト製作、建築現場での空調機器類の据付とダクトの取付）</dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">応募資格</dt>
-												<dd class="c-full-table-dd">高校卒業見込み者・既卒者可（卒業後概ね３年以内）<br>普通自動車免許必須（ＡＴ限定不可）<small>※誕生日等の都合で取得が遅れる場合は応相談</small></dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">雇用形態</dt>
-												<dd class="c-full-table-dd">正社員（試用期間3ヵ月）</dd>
-											</dl>
-										</div>
-									</div>
-								</div>
-								<div class="p-recruit-button">
-									<a href="../contact-recruit/?recruit_matter=中途採用&recruit_base=本社" class="c-secondary-button is-large"> 採用お問い合わせはこちら <span class="c-secondary-button-en">Recruitment Contact</span>
-									</a>
-								</div>
-							</section>
-							<section class="p-recruit-block" id="recruit-block-2-2">
-								<h3 class="p-recruit-headline">
-									<span class="c-label-title ">東北支店</sapn>
-								</h3>
-								<div class="p-recruit-content">
-									<div class="c-full-table">
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">募集職種</dt>
-												<dd class="c-full-table-dd">技能職（当社工場でのダクト製作、建築現場での空調機器類の据付とダクトの取付）</dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">応募資格</dt>
-												<dd class="c-full-table-dd">高校卒業見込み者・既卒者可（卒業後概ね３年以内）<br>普通自動車免許必須（ＡＴ限定不可）<small>※誕生日等の都合で取得が遅れる場合は応相談</small></dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">雇用形態</dt>
-												<dd class="c-full-table-dd">正社員（試用期間3ヵ月）</dd>
-											</dl>
-										</div>
-									</div>
-								</div>
-								<div class="p-recruit-button">
-									<a href="../contact-recruit/?recruit_matter=中途採用&recruit_base=東北支店" class="c-secondary-button is-large"> 採用お問い合わせはこちら <span class="c-secondary-button-en">Recruitment Contact</span>
-									</a>
-								</div>
-							</section>
-							<section class="p-recruit-block" id="recruit-block-2-3">
-								<h3 class="p-recruit-headline">
-									<span class="c-label-title ">茨城工場</sapn>
-								</h3>
-								<div class="p-recruit-content">
-									<div class="c-full-table">
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">募集職種</dt>
-												<dd class="c-full-table-dd">技能職（当社工場でのダクト製作、建築現場での空調機器類の据付とダクトの取付）</dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">応募資格</dt>
-												<dd class="c-full-table-dd">高校卒業見込み者・既卒者可（卒業後概ね３年以内）<br>普通自動車免許必須（ＡＴ限定不可）<small>※誕生日等の都合で取得が遅れる場合は応相談</small></dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">雇用形態</dt>
-												<dd class="c-full-table-dd">正社員（試用期間3ヵ月）</dd>
-											</dl>
-										</div>
-									</div>
-								</div>
-								<div class="p-recruit-button">
-									<a href="../contact-recruit/?recruit_matter=中途採用&recruit_base=茨城工場" class="c-secondary-button is-large"> 採用お問い合わせはこちら <span class="c-secondary-button-en">Recruitment Contact</span>
-									</a>
-								</div>
-							</section>
-						</section>
+							<div class="p-require-submit">
+								<button type="submit" class="c-secondary-button js-require-confirm" disabled>送　信</button>
+							</div>
+						</form>
 					</div>
 				</div>
 			</main>
@@ -601,6 +552,7 @@
 			</footer>
 		</div><!-- .l-wrapper -->
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+		<script src="https://yubinbango.github.io/yubinbango/yubinbango.js"></script>
 		<script src="../assets/js/script.js"></script>
 	</body>
 </html>

@@ -1,15 +1,101 @@
+<?php
+session_start();
+if (!(isset($_POST["csrf_token"])
+&& $_POST["csrf_token"] === $_SESSION['csrf_token'])) {
+// header('HTTP/1.1 403 Forbidden');
+header( "HTTP/1.1 302" );
+header('Location : ./index.php');
+exit;
+}
+$toke_byte = substr(base_convert(hash('sha256', uniqid()), 16, 36), 0, 16);
+$csrf_token = bin2hex($toke_byte);
+$_SESSION['csrf_token2'] = $csrf_token;
+/*******************************************************/
+/* 送信データ定義 */
+/* [key(POST[key]), name(for message), rule] */
+$rules = array(
+array('recruit_matter', 'お問い合わせ項目', 'required'),
+array('recruit_base', 'お問い合わせ拠点', 'required'),
+array('name', 'お名前', 'required'),
+array('tel', 'お電話番号', 'required'),
+array('email', 'メールアドレス', 'required|email'),
+array('postal_code', 'ご住所（郵便番号）', 'required'),
+array('prefecture', 'ご住所（都道府県）', 'required'),
+array('address_level1', 'ご住所（住所1）', 'required'),
+array('address_line2', 'ご住所（住所2）', ''),
+array('content', 'お問い合わせ内容', 'required'),
+array('agree', 'プライバシーポリシー', ''),
+);
+/*******************************************************/
+if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+header('HTTP/1.1 403 Forbidden');
+exit;
+}
+$form = $_POST;
+$_SESSION['post'] = $_POST;
+$post = $_SESSION['post'];
+unset($_SESSION['res']);
+$result = validation($form, $rules);
+$_SESSION['res'] = $result;
+if ($result['isSuccess'] !== true) {
+header( "HTTP/1.1 302" );
+header('Location : ./index.php');
+}
+/* end. */
+function validation($form, $rules)
+{
+$result = array('isSuccess' => true);
+$err = array();
+foreach ($rules as $rule) {
+list($key, $name, $lists) = $rule;
+$lists = explode('|', $lists);
+foreach ($lists as $list) {
+switch ($list) {
+case 'required':
+if ($form[$key] == '') {
+$result['isSuccess'] = false;
+$err[$key][] = "※「".$name."」は必須です。";
+break;
+}
+break;
+case 'email':
+if ($form[$key] !== '') {
+if (mb_strlen($form[$key], 'UTF-8') > 255 || preg_match('/\A.+@.+\z/', $form[$key]) !== 1) {
+$result['isSuccess'] = false;
+$err[$key][] = "有効なメールアドレスではありません。";
+}
+}
+break;
+case 'tel':
+if ($form[$key] !== '') {
+$tmp = mb_convert_kana(str_replace('-', '', $form[$key]), 'n');
+if (preg_match('/\A[0-9]{10,11}\z/', $tmp) !== 1) {
+$result['isSuccess'] = false;
+$err[$key][] = "電話番号は10桁、または11桁の数値で入力してください。";
+}
+}
+break;
+default:
+break;
+}
+}
+}
+$result['err'] = $err;
+return $result;
+}
+?>
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
-		<title>募集要項 | 株式会社サンエス工業｜空調機器製造販売</title>
+		<title>お問い合わせ 確認 | 株式会社サンエス工業｜空調機器製造販売</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 		<meta property="og:type" content="article">
 		<meta name="format-detection" content="telephone=no">
-		<meta property="og:title" content="募集要項 | 株式会社サンエス工業｜空調機器製造販売">
-		<meta property="og:url" content="http://www.sss-k.co.jp/recruit/index.html">
+		<meta property="og:title" content="お問い合わせ 確認 | 株式会社サンエス工業｜空調機器製造販売">
+		<meta property="og:url" content="http://www.sss-k.co.jp/contact-recruit/confirm.html">
 		<meta property="og:site_name" content="株式会社サンエス工業｜空調機器製造販売">
-		<meta property="og:description" content="募集要項。株式会社サンエス工業は、昭和49年創業の空調機器及び消音機器の製造メーカーです。">
+		<meta property="og:description" content="お問い合わせ 確認。株式会社サンエス工業は、昭和49年創業の空調機器及び消音機器の製造メーカーです。">
 		<meta name="description" content="株式会社サンエス工業は、昭和49年創業の空調機器及び消音機器の製造メーカーです。">
 		<link rel="stylesheet" href="../assets/css/style.css">
 	</head>
@@ -238,244 +324,98 @@
 				</nav>
 			</header>
 			<main class="l-main">
-				<div class="l-content">
-					<div class="c-visual-head is-recruit">
-						<h1 class="c-box-title is-type3">
-							<span class="c-box-title-text">採用情報</span>
-							<span class="c-box-title-bottom">募集要項</span>
-						</h1>
+				<div class="l-content is-light-blue">
+					<div class="c-simple-head is-light">
+						<h1 class="c-simple-head-title">採用お問い合わせフォーム</h1>
+						<p class="c-simple-head-en">Contact Us</p>
 					</div>
-					<div class="p-recruit">
-						<div class="p-recruit-nav">
-							<div class="p-recruit-nav-item">
-								<div class="c-inner-nav">
-									<div class="c-inner-nav-head"><a href="#recruit-section-1">新卒採用情報</a></div>
-									<ul class="c-inner-nav-list">
-										<li class="c-inner-nav-item">
-											<a href="#recruit-block-1-1" class="c-inner-nav-text">本社</a>
-										</li>
-										<li class="c-inner-nav-item">
-											<a href="#recruit-block-1-2" class="c-inner-nav-text">東北支店</a>
-										</li>
-										<li class="c-inner-nav-item">
-											<a href="#recruit-block-1-3" class="c-inner-nav-text">茨城工場</a>
-										</li>
-									</ul>
+					<div class="p-require">
+						<p class="p-require-lead"> 新卒採用・中途採用ついてお問い合わせは、<br> 下記入力フォームに必要事項をご入力の上「送信」ボタンを押してください。<br> あらためて担当者よりご連絡を差し上げます。<br> なお、お問い合わせの内容によりましては、お答えしかねる場合がございますので、予めご了承ください。 </p>
+						<form class="p-require-content" action="mail.php" method="POST">
+							<input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
+							<div class="p-require-input">
+								<div class="c-input">
+									<div class="c-input-block">
+										<span class="c-input-head">
+											<span class="c-input-name">お問い合わせ項目</span>
+											<span class="c-input-label">必須</span>
+										</span>
+										<div class="c-input-content">
+											<span class="c-input-content-confirm"> <?php if(isset($post['recruit_matter'])) echo htmlspecialchars($post['recruit_matter']); ?> </span>
+										</div>
+									</div>
+									<div class="c-input-block">
+										<span class="c-input-head">
+											<span class="c-input-name">お問い合わせ拠点</span>
+											<span class="c-input-label">必須</span>
+										</span>
+										<div class="c-input-content">
+											<span class="c-input-content-confirm"> <?php if(isset($post['recruit_base'])) echo htmlspecialchars($post['recruit_base']); ?> </span>
+										</div>
+									</div>
+									<div class="c-input-block">
+										<label for="form-name" class="c-input-head">
+											<span class="c-input-name">お名前</span>
+											<span class="c-input-label">必須</span>
+										</label>
+										<div class="c-input-content">
+											<input class="c-input-text" id="form-name" type="text" name="name" autocomplete="name" aria-required="true" required readonly="readonly" value="<?php if(isset($post['name'])) echo htmlspecialchars($post['name']); ?>" />
+										</div>
+									</div>
+									<div class="c-input-block">
+										<label for="form-tel" class="c-input-head">
+											<span class="c-input-name">お電話番号</span>
+											<span class="c-input-label">必須</span>
+										</label>
+										<div class="c-input-content">
+											<input class="c-input-text" id="form-tel" type="tel" name="tel" autocomplete="tel" aria-required="true" required readonly="readonly" value="<?php if(isset($post['tel'])) echo htmlspecialchars($post['tel']); ?>" />
+										</div>
+									</div>
+									<div class="c-input-block">
+										<label for="form-email" class="c-input-head">
+											<span class="c-input-name">メールアドレス</span>
+											<span class="c-input-label">必須</span>
+										</label>
+										<div class="c-input-content">
+											<input class="c-input-text" id="form-email" type="email" name="email" autocomplete="email" aria-required="true" required readonly="readonly" value="<?php if(isset($post['email'])) echo htmlspecialchars($post['email']); ?>" />
+										</div>
+									</div>
+									<div class="c-input-block">
+										<div class="c-input-head">
+											<span class="c-input-name">ご住所</span>
+											<span class="c-input-label">必須</span>
+										</div>
+										<div class="c-input-content">
+											<div class="c-input-post">
+												<span class="c-input-post-mark">〒</span>
+												<span class="c-input-post-number">
+													<input type="text" class="c-input-text" name="postal-code" aria-required="true" required readonly="readonly" value="<?php if(isset($post['postal_code'])) echo htmlspecialchars($post['postal_code']); ?>" />
+												</span>
+											</div>
+											<div class="c-input-address">
+												<input class="c-input-text" type="text" name="address-level1" aria-required="true" required autocomplete="address-level1" readonly="readonly" value="<?php if(isset($post['prefecture'])) echo htmlspecialchars($post['prefecture']); ?><?php if(isset($post['address_level1'])) echo htmlspecialchars($post['address_level1']); ?>" />
+											</div>
+											<div class="c-input-address">
+												<input class="c-input-text" type="text" name="address-line2" aria-required="true" required autocomplete="address-line2" readonly="readonly" value="<?php if(isset($post['address_line2'])) echo htmlspecialchars($post['address_line2']); ?>" />
+											</div>
+										</div>
+									</div>
+									<div class="c-input-block">
+										<label for="form-require" class="c-input-head">
+											<span class="c-input-name">お問い合わせ内容</span>
+											<span class="c-input-label">必須</span>
+										</label>
+										<div class="c-input-content">
+											<span id="form-require" class="c-input-content-confirm is-small"> <?php if(isset($post['content'])) echo htmlspecialchars($post['content']); ?> </span>
+										</div>
+									</div>
 								</div>
 							</div>
-							<div class="p-recruit-nav-item">
-								<div class="c-inner-nav">
-									<div class="c-inner-nav-head"><a href="#recruit-section-2">中途採用情報</a></div>
-									<ul class="c-inner-nav-list">
-										<li class="c-inner-nav-item">
-											<a href="#recruit-block-2-1" class="c-inner-nav-text">本社</a>
-										</li>
-										<li class="c-inner-nav-item">
-											<a href="#recruit-block-2-2" class="c-inner-nav-text">東北支店</a>
-										</li>
-										<li class="c-inner-nav-item">
-											<a href="#recruit-block-2-3" class="c-inner-nav-text">茨城工場</a>
-										</li>
-									</ul>
-								</div>
+							<div class="p-require-submit">
+								<button type="button" onClick="javascript:history.back(-1)" class="c-secondary-button is-white">修　正</button>
+								<button type="submit" class="c-secondary-button">送　信</button>
 							</div>
-						</div>
-						<section class="p-recruit-section" id="recruit-section-1">
-							<h2 class="p-recruit-title">
-								<span class="c-label-title is-full is-light-blue">新卒採用情報</span>
-							</h2>
-							<section class="p-recruit-block" id="recruit-block-1-1">
-								<h3 class="p-recruit-headline">
-									<span class="c-label-title is-light-blue">本社</sapn>
-								</h3>
-								<div class="p-recruit-content">
-									<div class="c-full-table">
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">募集職種</dt>
-												<dd class="c-full-table-dd">技能職（当社工場でのダクト製作、建築現場での空調機器類の据付とダクトの取付）</dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">応募資格</dt>
-												<dd class="c-full-table-dd">高校卒業見込み者・既卒者可（卒業後概ね３年以内）<br>普通自動車免許必須（ＡＴ限定不可）<small>※誕生日等の都合で取得が遅れる場合は応相談</small></dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">雇用形態</dt>
-												<dd class="c-full-table-dd">正社員（試用期間3ヵ月）</dd>
-											</dl>
-										</div>
-									</div>
-								</div>
-								<div class="p-recruit-button">
-									<a href="../contact-recruit/?recruit_matter=新卒採用&recruit_base=本社" class="c-secondary-button is-large"> 採用お問い合わせはこちら <span class="c-secondary-button-en">Recruitment Contact</span>
-									</a>
-								</div>
-							</section>
-							<section class="p-recruit-block" id="recruit-block-1-2">
-								<h3 class="p-recruit-headline">
-									<span class="c-label-title is-light-blue">東北支店</sapn>
-								</h3>
-								<div class="p-recruit-content">
-									<div class="c-full-table">
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">募集職種</dt>
-												<dd class="c-full-table-dd">技能職（当社工場でのダクト製作、建築現場での空調機器類の据付とダクトの取付）</dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">応募資格</dt>
-												<dd class="c-full-table-dd">高校卒業見込み者・既卒者可（卒業後概ね３年以内）<br>普通自動車免許必須（ＡＴ限定不可）<small>※誕生日等の都合で取得が遅れる場合は応相談</small></dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">雇用形態</dt>
-												<dd class="c-full-table-dd">正社員（試用期間3ヵ月）</dd>
-											</dl>
-										</div>
-									</div>
-								</div>
-								<div class="p-recruit-button">
-									<a href="../contact-recruit/?recruit_matter=新卒採用&recruit_base=東北支店" class="c-secondary-button is-large"> 採用お問い合わせはこちら <span class="c-secondary-button-en">Recruitment Contact</span>
-									</a>
-								</div>
-							</section>
-							<section class="p-recruit-block" id="recruit-block-1-3">
-								<h3 class="p-recruit-headline">
-									<span class="c-label-title is-light-blue">茨城工場</sapn>
-								</h3>
-								<div class="p-recruit-content">
-									<div class="c-full-table">
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">募集職種</dt>
-												<dd class="c-full-table-dd">技能職（当社工場でのダクト製作、建築現場での空調機器類の据付とダクトの取付）</dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">応募資格</dt>
-												<dd class="c-full-table-dd">高校卒業見込み者・既卒者可（卒業後概ね３年以内）<br>普通自動車免許必須（ＡＴ限定不可）<small>※誕生日等の都合で取得が遅れる場合は応相談</small></dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">雇用形態</dt>
-												<dd class="c-full-table-dd">正社員（試用期間3ヵ月）</dd>
-											</dl>
-										</div>
-									</div>
-								</div>
-								<div class="p-recruit-button">
-									<a href="../contact-recruit/?recruit_matter=新卒採用&recruit_base=茨城工場" class="c-secondary-button is-large"> 採用お問い合わせはこちら <span class="c-secondary-button-en">Recruitment Contact</span>
-									</a>
-								</div>
-							</section>
-						</section>
-						<section class="p-recruit-section" id="recruit-section-2">
-							<h2 class="p-recruit-title">
-								<span class="c-label-title is-full ">中途採用情報</span>
-							</h2>
-							<section class="p-recruit-block" id="recruit-block-2-1">
-								<h3 class="p-recruit-headline">
-									<span class="c-label-title ">本社</sapn>
-								</h3>
-								<div class="p-recruit-content">
-									<div class="c-full-table">
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">募集職種</dt>
-												<dd class="c-full-table-dd">技能職（当社工場でのダクト製作、建築現場での空調機器類の据付とダクトの取付）</dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">応募資格</dt>
-												<dd class="c-full-table-dd">高校卒業見込み者・既卒者可（卒業後概ね３年以内）<br>普通自動車免許必須（ＡＴ限定不可）<small>※誕生日等の都合で取得が遅れる場合は応相談</small></dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">雇用形態</dt>
-												<dd class="c-full-table-dd">正社員（試用期間3ヵ月）</dd>
-											</dl>
-										</div>
-									</div>
-								</div>
-								<div class="p-recruit-button">
-									<a href="../contact-recruit/?recruit_matter=中途採用&recruit_base=本社" class="c-secondary-button is-large"> 採用お問い合わせはこちら <span class="c-secondary-button-en">Recruitment Contact</span>
-									</a>
-								</div>
-							</section>
-							<section class="p-recruit-block" id="recruit-block-2-2">
-								<h3 class="p-recruit-headline">
-									<span class="c-label-title ">東北支店</sapn>
-								</h3>
-								<div class="p-recruit-content">
-									<div class="c-full-table">
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">募集職種</dt>
-												<dd class="c-full-table-dd">技能職（当社工場でのダクト製作、建築現場での空調機器類の据付とダクトの取付）</dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">応募資格</dt>
-												<dd class="c-full-table-dd">高校卒業見込み者・既卒者可（卒業後概ね３年以内）<br>普通自動車免許必須（ＡＴ限定不可）<small>※誕生日等の都合で取得が遅れる場合は応相談</small></dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">雇用形態</dt>
-												<dd class="c-full-table-dd">正社員（試用期間3ヵ月）</dd>
-											</dl>
-										</div>
-									</div>
-								</div>
-								<div class="p-recruit-button">
-									<a href="../contact-recruit/?recruit_matter=中途採用&recruit_base=東北支店" class="c-secondary-button is-large"> 採用お問い合わせはこちら <span class="c-secondary-button-en">Recruitment Contact</span>
-									</a>
-								</div>
-							</section>
-							<section class="p-recruit-block" id="recruit-block-2-3">
-								<h3 class="p-recruit-headline">
-									<span class="c-label-title ">茨城工場</sapn>
-								</h3>
-								<div class="p-recruit-content">
-									<div class="c-full-table">
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">募集職種</dt>
-												<dd class="c-full-table-dd">技能職（当社工場でのダクト製作、建築現場での空調機器類の据付とダクトの取付）</dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">応募資格</dt>
-												<dd class="c-full-table-dd">高校卒業見込み者・既卒者可（卒業後概ね３年以内）<br>普通自動車免許必須（ＡＴ限定不可）<small>※誕生日等の都合で取得が遅れる場合は応相談</small></dd>
-											</dl>
-										</div>
-										<div class="c-full-table-item">
-											<dl class="c-full-table-dl">
-												<dt class="c-full-table-dt">雇用形態</dt>
-												<dd class="c-full-table-dd">正社員（試用期間3ヵ月）</dd>
-											</dl>
-										</div>
-									</div>
-								</div>
-								<div class="p-recruit-button">
-									<a href="../contact-recruit/?recruit_matter=中途採用&recruit_base=茨城工場" class="c-secondary-button is-large"> 採用お問い合わせはこちら <span class="c-secondary-button-en">Recruitment Contact</span>
-									</a>
-								</div>
-							</section>
-						</section>
+						</form>
 					</div>
 				</div>
 			</main>
