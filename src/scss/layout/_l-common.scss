@@ -48,9 +48,7 @@
 	}
 
 	&.is-no-pb {
-		@include pc {
-			padding-bottom: 0;
-		}
+		padding-bottom: 0;
 	}
 
 	@include pc {

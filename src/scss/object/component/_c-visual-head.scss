@@ -11,13 +11,11 @@
 
 	@include pc {
 		height: 220px;
-		margin-bottom: 64px;
 	}
 
 	&.is-recruit {
 		@include pc {
 			background-image: url("../images/recruit/recruit-head1.jpg");
-			margin-bottom: 0;
 		}
 		@include sp {
 			background-image: url("../images/recruit/recruit-head1_sp.jpg");

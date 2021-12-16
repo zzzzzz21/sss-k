@@ -4,26 +4,44 @@
 	background-size: 100%;
 
 	@include pc {
+		background-image: url("../images/business/business-footer1.jpg");
 		height: 378px;
 		margin-top: 110px;
 		padding-top: 50px;
 	}
+
+	@include sp {
+		background-image: url("../images/business/business-footer1_sp.jpg");
+		height: 362px;
+		margin-top: 40px;
+	}
 }
 
-.c-business-inner {
+.c-business-nav-inner {
 	align-items: center;
 	background: rgba($base-white, 0.85);
 	display: flex;
 	justify-content: center;
-	width: 100%;
 
 	@include pc {
 		min-height: 260px;
+		width: 100%;
+	}
+
+	@include sp {
+		flex-direction: column;
+		height: 100%;
+		margin: 0 auto;
+		width: 210px;
 	}
 
 	& > *:nth-of-type(n + 2) {
 		@include pc {
 			margin-left: 60px;
+		}
+
+		@include sp {
+			margin-top: 35px;
 		}
 	}
 }

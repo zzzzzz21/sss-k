@@ -1,0 +1,9 @@
+.p-business {
+	@include pc {
+		padding-top: 64px;
+	}
+
+	@include sp {
+		padding-top: 45px;
+	}
+}

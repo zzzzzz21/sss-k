@@ -18,10 +18,21 @@
 	}
 
 	&.is-link {
-		@include pc {
-			transition: opacity 0.3s;
-			&:hover {
-				opacity: 0.7;
+		@include hoverOpacity(0.7);
+	}
+
+	&.is-nav {
+		@include sp {
+			height: 125px;
+			width: 125px;
+
+			.c-box-title-text {
+				font-size: 20px;
+			}
+
+			.c-box-title-bottom {
+				bottom: 5px;
+				font-size: 10px;
 			}
 		}
 	}

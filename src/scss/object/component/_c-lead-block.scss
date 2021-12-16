@@ -4,6 +4,10 @@
 		padding: 0 10px;
 		margin: 0 auto;
 	}
+
+	@include sp {
+		padding: 0 20px;
+	}
 }
 
 .c-lead-block-headline {
@@ -12,6 +16,10 @@
 
 	@include pc {
 		font-size: 26px;
+	}
+
+	@include sp {
+		font-size: 18px;
 	}
 }
 
@@ -23,8 +31,8 @@
 	}
 
 	@include sp {
-		font-size: 16px;
-		line-height: 2.05;
-		margin-top: 20px;
+		font-size: 13px;
+		line-height: 1.75;
+		margin-top: 18px;
 	}
 }
