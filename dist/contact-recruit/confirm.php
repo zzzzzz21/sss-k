@@ -81,7 +81,7 @@ break;
 }
 }
 $result['err'] = $err;
-åreturn $result;
+return $result;
 }
 ?>
 <!DOCTYPE html>
