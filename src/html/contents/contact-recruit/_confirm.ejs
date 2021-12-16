@@ -11,7 +11,8 @@
 			あらためて担当者よりご連絡を差し上げます。<br>
 			なお、お問い合わせの内容によりましては、お答えしかねる場合がございますので、予めご了承ください。
 		</p>
-		<form class="p-require-content">
+		<form class="p-require-content" action="mail.php" method="POST">
+			<input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
 			<div class="p-require-input">
 				<div class="c-input">
 					<div class="c-input-block">
@@ -20,7 +21,9 @@
 							<span class="c-input-label">必須</span>
 						</span>
 						<div class="c-input-content">
-							<span class="c-input-content-confirm">新卒採用</span>
+							<span class="c-input-content-confirm">
+                                <?php if(isset($post['recruit_matter'])) echo htmlspecialchars($post['recruit_matter']); ?>
+                            </span>
 						</div>
 					</div>
 					<div class="c-input-block">
@@ -29,7 +32,9 @@
 							<span class="c-input-label">必須</span>
 						</span>
 						<div class="c-input-content">
-							<span class="c-input-content-confirm">本社</span>
+							<span class="c-input-content-confirm">
+                                <?php if(isset($post['recruit_base'])) echo htmlspecialchars($post['recruit_base']); ?>
+                            </span>
 						</div>
 					</div>
 
@@ -47,7 +52,7 @@
 								aria-required="true"
 								required
 								readonly="readonly"
-								value="お名前お名前お名前お名前" />
+								value="<?php if(isset($post['name'])) echo htmlspecialchars($post['name']); ?>" />
 						</div>
 					</div>
 					<div class="c-input-block">
@@ -64,7 +69,7 @@
 								aria-required="true"
 								required
 								readonly="readonly"
-								value="01203456789" />
+								value="<?php if(isset($post['tel'])) echo htmlspecialchars($post['tel']); ?>" />
 						</div>
 					</div>
 					<div class="c-input-block">
@@ -81,7 +86,7 @@
 							aria-required="true"
 							required
 							readonly="readonly"
-							value="info@tmail.com" />
+							value="<?php if(isset($post['email'])) echo htmlspecialchars($post['email']); ?>" />
 						</div>
 					</div>
 					<div class="c-input-block">
@@ -99,7 +104,7 @@
 										aria-required="true"
 										required
 										readonly="readonly"
-										value="110-0005" />
+										value="<?php if(isset($post['postal_code'])) echo htmlspecialchars($post['postal_code']); ?>" />
 								</span>
 							</div>
 							<div class="c-input-address">
@@ -110,7 +115,7 @@
 									required
 									autocomplete="address-level1"
 									readonly="readonly"
-									value="東京都台東区上野５-１５-１４"  />
+									value="<?php if(isset($post['prefecture'])) echo htmlspecialchars($post['prefecture']); ?><?php if(isset($post['address_level1'])) echo htmlspecialchars($post['address_level1']); ?>"  />
 							</div>
 							<div class="c-input-address">
 								<input class="c-input-text"
@@ -120,7 +125,7 @@
 									required
 									autocomplete="address-line2"
 									readonly="readonly"
-									value="例）ミヤギビル1F" />
+									value="<?php if(isset($post['address_line2'])) echo htmlspecialchars($post['address_line2']); ?>" />
 							</div>
 						</div>
 					</div>
@@ -130,15 +135,17 @@
 							<span class="c-input-label">必須</span>
 						</label>
 						<div class="c-input-content">
-							<span id="form-require" class="c-input-content-confirm is-small">お問い合わせ内容お問い合わせ内容お問い合わせ内容お問い合わせ内容</span>
+							<span id="form-require" class="c-input-content-confirm is-small">
+                                <?php if(isset($post['content'])) echo htmlspecialchars($post['content']); ?>
+                            </span>
 						</div>
 					</div>
 				</div>
 			</div>
 
 			<div class="p-require-submit">
-				<button type="button" class="c-secondary-button is-white">修　正</button>
-				<button type="button" class="c-secondary-button">送　信</button>
+				<button type="button" onClick="javascript:history.back(-1)" class="c-secondary-button is-white">修　正</button>
+				<button type="submit" class="c-secondary-button">送　信</button>
 			</div>
 		</form>
 	</div>

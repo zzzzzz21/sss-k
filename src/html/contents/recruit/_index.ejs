@@ -7,7 +7,7 @@
 		'id': 'recruit-section-1',
 		'bases': [
 			{
-				title: '本　社',
+				title: '本社',
 				id: 'recruit-block-1-1',
 				list: [
 					{
@@ -188,7 +188,7 @@
 		'id': 'recruit-section-2',
 		'bases': [
 			{
-				title: '本　社',
+				title: '本社',
 				id: 'recruit-block-2-1',
 				list: [
 					{
@@ -413,7 +413,7 @@
 					</div>
 				</div>
 				<div class="p-recruit-button">
-					<a href="./contact-recruit/" class="c-secondary-button is-large">
+					<a href="../contact-recruit/?recruit_matter=<% if(information.id === 'recruit-section-1'){ %>新卒採用<% } else { %>中途採用<% } %>&recruit_base=<%= base.title %>" class="c-secondary-button is-large">
 						採用お問い合わせはこちら
 						<span class="c-secondary-button-en">Recruitment Contact</span>
 					</a>

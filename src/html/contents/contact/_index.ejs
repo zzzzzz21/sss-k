@@ -19,7 +19,8 @@
 下記のフォームに必要項目をご記入頂き、「送信」ボタンを押して下さい。
 		</p>
 		<script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
-		<form class="p-require-content h-adr">
+		<form class="p-require-content h-adr" method="post" action="confirm.php">
+			<input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
 			<span class="p-country-name" style="display:none;">Japan</span>
 			<div class="p-require-input">
 				<div class="c-input">
@@ -31,14 +32,17 @@
 						<div class="c-input-content">
 							<div class="c-input-radio">
 								<div class="c-input-radio-item">
-									<input type="radio" name="matter" id="form-matter1" value="まずは相談したい" class="c-input-radio-input">
+									<input type="radio" name="matter" id="form-matter1" value="まずは相談したい" class="c-input-radio-input" <?php if(isset($post['matter']) && $post['matter'] == 'まずは相談したい') echo 'checked'; ?>>
 									<label for="form-matter1" class="c-input-radio-label">まずは相談したい</label>
 								</div>
 								<div class="c-input-radio-item">
-									<input type="radio" name="matter" id="form-matter2" value="製品についてのお問い合わせ" class="c-input-radio-input">
+									<input type="radio" name="matter" id="form-matter2" value="製品についてのお問い合わせ" class="c-input-radio-input" <?php if(isset($post['matter']) && $post['matter'] == '製品についてのお問い合わせ') echo 'checked'; ?>>
 									<label for="form-matter2" class="c-input-radio-label">製品についてのお問い合わせ</label>
 								</div>
 							</div>
+                            <?php if(isset($res['err']['matter'])): ?>
+                            <?php echo '<p class="c-input-error">'.$res['err']['matter'][0].'</p>'; ?>
+                            <?php endif ?>
 						</div>
 					</div>
 					<div class="c-input-block">
@@ -48,9 +52,13 @@
 						<div class="c-input-content">
 							<textarea class="c-input-area"
 										id="form-other"
-										name="require"
+										name="other_content"
 										aria-multiline="true">
+                                <?php if(isset($post['other_content'])) echo $post['other_content']; ?>
 							</textarea>
+                            <?php if(isset($res['err']['other_content'])): ?>
+                            <?php echo '<p class="c-input-error">'.$res['err']['other_content'][0].'</p>'; ?>
+                            <?php endif ?>
 						</div>
 					</div>
 					<div class="c-input-block">
@@ -65,8 +73,13 @@
 								name="organization"
 								autocomplete="organization"
 								aria-required="true"
+								value="<?php if(isset($post['organization'])) echo $post['organization']; ?>"
 								required />
+                            <?php if(isset($res['err']['organization'])): ?>
+                            <?php echo '<p class="c-input-error">'.$res['err']['organization'][0].'</p>'; ?>
+                            <?php endif ?>
 						</div>
+
 						
 					</div>
 					<div class="c-input-block">
@@ -77,7 +90,12 @@
 						<input class="c-input-text"
 							id="form-department"
 							type="text"
-							name="department" />
+							name="department"
+							value="<?php if(isset($post['department'])) echo $post['department']; ?>"
+							/>
+                            <?php if(isset($res['err']['department'])): ?>
+                            <?php echo '<p class="c-input-error">'.$res['err']['department'][0].'</p>'; ?>
+                            <?php endif ?>
 						</div>
 					</div>
 					<div class="c-input-block">
@@ -89,10 +107,14 @@
 							<input class="c-input-text"
 								id="form-person"
 								type="text"
-								name="organization-title"
+								name="organization_title"
 								autocomplete="organization-title"
 								aria-required="true"
+								value="<?php if(isset($post['organization_title'])) echo $post['organization_title']; ?>"
 								required />
+                            <?php if(isset($res['err']['organization_title'])): ?>
+                            <?php echo '<p class="c-input-error">'.$res['err']['organization_title'][0].'</p>'; ?>
+                            <?php endif ?>
 						</div>
 					</div>
 					<div class="c-input-block">
@@ -107,7 +129,11 @@
 								name="tel"
 								autocomplete="tel"
 								aria-required="true"
+								value="<?php if(isset($post['tel'])) echo $post['tel']; ?>"
 								required />
+                            <?php if(isset($res['err']['tel'])): ?>
+                            <?php echo '<p class="c-input-error">'.$res['err']['tel'][0].'</p>'; ?>
+                            <?php endif ?>
 						</div>
 					</div>
 					<div class="c-input-block">
@@ -122,7 +148,11 @@
 							name="email"
 							autocomplete="email"
 							aria-required="true"
+							value="<?php if(isset($post['email'])) echo $post['email']; ?>"
 							required />
+                            <?php if(isset($res['err']['email'])): ?>
+                            <?php echo '<p class="c-input-error">'.$res['err']['email'][0].'</p>'; ?>
+                            <?php endif ?>
 						</div>
 					</div>
 					<div class="c-input-block">
@@ -135,16 +165,17 @@
 								<span class="c-input-post-number">
 									<input type="text" 
 										class="c-input-text p-postal-code" 
-										name="postal-code" 
+										name="postal_code"
 										autocomplete="postal-code"
 										size="8"
 										maxlength="8"
+										value="<?php if(isset($post['postal_code'])) echo $post['postal_code']; ?>"
 										placeholder="例）110-0005" />
 								</span>
 								<span class="c-input-post-select">
 									<select name="prefecture" class="c-input-select p-region">
 										<% for (let i = 0; i < prefectures.length; i++) { %>
-										<option value="<%= prefectures[i] %>"><%= prefectures[i] %></option>
+										<option value="<%= prefectures[i] %>" <?php if(isset($post['prefecture']) && $post['prefecture'] == '<%= prefectures[i] %>' ) echo 'selected'; ?>><%= prefectures[i] %></option>
 										<% } %>
 									</select>
 								</span>
@@ -152,15 +183,17 @@
 							<div class="c-input-address">
 								<input class="c-input-text p-region p-locality p-street-address"
 									type="text"
-									name="address-level1"
+									name="address_level1"
 									autocomplete="address-level1"
+									value="<?php if(isset($post['address_level1'])) echo $post['address_level1']; ?>"
 									placeholder="例）東京都台東区上野５-１５-１４" />
 							</div>
 							<div class="c-input-address">
 								<input class="c-input-text p-extended-address"
 									type="text"
-									name="address-line2"
+									name="address_line2"
 									autocomplete="address-line2"
+									value="<?php if(isset($post['address_line2'])) echo $post['address_line2']; ?>"
 									placeholder="例）ミヤギビル1F" />
 							</div>
 						</div>
@@ -181,7 +214,7 @@
 			</div>
 
 			<div class="p-require-submit">
-				<button type="button" class="c-secondary-button js-require-confirm" disabled>送　信</button>
+				<button type="submit" class="c-secondary-button js-require-confirm" disabled>送　信</button>
 			</div>
 		</form>
 	</div>

@@ -21,6 +21,7 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const prettify = require('gulp-prettify');
 const browserSync = require('browser-sync').create();
+const php = require('gulp-connect-php');
 
 // アセットディレクトリ(状況に応じて書き換え)
 const path = 'dist';
@@ -72,6 +73,13 @@ gulp.task('ejs', function (done) {
       let name = pages[i].name,
           url = pages[i].url,
           contents = pages[i].contents;
+      let phpFlag = false;
+      if(
+        (url === '/contact/' && name === 'index')
+        || (url === '/contact/' && name === 'confirm')
+        || (url === '/contact-recruit/' && name === 'index')
+        || (url === '/contact-recruit/' && name === 'confirm')
+      ) phpFlag = true;
       gulp
       .src(temp)
       .pipe(plumber())
@@ -80,7 +88,7 @@ gulp.task('ejs', function (done) {
         indent_size: 2,
         indent_with_tabs: true
       }))
-      .pipe(rename(name + '.html'))
+      .pipe(rename(name + (!phpFlag ? '.html' : '.php')))
       .pipe(gulp.dest('./' + path  + url))
       .pipe(browserSync.stream())
 
@@ -113,13 +121,24 @@ gulp.task('imagemin', (done) => {
 gulp.task('sync', () => {
   browserSync.init({
     server: {
+      proxy: 'localhost:8001',
       baseDir: './' + path + '/',
+      startPath: './',
       index: 'index.html'
     },
     open: 'external',
     reloadOnRestart: true
   });
 });
+
+gulp.task('php', function() {
+  php.server({
+    port: 8001,
+    base: './' + path + '/',
+    root: './' + path + '/',
+  });
+});
+
 
 gulp.task('reload', () => {
   browserSync.reload();
@@ -129,7 +148,8 @@ gulp.task('watch', () => {
   gulp.watch(['./src/scss/**/*.scss'], gulp.task('sass'));
   gulp.watch(['./src/js/**/*.js'], gulp.task('js'));
   gulp.watch(['./src/html/**/*.ejs'], gulp.task('ejs'));
-  gulp.watch(['./' + Build + '/**/*.html'], gulp.task('reload'));
+  gulp.watch(['./' + Build + '/**/*.html', './' + Build + '/**/*.php' ], gulp.task('reload'));
 });
 
-gulp.task('default', gulp.series(gulp.parallel('sass', 'ejs', 'sync', 'js', 'reload', 'watch')));
+gulp.task('default', gulp.series(gulp.parallel('php', 'sass', 'ejs', 'sync', 'js', 'reload', 'watch')));
+// gulp.task('develop', gulp.series(gulp.parallel('php', 'sass', 'ejs', 'sync', 'js', 'reload', 'watch')));
