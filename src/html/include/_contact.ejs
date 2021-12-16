@@ -1,0 +1,116 @@
+<%
+const d = jsonData;
+  if ((d.url == '/contact/' || d.url == '/contact-recruit/') && d.name == 'index') { -%>
+<?php
+  session_start();
+  $toke_byte = substr(base_convert(hash('sha256', uniqid()), 16, 36), 0, 16);
+  $csrf_token = bin2hex($toke_byte);
+  $_SESSION['csrf_token'] = $csrf_token;
+  $res = (isset($_SESSION['res']) ? $_SESSION['res'] : '');
+  $post = (isset($_SESSION['post']) ? $_SESSION['post'] : '');
+?>
+<% } else if ((d.url == '/contact/' || d.url == '/contact-recruit/') && d.name == 'confirm'){ -%>
+<?php
+session_start();
+if (!(isset($_POST["csrf_token"])
+    && $_POST["csrf_token"] === $_SESSION['csrf_token'])) {
+    // header('HTTP/1.1 403 Forbidden');
+    header( "HTTP/1.1 302" );
+    header('Location : ./index.php');
+    exit;
+}
+$toke_byte = substr(base_convert(hash('sha256', uniqid()), 16, 36), 0, 16);
+$csrf_token = bin2hex($toke_byte);
+$_SESSION['csrf_token2'] = $csrf_token;
+/*******************************************************/
+/* 送信データ定義 */
+/* [key(POST[key]), name(for message), rule] */
+  <% if (d.url == '/contact/') { -%>
+$rules = array(
+    array('matter', 'お問い合わせ内容', 'required'),
+    array('other_content', 'その他お問い合わせ', ''),
+    array('organization', '会社名', 'required'),
+    array('department', '部署名', ''),
+    array('organization_title', 'ご担当者名', 'required'),
+    array('tel', 'お電話番号', 'required'),
+    array('email', 'メールアドレス', 'required|email'),
+    array('postal_code', 'ご住所（郵便番号）', ''),
+    array('prefecture', 'ご住所（都道府県）', ''),
+    array('address_level1', 'ご住所（住所1）', ''),
+    array('address_line2', 'ご住所（住所2）', ''),
+    array('agree', 'プライバシーポリシー', ''),
+);
+  <% } else if (d.url == '/contact-recruit/') { -%>
+$rules = array(
+    array('recruit_matter', 'お問い合わせ項目', 'required'),
+    array('recruit_base', 'お問い合わせ拠点', 'required'),
+    array('name', 'お名前', 'required'),
+    array('tel', 'お電話番号', 'required'),
+    array('email', 'メールアドレス', 'required|email'),
+    array('postal_code', 'ご住所（郵便番号）', 'required'),
+    array('prefecture', 'ご住所（都道府県）', 'required'),
+    array('address_level1', 'ご住所（住所1）', 'required'),
+    array('address_line2', 'ご住所（住所2）', ''),
+    array('content', 'お問い合わせ内容', 'required'),
+    array('agree', 'プライバシーポリシー', ''),
+);
+  <% } -%>
+/*******************************************************/
+if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+    header('HTTP/1.1 403 Forbidden');
+    exit;
+}
+$form = $_POST;
+$_SESSION['post'] = $_POST;
+$post = $_SESSION['post'];
+unset($_SESSION['res']);
+$result = validation($form, $rules);
+$_SESSION['res'] = $result;
+if ($result['isSuccess'] !== true) {
+  header( "HTTP/1.1 302" );
+  header('Location : ./index.php');
+}
+/* end. */
+function validation($form, $rules)
+{
+    $result = array('isSuccess' => true);
+    $err = array();
+    foreach ($rules as $rule) {
+        list($key, $name, $lists) = $rule;
+        $lists = explode('|', $lists);
+        foreach ($lists as $list) {
+            switch ($list) {
+                case 'required':
+                    if ($form[$key] == '') {
+                        $result['isSuccess'] = false;
+                        $err[$key][] = "※「".$name."」は必須です。";
+                        break;
+                    }
+                    break;
+                case 'email':
+                    if ($form[$key] !== '') {
+                        if (mb_strlen($form[$key], 'UTF-8') > 255 || preg_match('/\A.+@.+\z/', $form[$key]) !== 1) {
+                            $result['isSuccess'] = false;
+                            $err[$key][] = "有効なメールアドレスではありません。";
+                        }
+                    }
+                    break;
+                case 'tel':
+                    if ($form[$key] !== '') {
+                        $tmp = mb_convert_kana(str_replace('-', '', $form[$key]), 'n');
+                        if (preg_match('/\A[0-9]{10,11}\z/', $tmp) !== 1) {
+                            $result['isSuccess'] = false;
+                            $err[$key][] = "電話番号は10桁、または11桁の数値で入力してください。";
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    $result['err'] = $err;
+    åreturn $result;
+}
+?>
+<% } -%>
