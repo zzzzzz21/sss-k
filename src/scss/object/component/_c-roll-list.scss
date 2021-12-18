@@ -1,0 +1,133 @@
+.c-roll-list {
+}
+
+.c-roll-list-title {
+	display: flex;
+	border-bottom: 1px solid $base-light-blue;
+	line-height: 2.1;
+	margin-bottom: 11px;
+
+	@include pc {
+		justify-content: center;
+	}
+}
+
+.c-roll-list-title-text {
+	color: $c-roll-list-title-text;
+	display: block;
+	padding: 0 20px 0;
+
+	@include pc {
+		font-size: 16px;
+		width: 820px;
+	}
+
+	@include sp {
+		font-size: 16px;
+	}
+}
+
+.c-roll-list-block {
+	& + & {
+		@include pc {
+			margin-top: 29px;
+		}
+
+		@include sp {
+			margin-top: 33px;
+		}
+	}
+}
+
+.c-roll-list-headline {
+	border-bottom: 1px solid $base-light-blue;
+	display: flex;
+	line-height: 2;
+	margin-bottom: 20px;
+
+	@include pc {
+		justify-content: center;
+	}
+}
+
+.c-roll-list-headline-text {
+	color: $base-light-blue;
+	display: block;
+	font-size: 21px;
+	padding: 0 20px;
+
+	@include pc {
+		width: 820px;
+	}
+}
+
+.c-roll-list-inner {
+	margin: 0 auto;
+	padding: 0 20px;
+	position: relative;
+
+	@include pc {
+		display: flex;
+		flex-wrap: wrap;
+		width: 820px;
+	}
+}
+
+.c-roll-list-content {
+	flex: 1;
+
+	& + & {
+		.c-roll-list-content-item {
+			@include pc {
+				padding-left: 20px;
+			}
+
+			@include sp {
+				&:first-child {
+					&::before {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
+
+.c-roll-list-content-item {
+	font-size: 14px;
+	line-height: 2;
+	position: relative;
+	width: 100%;
+
+	@include pc {
+		padding-top: 4px;
+	}
+
+	@include sp {
+		padding: 1.5px 0;
+	}
+
+	&:first-child {
+		&::before {
+			display: none;
+		}
+	}
+
+	&::before {
+		background-image: linear-gradient(
+			to right,
+			$c-roll-list-content-item-border,
+			$c-roll-list-content-item-border 2px,
+			transparent 2px,
+			transparent 4px
+		);
+		background-repeat: repeat-x;
+		background-size: 4px 1px;
+		top: 0;
+		content: "";
+		height: 1px;
+		left: 0;
+		position: absolute;
+		width: 100%;
+	}
+}

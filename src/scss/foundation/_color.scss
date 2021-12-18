@@ -14,13 +14,14 @@ $palette-67D8F9: #242627;
 $palette-64645F: #64645f;
 $palette-707070: #707070;
 $palette-7E7E5B: #7e7e5b;
+$palette-85A9CB: #85a9cb;
 $palette-878782: #878782;
+$palette-9E9E9E: #9e9e9e;
 $palette-AAAAA5: #aaaaa5;
 $palette-C3C3BE: #c3c3be;
 $palette-EAEAE5: #eaeae5;
 $palette-EBEBE6: #ebebe6;
 $palette-E8F9FE: #e8f9fe;
-$palette-9E9E9E: #9e9e9e;
 $palette-F3B533: #f3b533;
 $palette-F5F5F0: #f5f5f0;
 $palette-FF0000: #ff0000;
@@ -29,6 +30,7 @@ $palette-FFF: #fff;
 // Base color
 $base-black: $palette-000;
 $base-white: $palette-FFF;
+$base-gray: $palette-64645F;
 $base-nav-color: $palette-FFF;
 $base-blue: $palette-0B5398;
 $base-light-blue: $palette-67BEF9;
@@ -38,7 +40,6 @@ $base-border: $palette-EBEBE6;
 $l-header-button-line: $palette-AAAAA5;
 $l-header-require: $palette-C3C3BE;
 
-$l-footer-nav: $palette-64645F;
 $l-footer-nav-border: $palette-F5F5F0;
 $l-footer-buttons: $palette-F5F5F0;
 
@@ -47,7 +48,6 @@ $l-content-light-blue: $palette-E8F9FE;
 
 // Project
 $p-top-content-background: $palette-F5F5F0;
-$p-top-card-title: $palette-64645F;
 
 $p-recruit-nav-item-border: $palette-EAEAE5;
 
@@ -66,4 +66,7 @@ $c-pc-header-nav-hover: $palette-6BCCFF;
 
 $c-full-table-item-border-sp: $palette-EAEAE5;
 
-$c-lead-block-title: $palette-64645F;
+$c-product-detail-list-item-dot: $palette-85A9CB;
+
+$c-roll-list-title-text: $palette-C3C3BE;
+$c-roll-list-content-item-border: $palette-EBEBE6;

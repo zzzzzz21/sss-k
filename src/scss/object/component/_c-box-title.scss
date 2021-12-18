@@ -42,6 +42,15 @@
 	font-size: 34px;
 	font-weight: normal;
 	letter-spacing: 0.05em;
+	line-height: 1;
+	text-align: center;
+}
+
+.c-box-title-text-small {
+	display: block;
+	font-size: 0.41em;
+	letter-spacing: 0;
+	margin-top: 0.75em;
 }
 
 .c-box-title-bottom {
@@ -58,5 +67,12 @@
 	@include sp {
 		bottom: 20px;
 		font-size: 16px;
+	}
+
+	&.is-medium {
+		@include pc {
+			letter-spacing: 0.2em;
+			bottom: 20px;
+		}
 	}
 }

@@ -9,7 +9,21 @@
 		padding: 100% 0 0;
 		position: absolute;
 		top: 0;
-		width: 71.428571%;
+		@include pc {
+			width: 71.428571%;
+		}
+
+		@include sp {
+			width: 100%;
+		}
+	}
+
+	&.is-works {
+		@include sp {
+			&::before {
+				top: 76px;
+			}
+		}
 	}
 }
 

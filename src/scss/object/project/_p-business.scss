@@ -7,3 +7,85 @@
 		padding-top: 45px;
 	}
 }
+
+.p-business-index {
+	@include pc {
+		max-width: 800px;
+		padding: 0 10px;
+		margin: 0 auto;
+	}
+
+	@include sp {
+		padding: 0 20px;
+	}
+}
+
+.p-business-products {
+	padding: 0 20px 118px;
+	margin: 0 auto;
+	max-width: 730px;
+
+	@include sp {
+		padding-bottom: 50px;
+	}
+}
+
+.p-business-products-detail {
+	@include pc {
+		margin-top: 75px;
+	}
+
+	@include sp {
+		margin-top: 42px;
+	}
+}
+
+.p-business-works {
+	@include pc {
+		padding: 82px 0 120px;
+	}
+
+	@include sp {
+		padding: 78px 0 72px;
+	}
+}
+
+.p-business-works-title {
+	align-items: center;
+	background: $base-light-blue;
+	display: flex;
+	height: 76px;
+	position: absolute;
+	top: 0;
+	width: 100%;
+
+	@include pc {
+		justify-content: center;
+	}
+}
+
+.p-business-works-title-text {
+	color: $base-white;
+	display: block;
+	padding: 0 20px 0;
+
+	@include pc {
+		width: 820px;
+	}
+}
+
+.p-business-works-archive {
+	padding: 0 20px;
+	margin: 0 auto;
+	max-width: 820px;
+}
+
+.p-business-works-list {
+	@include pc {
+		margin-top: 100px;
+	}
+
+	@include sp {
+		margin-top: 54px;
+	}
+}
