@@ -9,12 +9,12 @@
 	}
 
 	@include pc {
-		border-bottom: 1px solid $base-border;
+		border-bottom: 1px solid $base-beige;
 		justify-content: center;
 	}
 
 	@include sp {
-		border-bottom: 1px solid $c-full-table-item-border-sp;
+		border-bottom: 1px solid $base-border;
 		padding: 24px 20px 8px;
 	}
 }

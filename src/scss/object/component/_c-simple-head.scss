@@ -11,6 +11,11 @@
 	&.is-light {
 		background: $base-light-blue;
 	}
+
+	&.is-beige {
+		background: $base-beige;
+		color: $c-simple-head-gray-text;
+	}
 }
 
 .c-simple-head-title {

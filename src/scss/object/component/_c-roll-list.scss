@@ -116,8 +116,8 @@
 	&::before {
 		background-image: linear-gradient(
 			to right,
-			$c-roll-list-content-item-border,
-			$c-roll-list-content-item-border 2px,
+			$base-beige,
+			$base-beige 2px,
 			transparent 2px,
 			transparent 4px
 		);

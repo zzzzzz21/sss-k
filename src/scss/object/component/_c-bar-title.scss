@@ -24,4 +24,22 @@
 		right: 5px;
 		width: 30px;
 	}
+
+	&.is-white,
+	&.is-beige {
+		color: $c-bar-title-gray;
+		&::after {
+			background: url(#{$IMG_PATH}common/icon-blue-curve.svg) left top/100%
+				no-repeat;
+		}
+	}
+
+	&.is-white {
+		background: $base-white;
+		border: 1px solid $base-blue;
+	}
+
+	&.is-beige {
+		background: $base-beige;
+	}
 }
