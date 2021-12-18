@@ -22,6 +22,15 @@
 		}
 	}
 
+	&.is-comapny {
+		@include pc {
+			background-image: url("../images/company/company-head1.jpg");
+		}
+		@include sp {
+			background-image: url("../images/company/company-head1_sp.jpg");
+		}
+	}
+
 	&.is-type1 {
 		@include pc {
 			background-image: url("../images/business/business-head1.jpg");

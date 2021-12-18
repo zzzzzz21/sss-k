@@ -19,7 +19,7 @@
 		{
 			"url": "/company/",
 			"name": "index",
-			"title": "ごあいさつ・企業理念",
+			"title": "ご挨拶・企業理念",
 			"contents": "contents/company/_index",
 			"path": "../",
 			"current": "company"

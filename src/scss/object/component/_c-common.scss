@@ -5,3 +5,51 @@
 		text-decoration: none;
 	}
 }
+
+.c-common-bg {
+	position: relative;
+	&::before {
+		background: url("../images/common/bg_common1.png") left top/100% no-repeat;
+		content: "";
+		height: 0;
+		left: 0;
+		padding: 100% 0 0;
+		position: absolute;
+		top: 0;
+		@include pc {
+			width: 71.428571%;
+		}
+
+		@include sp {
+			width: 100%;
+		}
+	}
+
+	&.is-works {
+		@include sp {
+			&::before {
+				top: 76px;
+			}
+		}
+	}
+
+	&.is-bottom {
+		&::before {
+			background: url("../images/common/bg_common2.png") left bottom/100%
+				no-repeat;
+			bottom: 0;
+			left: auto;
+			right: 0;
+			top: auto;
+
+			@include sp {
+				display: none;
+			}
+		}
+	}
+}
+
+.c-common-bg-inner {
+	position: relative;
+	z-index: 1;
+}

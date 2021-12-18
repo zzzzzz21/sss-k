@@ -1,0 +1,42 @@
+.c-card-title {
+	align-items: center;
+	background: $base-blue;
+	color: $base-white;
+	display: flex;
+	justify-content: center;
+	min-height: 90px;
+	position: relative;
+	width: 195px;
+
+	@include sp {
+		margin: 0 auto;
+	}
+
+	&::after {
+		background: url(#{$IMG_PATH}common/icon-white-curve.svg) left top / 100%
+			no-repeat;
+		content: "";
+		position: absolute;
+
+		@include pc {
+			bottom: 5px;
+			height: 15px;
+			right: 5px;
+			width: 15px;
+		}
+		@include sp {
+			bottom: 5px;
+			height: 15px;
+			right: 5px;
+			width: 15px;
+		}
+	}
+}
+.c-card-title-text {
+	font-size: 18px;
+}
+
+.c-card-title-en {
+	display: block;
+	font-size: 14px;
+}

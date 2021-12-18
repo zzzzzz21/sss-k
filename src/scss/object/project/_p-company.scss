@@ -1,0 +1,127 @@
+.p-comapny-index {
+	margin: 0 auto;
+	max-width: 820px;
+	padding: 0 20px;
+	@include pc {
+		margin-top: -30px;
+		padding-bottom: 144px;
+	}
+
+	@include sp {
+		padding-top: 50px;
+		padding-bottom: 85px;
+	}
+}
+
+.p-company-index-section {
+	@include pc {
+		margin-bottom: 60px;
+	}
+	@include sp {
+		margin-bottom: 90px;
+	}
+}
+
+.p-company-index-content {
+	@include pc {
+		display: flex;
+		margin-top: 23px;
+	}
+
+	@include sp {
+		margin-top: 20px;
+	}
+}
+
+.p-company-index-detail {
+	@include pc {
+		flex: 1;
+	}
+}
+
+.p-company-index-text {
+	margin-bottom: 2.3em;
+
+	@include pc {
+		font-size: 14px;
+		line-height: 2.2;
+	}
+
+	@include sp {
+		font-size: 13px;
+		line-height: 1.7;
+	}
+}
+
+.p-company-index-visual {
+	@include pc {
+		padding-top: 5px;
+		width: 250px;
+	}
+
+	@include sp {
+		margin: 20px auto 0;
+		width: 190px;
+	}
+}
+
+.p-company-index-visual-signiture {
+	@include sp {
+		width: 164px;
+	}
+}
+
+.p-company-index-3s {
+	@include pc {
+		margin-top: 86px;
+	}
+
+	@include sp {
+		margin-top: -40px;
+	}
+}
+
+.p-company-index-3s-title {
+	color: $base-gray;
+	font-weight: normal;
+
+	@include pc {
+		font-size: 26px;
+		margin-left: 60px;
+	}
+
+	@include sp {
+		font-size: 22px;
+		text-align: center;
+	}
+}
+
+.p-company-index-3s-content {
+	@include pc {
+		margin-top: 202px;
+	}
+
+	@include sp {
+		margin-top: 332px;
+	}
+}
+
+.p-company-products {
+	padding: 0 20px 118px;
+	margin: 0 auto;
+	max-width: 730px;
+
+	@include sp {
+		padding-bottom: 50px;
+	}
+}
+
+.p-company-works {
+	@include pc {
+		padding: 82px 0 120px;
+	}
+
+	@include sp {
+		padding: 78px 0 72px;
+	}
+}
