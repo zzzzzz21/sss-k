@@ -1,0 +1,27 @@
+.c-bar-title {
+	align-items: center;
+	background: $base-blue;
+	color: $base-white;
+	display: flex;
+	font-size: 18px;
+	letter-spacing: 0.05em;
+	min-height: 40px;
+	padding: 0 40px 0 20px;
+	position: relative;
+	width: 100%;
+
+	@include sp {
+		margin: 0 auto;
+	}
+
+	&::after {
+		background: url(#{$IMG_PATH}common/icon-light-blue-curve.svg) left top/100%
+			no-repeat;
+		bottom: 5px;
+		content: "";
+		height: 30px;
+		position: absolute;
+		right: 5px;
+		width: 30px;
+	}
+}

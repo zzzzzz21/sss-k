@@ -49,7 +49,7 @@
 
 .l-footer-top-button__link {
 	@include getArrow;
-	background: $c-to-top-background;
+	background: $base-light-gray;
 	border-radius: 50%;
 	color: $base-white;
 	display: block;

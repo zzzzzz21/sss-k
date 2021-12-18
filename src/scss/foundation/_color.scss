@@ -31,6 +31,7 @@ $palette-FFF: #fff;
 $base-black: $palette-000;
 $base-white: $palette-FFF;
 $base-gray: $palette-64645F;
+$base-light-gray: $palette-C3C3BE;
 $base-nav-color: $palette-FFF;
 $base-blue: $palette-0B5398;
 $base-light-blue: $palette-67BEF9;
@@ -38,7 +39,6 @@ $base-border: $palette-EBEBE6;
 
 // Layout
 $l-header-button-line: $palette-AAAAA5;
-$l-header-require: $palette-C3C3BE;
 
 $l-footer-nav-border: $palette-F5F5F0;
 $l-footer-buttons: $palette-F5F5F0;
@@ -52,7 +52,6 @@ $p-top-content-background: $palette-F5F5F0;
 $p-recruit-nav-item-border: $palette-EAEAE5;
 
 // Component
-$c-to-top-background: $palette-C3C3BE;
 
 $c-form-title-head-label: $palette-FF0000;
 $c-input-check-line: $palette-7E7E5B;
@@ -68,7 +67,4 @@ $c-full-table-item-border-sp: $palette-EAEAE5;
 
 $c-product-detail-list-item-dot: $palette-85A9CB;
 
-$c-roll-list-title-text: $palette-C3C3BE;
 $c-roll-list-content-item-border: $palette-EBEBE6;
-
-$c-history-year: $palette-C3C3BE;

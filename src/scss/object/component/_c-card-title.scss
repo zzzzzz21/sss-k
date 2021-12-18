@@ -15,21 +15,12 @@
 	&::after {
 		background: url(#{$IMG_PATH}common/icon-white-curve.svg) left top / 100%
 			no-repeat;
+		bottom: 5px;
 		content: "";
+		height: 15px;
 		position: absolute;
-
-		@include pc {
-			bottom: 5px;
-			height: 15px;
-			right: 5px;
-			width: 15px;
-		}
-		@include sp {
-			bottom: 5px;
-			height: 15px;
-			right: 5px;
-			width: 15px;
-		}
+		right: 5px;
+		width: 15px;
 	}
 }
 .c-card-title-text {
