@@ -13,6 +13,21 @@
 	}
 }
 
+.p-comapny-history {
+	margin: 0 auto;
+	max-width: 820px;
+	padding: 0 20px;
+	@include pc {
+		padding-top: 65px;
+		padding-bottom: 85px;
+	}
+
+	@include sp {
+		padding-top: 20px;
+		padding-bottom: 28px;
+	}
+}
+
 .p-company-index-section {
 	@include pc {
 		margin-bottom: 60px;

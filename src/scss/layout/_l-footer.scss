@@ -39,6 +39,7 @@
 	@include pc {
 		position: absolute;
 		top: -57px;
+		z-index: 2;
 
 		&.is-top {
 			display: none;

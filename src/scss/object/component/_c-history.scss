@@ -1,0 +1,83 @@
+.c-history-year {
+	color: $c-history-year;
+	font-size: 60px;
+	font-weight: normal;
+	line-height: 1;
+	position: relative;
+
+	&::after {
+		background: url(#{$IMG_PATH}common/icon-arrow.png) left top / 100% no-repeat;
+		content: "";
+		display: block;
+		height: 38px;
+		margin: 12px 0 0 53px;
+		width: 24px;
+
+		@include sp {
+			bottom: -80px;
+			position: absolute;
+		}
+	}
+}
+
+.c-history-block {
+	@include pc {
+		display: flex;
+	}
+
+	&:nth-of-type(n + 2) {
+		@include pc {
+			margin-top: 14px;
+		}
+
+		@include sp {
+			margin-top: 24px;
+		}
+	}
+
+	&:last-child {
+		.c-history-year {
+			&::after {
+				display: none;
+			}
+		}
+	}
+}
+
+.c-history-content {
+	display: flex;
+
+	@include pc {
+		margin: 35px 0 0 5px;
+	}
+}
+
+.c-history-dl {
+	display: flex;
+}
+
+.c-history-dt {
+	color: $base-blue;
+	font-size: 12px;
+	font-weight: bold;
+	white-space: nowrap;
+
+	@include sp {
+		width: 8em;
+	}
+}
+
+.c-history-dd {
+	@include pc {
+		font-size: 14px;
+		line-height: 2.2;
+		margin: -5px 0 0 45px;
+	}
+
+	@include sp {
+		flex: 1;
+		font-size: 13px;
+		line-height: 1.8;
+		min-height: 70px;
+	}
+}
