@@ -15,6 +15,36 @@
 		height: 362px;
 		margin-top: 40px;
 	}
+  
+    &.is-type2 {
+      @include pc {
+          background-image: url("../images/business/business-footer2.jpg");
+          height: 378px;
+          margin-top: 110px;
+          padding-top: 50px;
+      }
+
+      @include sp {
+          background-image: url("../images/business/business-footer2_sp.jpg");
+          height: 362px;
+          margin-top: 40px;
+      }
+    }
+  
+    &.is-type3 {
+      @include pc {
+          background-image: url("../images/business/business-footer3.jpg");
+          height: 378px;
+          margin-top: 110px;
+          padding-top: 50px;
+      }
+
+      @include sp {
+          background-image: url("../images/business/business-footer3_sp.jpg");
+          height: 362px;
+          margin-top: 40px;
+      }
+    }
 }
 
 .c-business-nav-inner {
