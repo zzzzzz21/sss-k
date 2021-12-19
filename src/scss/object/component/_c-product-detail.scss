@@ -129,10 +129,13 @@
 	@include pc {
 		margin: 4px 0 0 20px;
 		width: 345px;
+      &.is-auto {
+        width: auto;
+      }
 	}
 
 	@include sp {
-		margin: 8px 0 0;
+		margin: 20px 0 0;
 	}
 }
 
