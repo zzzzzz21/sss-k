@@ -13,10 +13,22 @@
 		margin-top: 32px;
 		padding-bottom: 10px;
 	}
+
+	@include sp {
+		margin-top: 20px;
+		padding-bottom: 2px;
+	}
 }
 
 .c-center-haed-text {
 	color: $base-gray;
-	font-size: 26px;
 	font-weight: bold;
+
+	@include pc {
+		font-size: 26px;
+	}
+
+	@include sp {
+		font-size: 18px;
+	}
 }

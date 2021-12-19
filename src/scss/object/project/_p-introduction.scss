@@ -1,14 +1,22 @@
 .p-introduction {
 	margin: 0 auto;
-	// max-width: 820px;
-	// padding: 0 20px;
 
 	@include pc {
-		padding-top: 65px;
+		padding: 30px 0 42px;
 	}
 
 	@include sp {
-		padding-top: 50px;
+		padding: 15px 0 10px;
+	}
+}
+
+.p-introduction-content {
+	@include pc {
+		margin-top: 65px;
+	}
+
+	@include sp {
+		margin-top: 45px;
 	}
 }
 
@@ -21,17 +29,34 @@
 .p-introduction-slide {
 	display: flex;
 	flex-wrap: wrap;
+	font-size: 0;
 
 	@include pc {
 		margin-top: 60px;
 	}
+
+	@include sp {
+		margin-top: 20px;
+	}
 }
 
 .p-introduction-slide-item {
-	flex: 1;
+	@include pc {
+		flex: 1;
+	}
+
+	@include sp {
+		width: 50%;
+	}
 
 	&.is-large {
-		flex: 2;
+		@include pc {
+			flex: 2;
+		}
+
+		@include sp {
+			width: 100%;
+		}
 	}
 
 	img {
@@ -41,15 +66,25 @@
 
 .p-introduction-interview {
 	@include pc {
-		margin: 90px auto 0;
+		margin: 90px auto 60px;
 		max-width: 820px;
 		padding: 0 20px;
+	}
+
+	@include sp {
+		margin: 40px auto 45px;
+	}
+}
+
+.p-introduction-interview-headline {
+	@include sp {
+		padding: 0 20px 20px;
 	}
 }
 
 .p-introduction-interview-list {
 	@include pc {
-		margin-top: 50px;
+		margin-top: 45px;
 	}
 }
 
@@ -62,10 +97,22 @@
 			flex-direction: row-reverse;
 		}
 	}
+
+	&:nth-of-type(n + 2) {
+		@include pc {
+			margin-top: 54px;
+		}
+
+		@include sp {
+			margin-top: 45px;
+		}
+	}
 }
 
 .p-introduction-interview-image {
+	display: flex;
 	position: relative;
+
 	@include pc {
 		width: 360px;
 	}
@@ -77,6 +124,8 @@
 	color: $base-white;
 	font-weight: bold;
 	left: 0;
+	letter-spacing: 0.1em;
+	padding: 0.25em;
 	position: absolute;
 	text-align: center;
 	width: 100%;
@@ -84,17 +133,36 @@
 	@include pc {
 		font-size: 14px;
 	}
+
+	@include sp {
+		font-size: 12px;
+	}
 }
 
 .p-introduction-interview-text {
 	@include pc {
 		font-size: 14px;
-		line-height: 2.2;
+		line-height: 2.25;
 		width: 390px;
 	}
 
 	@include sp {
 		font-size: 13px;
-		line-height: 1.8;
+		line-height: 1.7;
+		padding: 20px 20px 0;
+	}
+}
+
+.p-introduction-button {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+
+	@include pc {
+		width: 310px;
+	}
+
+	@include sp {
+		padding: 0 10px;
 	}
 }

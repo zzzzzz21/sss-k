@@ -36,6 +36,23 @@
 			}
 		}
 	}
+
+	&.is-small {
+		@include sp {
+			height: 130px;
+			width: 130px;
+		}
+
+		.c-box-title-text {
+			@include pc {
+				font-size: 21px;
+			}
+
+			@include sp {
+				font-size: 12px;
+			}
+		}
+	}
 }
 
 .c-box-title-text {
@@ -45,10 +62,6 @@
 	line-height: 1;
 	text-align: center;
 	white-space: nowrap;
-
-	&.is-small {
-		font-size: 21px;
-	}
 }
 
 .c-box-title-text-small {

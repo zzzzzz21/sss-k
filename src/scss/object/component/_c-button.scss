@@ -53,3 +53,23 @@
 		padding: 5px;
 	}
 }
+
+.c-button-large {
+	@include getTriangle($base-light-gray, right, 7, 8);
+	align-items: center;
+	border: 1px solid $base-light-blue;
+	color: $base-light-blue;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+
+	@include pc {
+		min-height: 64px;
+		min-width: 310px;
+	}
+
+	@include sp {
+		min-height: 62px;
+		font-size: 14px;
+	}
+}
