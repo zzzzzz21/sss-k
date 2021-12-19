@@ -64,6 +64,18 @@
 	}
 }
 
+.p-introduction-illust {
+	text-align: center;
+
+	@include pc {
+		padding: 40px 0 0 57px;
+	}
+
+	@include sp {
+		padding: 28px 20px 0;
+	}
+}
+
 .p-introduction-interview {
 	@include pc {
 		margin: 90px auto 60px;
@@ -79,12 +91,6 @@
 .p-introduction-interview-headline {
 	@include sp {
 		padding: 0 20px 20px;
-	}
-}
-
-.p-introduction-interview-list {
-	@include pc {
-		margin-top: 45px;
 	}
 }
 
@@ -150,6 +156,145 @@
 		font-size: 13px;
 		line-height: 1.7;
 		padding: 20px 20px 0;
+	}
+}
+
+.p-introduction-business {
+	@include pc {
+		margin: 74px auto 42px;
+		max-width: 1020px;
+		padding: 0 20px;
+	}
+
+	@include sp {
+		margin: 45px auto 55px;
+	}
+}
+
+.p-introduction-business-item {
+	@include pc {
+		align-items: flex-start;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&:nth-of-type(even) {
+		@include pc {
+			flex-direction: row-reverse;
+
+			.p-introduction-business-detail {
+				justify-content: flex-start;
+				padding: 0 0 0 30px;
+			}
+		}
+
+		@include sp {
+			.p-introduction-business-image {
+				margin: auto 0 0 0;
+			}
+
+			.p-introduction-business-image-title {
+				left: auto;
+				right: 0;
+			}
+		}
+	}
+
+	&:nth-of-type(n + 2) {
+		@include pc {
+			margin-top: 54px;
+		}
+
+		@include sp {
+			margin-top: 50px;
+		}
+	}
+}
+
+.p-introduction-business-image {
+	display: flex;
+	position: relative;
+
+	@include pc {
+		width: 460px;
+	}
+
+	@include sp {
+		margin: 0 0 0 auto;
+		width: 93.75%;
+	}
+
+	img {
+		width: 100%;
+	}
+}
+
+.p-introduction-business-image-title {
+	background: $base-blue;
+	bottom: 0;
+	color: $base-white;
+	font-size: 14px;
+	font-weight: bold;
+	left: 0;
+	letter-spacing: 0.1em;
+	padding: 0.25em;
+	position: absolute;
+	text-align: center;
+	width: 155px;
+}
+
+.p-introduction-business-detail {
+	@include pc {
+		display: flex;
+		flex: 1;
+		justify-content: flex-end;
+		padding: 0 30px 0 0;
+	}
+}
+
+.p-introduction-business-inner {
+	@include pc {
+		width: 390px;
+	}
+
+	@include sp {
+		padding: 0 20px;
+	}
+}
+
+.p-introduction-business-content {
+	@include pc {
+		margin-top: 30px;
+	}
+
+	@include sp {
+		margin: 23px 0 20px;
+	}
+}
+
+.p-introduction-business-headline {
+	color: $base-gray;
+
+	@include pc {
+		font-size: 26px;
+	}
+
+	@include sp {
+		font-size: 18px;
+	}
+}
+
+.p-introduction-business-text {
+	@include pc {
+		font-size: 14px;
+		line-height: 2.2;
+		margin-top: 15px;
+	}
+
+	@include sp {
+		font-size: 13px;
+		line-height: 1.75;
+		margin-top: 15px;
 	}
 }
 

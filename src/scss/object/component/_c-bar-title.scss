@@ -34,6 +34,13 @@
 		}
 	}
 
+	&.is-icon-white {
+		&::after {
+			background: url(#{$IMG_PATH}common/icon-white-curve.svg) left top/100%
+				no-repeat;
+		}
+	}
+
 	&.is-white {
 		background: $base-white;
 		border: 1px solid $base-blue;
@@ -41,5 +48,25 @@
 
 	&.is-beige {
 		background: $base-beige;
+	}
+
+	&.is-small {
+		font-size: 14px;
+		min-height: 27px;
+		width: 195px;
+
+		@include sp {
+			margin: 0;
+		}
+
+		&::after {
+			height: 15px;
+			width: 15px;
+		}
+	}
+
+	&.is-center {
+		justify-content: center;
+		padding: 0 20px;
 	}
 }
