@@ -32,6 +32,10 @@
 	@include sp {
 		flex-direction: column;
 	}
+
+	&.is-align-top {
+		align-items: baseline;
+	}
 }
 
 .c-full-table-dt {
