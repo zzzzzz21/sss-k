@@ -39,4 +39,22 @@
 			background-image: url("../images/business/business-head1_sp.jpg");
 		}
 	}
+
+	&.is-type2 {
+		@include pc {
+			background-image: url("../images/business/business-head2.jpg");
+		}
+		@include sp {
+			background-image: url("../images/business/business-head2_sp.jpg");
+		}
+	}
+
+	&.is-type3 {
+		@include pc {
+			background-image: url("../images/business/business-head3.jpg");
+		}
+		@include sp {
+			background-image: url("../images/business/business-head3_sp.jpg");
+		}
+	}
 }

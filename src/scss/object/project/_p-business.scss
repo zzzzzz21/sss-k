@@ -43,10 +43,16 @@
 .p-business-works {
 	@include pc {
 		padding: 82px 0 120px;
+        &.is-no-images {
+          padding-top: 12px;
+        }
 	}
 
 	@include sp {
 		padding: 78px 0 72px;
+        &.is-no-images {
+          padding-top: 30px;
+        }
 	}
 }
 
@@ -74,6 +80,14 @@
 	}
 }
 
+.p-business-works-head {
+    width: 100%;
+    margin-bottom: 2em;
+    &-image {
+        width: 100%;
+        height: auto;
+    }
+}
 .p-business-works-archive {
 	padding: 0 20px;
 	margin: 0 auto;
