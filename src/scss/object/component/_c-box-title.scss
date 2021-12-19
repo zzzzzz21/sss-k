@@ -45,6 +45,10 @@
 	line-height: 1;
 	text-align: center;
 	white-space: nowrap;
+
+	&.is-small {
+		font-size: 21px;
+	}
 }
 
 .c-box-title-text-small {

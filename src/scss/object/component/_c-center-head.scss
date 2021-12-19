@@ -1,0 +1,22 @@
+.c-center-head {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.c-center-head-lead {
+	border-bottom: 1px solid $base-blue;
+	text-align: center;
+	width: 100%;
+
+	@include pc {
+		margin-top: 32px;
+		padding-bottom: 10px;
+	}
+}
+
+.c-center-haed-text {
+	color: $base-gray;
+	font-size: 26px;
+	font-weight: bold;
+}

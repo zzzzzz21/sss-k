@@ -16,6 +16,11 @@
 		font-size: 16px;
 		line-height: 2.05;
 		margin-top: 12px;
+
+		&.is-small {
+			font-size: 14px;
+			line-height: 2.2;
+		}
 	}
 
 	@include sp {
