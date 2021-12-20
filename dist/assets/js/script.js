@@ -1,29 +1,41 @@
 'use strict'; // ブレークポイント（px）
 
-const breakPoint = '768'; // ヘッダー
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
-const header = document.querySelector('.js-header'); // body
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-const body = document.querySelector('.js-body'); // SP専用ヘッダーのハンバーガーボタン
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-const headerToggleButton = document.querySelector('.js-header-button'); // ヘッダーのグローバルナビゲーション
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
 
-const headerMenu = document.querySelector('.js-header-menu'); // トップページのcanvasの要素を取得
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
-const canvas = document.querySelector('.c-wave-canvas'); // 募集要項ページのタグを取得
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-const recruit = document.querySelector('.js-recruit'); // 2Dの描画命令群を取得
+var breakPoint = '768'; // ヘッダー
+
+var header = document.querySelector('.js-header'); // body
+
+var body = document.querySelector('.js-body'); // SP専用ヘッダーのハンバーガーボタン
+
+var headerToggleButton = document.querySelector('.js-header-button'); // ヘッダーのグローバルナビゲーション
+
+var headerMenu = document.querySelector('.js-header-menu'); // トップページのcanvasの要素を取得
+
+var canvas = document.querySelector('.c-wave-canvas'); // 募集要項ページのタグを取得
+
+var recruit = document.querySelector('.js-recruit'); // 2Dの描画命令群を取得
 
 if (canvas) {
   var context = canvas.getContext('2d');
 } // PC/SP判定フラグ
 
 
-let isSmartPhone; // 画面の幅
+var isSmartPhone; // 画面の幅
 
-let stageW = 0; // 画面の高さ
+var stageW = 0; // 画面の高さ
 
-let stageH = 0;
+var stageH = 0;
 document.addEventListener('DOMContentLoaded', init);
 window.addEventListener('resize', resizeEvent);
 /**
@@ -83,36 +95,41 @@ function setHeaderWaiAria() {
  */
 
 
-const scrollTrigger = document.querySelectorAll('a[href^="#"]');
+var scrollTrigger = document.querySelectorAll('a[href^="#"]');
 
-for (let i = 0; i < scrollTrigger.length; i++) {
-  scrollTrigger[i].addEventListener('click', e => {
+var _loop = function _loop(i) {
+  scrollTrigger[i].addEventListener('click', function (e) {
     e.preventDefault();
-    let href = scrollTrigger[i].getAttribute('href');
-    let targetElement = document.getElementById(href.replace('#', ''));
-    const rect = targetElement.getBoundingClientRect().top;
-    const offset = window.pageYOffset; // ヘッダーがトップ固定の場合はヘッダーの高さを入れる。
+    var href = scrollTrigger[i].getAttribute('href');
+    var targetElement = document.getElementById(href.replace('#', ''));
+    var rect = targetElement.getBoundingClientRect().top;
+    var offset = window.pageYOffset; // ヘッダーがトップ固定の場合はヘッダーの高さを入れる。
 
-    let gap = 0;
+    var gap = 0;
 
     if (isSmartPhone) {
-      const headerHeight = document.querySelector('.js-header');
-      gap = headerHeight.clientHeight;
+      var _headerHeight = document.querySelector('.js-header');
+
+      gap = _headerHeight.clientHeight;
     }
 
     if (recruit) {
-      const recruitNav = document.querySelector('.js-recruit-nav');
+      var recruitNav = document.querySelector('.js-recruit-nav');
       gap += recruitNav.clientHeight;
     } // 目的の要素の位置
 
 
-    const target = rect + offset - gap; // behaviorでスピードを調整する。
+    var target = rect + offset - gap; // behaviorでスピードを調整する。
 
     window.scrollTo({
       top: target,
       behavior: 'smooth'
     });
   });
+};
+
+for (var i = 0; i < scrollTrigger.length; i++) {
+  _loop(i);
 }
 /**
  * SPにてハッシュ付きURLでリンク遷移した時にヘッダー分スクロールする
@@ -122,11 +139,11 @@ for (let i = 0; i < scrollTrigger.length; i++) {
 
 function scrollToHashByMobile() {
   if (isSmartPhone) {
-    const hash = location.hash;
+    var hash = location.hash;
 
     if (hash) {
-      const headerHeight = document.querySelector('.js-header').clientHeight;
-      const ScrollHeight = headerHeight * -1;
+      var headerHeight = document.querySelector('.js-header').clientHeight;
+      var ScrollHeight = headerHeight * -1;
       setTimeout(function () {
         window.scrollBy({
           top: ScrollHeight,
@@ -143,12 +160,12 @@ function scrollToHashByMobile() {
 
 
 function toggleMenu() {
-  let isHeaderMenuShow = headerMenu.getAttribute('aria-hidden'); // ハンバーガーメニューを押した時にwai-aria属性を設定する。グローバルメニューを閉じた時に処理もこちらで兼任する
+  var isHeaderMenuShow = headerMenu.getAttribute('aria-hidden'); // ハンバーガーメニューを押した時にwai-aria属性を設定する。グローバルメニューを閉じた時に処理もこちらで兼任する
 
   $('.js-accordion').each(function () {
-    const el = $(this);
-    const tab = el.find('.js-accordion-tab');
-    const panel = el.find('.js-accordion-panel');
+    var el = $(this);
+    var tab = el.find('.js-accordion-tab');
+    var panel = el.find('.js-accordion-panel');
     tab.attr('aria-selected', 'false');
     panel.attr('aria-expanded', 'false');
     panel.attr('aria-hidden', 'true');
@@ -176,15 +193,16 @@ function toggleMenu() {
 
 function setNavigationCurrent() {
   // 現在URLを取得
-  const currentUrl = window.location.href;
-  const navigationUrlList = document.querySelectorAll('.c-nav-list__link');
+  var currentUrl = window.location.href;
+  var navigationUrlList = document.querySelectorAll('.c-nav-list__link');
 
-  for (let i = 0; i < navigationUrlList.length; i++) {
-    const currentHref = navigationUrlList[i].getAttribute('href');
-    const currentHrefText = currentHref.split('/')[1];
+  for (var _i = 0; _i < navigationUrlList.length; _i++) {
+    var currentHref = navigationUrlList[_i].getAttribute('href');
+
+    var currentHrefText = currentHref.split('/')[1];
 
     if (currentUrl.indexOf(currentHrefText) > -1) {
-      navigationUrlList[i].classList.add('c-nav-list__link--current');
+      navigationUrlList[_i].classList.add('c-nav-list__link--current');
     }
   }
 }
@@ -195,10 +213,10 @@ function setNavigationCurrent() {
 // カルーセルの動作フラグ
 
 
-const swiperInit = document.querySelector('.swiper-init');
+var swiperInit = document.querySelector('.swiper-init');
 
 if (swiperInit) {
-  const swiper = new Swiper('.swiper-container', {
+  var swiper = new Swiper('.swiper-container', {
     effect: 'fade',
     loop: true,
     autoplay: true,
@@ -212,9 +230,9 @@ if (swiperInit) {
 
 
 $('.js-accordion-tab').on('click', function () {
-  const tab = $(this);
-  const panel = tab.parent().find('.js-accordion-panel');
-  const expanded = tab.attr('aria-selected') === 'true';
+  var tab = $(this);
+  var panel = tab.parent().find('.js-accordion-panel');
+  var expanded = tab.attr('aria-selected') === 'true';
 
   if (expanded) {
     tab.attr('aria-selected', 'false');
@@ -232,8 +250,8 @@ $('.js-accordion-tab').on('click', function () {
  */
 
 $('.js-check-button').on('change', function () {
-  const target = this.dataset.target;
-  const targetElement = document.querySelector('.' + target);
+  var target = this.dataset.target;
+  var targetElement = document.querySelector('.' + target);
 
   if (this.checked) {
     targetElement.disabled = false;
@@ -248,34 +266,34 @@ $('.js-check-button').on('change', function () {
 
 if (recruit) {
   getDeviceWidth();
-  const recruitElement = document.querySelector('.js-recruit');
+  var recruitElement = document.querySelector('.js-recruit');
   /** リクルートページを囲むelement */
 
-  const recruitWrapperElement = document.querySelector('.js-recruit-wrapper');
+  var recruitWrapperElement = document.querySelector('.js-recruit-wrapper');
   /** リクルートページ内ナビゲーションのelement */
 
-  const recruitNavElement = document.querySelector('.js-recruit-nav');
+  var recruitNavElement = document.querySelector('.js-recruit-nav');
   /** リクルートページ内ナビゲーションのelementの高さ */
 
-  const recruitNavElementHeight = recruitNavElement.clientHeight;
+  var recruitNavElementHeight = recruitNavElement.clientHeight;
   /** ヘッダーの高さ */
 
-  const headerHeight = document.querySelector('.l-header').clientHeight;
+  var headerHeight = document.querySelector('.l-header').clientHeight;
   /** リクルートページ内のナビゲーションの高さ */
 
-  let addHeightToWrapper = recruitNavElementHeight;
+  var addHeightToWrapper = recruitNavElementHeight;
   /** ビジュアル付きタイトルの高さ */
 
-  const titleHeight = document.querySelector('.c-visual-head').clientHeight;
+  var titleHeight = document.querySelector('.c-visual-head').clientHeight;
   /** ナビゲーションの固定開始位置の初期値 */
 
-  let targetHeight;
+  var targetHeight;
   /** スクロール量を測るための初期値 */
 
-  let scrollHeigit;
+  var scrollHeigit;
   /** ナビゲーションの固定位置の初期値 */
 
-  let addTopToNav;
+  var addTopToNav;
   /** スマートフォンの時はナビゲーションの固定位置と固定開始タイミングを調整する */
 
   if (isSmartPhone) {
@@ -290,12 +308,12 @@ if (recruit) {
     scrollHeigit = window.pageYOffset;
 
     if (scrollHeigit > targetHeight) {
-      recruitWrapperElement.setAttribute('style', `padding-top:${addHeightToWrapper}px `);
-      recruitNavElement.setAttribute('style', `top:${addTopToNav}px`);
+      recruitWrapperElement.setAttribute('style', "padding-top:".concat(addHeightToWrapper, "px "));
+      recruitNavElement.setAttribute('style', "top:".concat(addTopToNav, "px"));
       recruitElement.classList.add('is-fixed');
     } else {
-      recruitWrapperElement.setAttribute('style', `padding-top: 0 `);
-      recruitNavElement.setAttribute('style', `top: 0 `);
+      recruitWrapperElement.setAttribute('style', "padding-top: 0 ");
+      recruitNavElement.setAttribute('style', "top: 0 ");
       recruitElement.classList.remove('is-fixed');
     }
   });
@@ -320,7 +338,7 @@ if (canvas !== null) {
 
 function tick() {
   requestAnimationFrame(tick);
-  const time = Date.now() / 4000;
+  var time = Date.now() / 4000;
   draw(time);
 }
 /**
@@ -333,23 +351,24 @@ function draw(time) {
   // 画面をリセット
   context.clearRect(0, 0, stageW, stageH);
   context.lineWidth = 16;
-  const amplitude = stageH / 1.6; // 縦幅の大きさ
+  var amplitude = stageH / 1.6; // 縦幅の大きさ
 
-  const lineNum = 128; // ラインの数
+  var lineNum = 128; // ラインの数
 
-  const segmentNum = 100; // 分割数
+  var segmentNum = 100; // 分割数
 
-  [...new Array(lineNum).keys()].forEach(j => {
-    const coefficient = 50 + j;
+  _toConsumableArray(new Array(lineNum).keys()).forEach(function (j) {
+    var coefficient = 50 + j;
     context.beginPath(); // ラインの透明度を操作する
 
-    const a = Math.round(j / lineNum * 6) / 10;
-    context.strokeStyle = `rgba(255, 255, 255, ${a})`;
-    [...new Array(segmentNum).keys()].forEach(i => {
-      const x = i / (segmentNum - 1) * stageW;
-      const px = i / coefficient;
-      const py = j / 50 + time;
-      const y = amplitude * noise.perlin2(px, py) + stageH / 2;
+    var a = Math.round(j / lineNum * 6) / 10;
+    context.strokeStyle = "rgba(255, 255, 255, ".concat(a, ")");
+
+    _toConsumableArray(new Array(segmentNum).keys()).forEach(function (i) {
+      var x = i / (segmentNum - 1) * stageW;
+      var px = i / coefficient;
+      var py = j / 50 + time;
+      var y = amplitude * noise.perlin2(px, py) + stageH / 2;
 
       if (i === 0) {
         context.moveTo(x, y);
@@ -357,6 +376,7 @@ function draw(time) {
         context.lineTo(x, y);
       }
     });
+
     context.stroke();
   });
 }
