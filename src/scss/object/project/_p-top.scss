@@ -185,6 +185,7 @@
 .p-top-card__button {
 	@include pc {
 		flex: 1;
+        transition: all ease .3s;
 
 		&.is-large {
 			flex: 2;
