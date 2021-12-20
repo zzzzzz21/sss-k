@@ -9,10 +9,10 @@
 			"path": "./",
 			"isTop": true,
 			"css": [
-				"https://unpkg.com/swiper/swiper-bundle.min.css"
+				"./assets/css/libs/swiper.min.css"
 			],
 			"script": [
-				"https://unpkg.com/swiper/swiper-bundle.min.js",
+				"./assets/js/libs/swiper.min.js",
 				"./assets/js/libs/perlin.js"
 			]
 		},
