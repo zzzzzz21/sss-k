@@ -1,5 +1,6 @@
 .c-image-button {
 	@include getTriangle;
+	@include hoverOpacity(0.5);
 	align-items: center;
 	background: rgba($base-white, 0.8);
 	border: 2px solid $base-light-blue;

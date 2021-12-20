@@ -48,6 +48,7 @@
 }
 
 .l-footer-top-button__link {
+	@include hoverOpacity(0.5);
 	@include getArrow;
 	background: $base-light-gray;
 	border-radius: 50%;

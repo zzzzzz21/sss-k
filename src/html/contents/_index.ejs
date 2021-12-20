@@ -1,7 +1,7 @@
 <% var d = jsonData; -%>
 <div class="l-top">
   <div class="p-top-kv">
-    <p class="p-top-lead">快適な空間をめざして</p>
+    <p class="p-top-lead">空気のコントロールを通じて<br class="sp-view">快適空間を守る</p>
     <div class="swiper-container swiper-init">
       <div class="swiper-wrapper">
         <div class="swiper-slide"><img src="<%- d.path %>assets/images/top/kv1.jpg" alt="" width="980" height="620"></div>
@@ -17,30 +17,34 @@
   <div class="p-top-content">
     <div class="p-top-cards">
         <section class="p-top-card p-top-card--wide">
-            <h2 class="p-top-card__title p-top-card__title--blue">私たちの<br>技術力</h2>
+            <h2 class="p-top-card__title">Introduction</h2>
+						<p class="p-top-card__en">サンエス工業を語る</p>
             <div class="p-top-card__link">
-                <a href="<%- d.path %>introduction/" class="c-button">快適な空気を作る３つの要素</a>
-                <a href="<%- d.path %>introduction/02/" class="c-button">サンエスらしさって何だろう</a>
+                <a href="<%- d.path %>introduction/" class="c-button p-top-card__button">快適な空気を作る３つの要素</a>
+                <a href="<%- d.path %>introduction/02/" class="c-button p-top-card__button">サンエスらしさって何だろう</a>
             </div>
         </section>
         <section class="p-top-card">
             <h2 class="p-top-card__title">Business Lineup</h2>
+						<p class="p-top-card__en">事業案内</p>
             <div class="p-top-card__link">
-                <a href="<%- d.path %>business/silencer/" class="c-button">消音部門</a>
-                <a href="<%- d.path %>business/air-conditioning/" class="c-button">空調部門</a>
-                <a href="<%- d.path %>business/duct/" class="c-button">ダクト部門</a>
+                <a href="<%- d.path %>business/silencer/" class="c-button p-top-card__button">消音部門</a>
+                <a href="<%- d.path %>business/air-conditioning/" class="c-button p-top-card__button">空調部門</a>
+                <a href="<%- d.path %>business/duct/" class="c-button p-top-card__button">ダクト部門</a>
             </div>
         </section>
         <section class="p-top-card">
-            <h2 class="p-top-card__title">Company Profile</h2>
+            <h2 class="p-top-card__title">About us</h2>
+						<p class="p-top-card__en">会社案内</p>
             <div class="p-top-card__link">
-                <a href="<%- d.path %>company/" class="c-button c-button--high">会社案内</a>
+                <a href="<%- d.path %>company/" class="c-button p-top-card__button is-large">企業情報</a>
+								<a href="<%- d.path %>assets/pdf/SSS_companyoutline.pdf" class="c-button p-top-card__button is-reverse">会社案内PDF</a>
             </div>
         </section>
     </div>
     <div class="u-align-center">
         <a href="<%- d.path %>recruit/" class="c-image-button">
-            <span class="c-image-button__image"><img src="<%- d.path %>assets/images/top/recruit-button-image1.jpg" alt=""></span>
+            <span class="c-image-button__image"><img src="<%- d.path %>assets/images/top/recruit-button-image1.jpg" alt="採用情報"></span>
             <span class="c-image-button__text">採用情報</span>
         </a>
     </div>

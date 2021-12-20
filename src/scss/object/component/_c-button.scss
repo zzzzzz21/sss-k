@@ -1,6 +1,5 @@
 .c-button {
 	@include getTriangle;
-	@include buttonAnimation;
 	align-items: center;
 	background: $base-light-blue;
 	color: $base-white;
@@ -11,11 +10,19 @@
 	@include pc {
 		font-size: 14px;
 		min-height: 28px;
+
+		&:hover {
+			background-color: $base-blue;
+
+			&::after {
+				border-color: transparent transparent transparent $base-white;
+			}
+		}
 	}
 
 	@include sp {
 		font-size: 18px;
-		min-height: 46px;
+		min-height: 39px;
 	}
 
 	& + & {
@@ -27,14 +34,34 @@
 		}
 	}
 
-	&--high {
+	&.is-reverse {
+		background: $base-white;
+		border: 1px solid $base-light-blue;
+		color: $base-light-blue;
+
+		&::after {
+			border-color: transparent transparent transparent $base-light-blue;
+		}
+
+		&::before {
+			display: none;
+		}
+
 		@include pc {
-			height: 104px;
+			&:hover {
+				border-color: $base-blue;
+				color: $base-blue;
+
+				&::after {
+					border-color: transparent transparent transparent $base-blue;
+				}
+			}
 		}
 	}
 }
 
 .c-button-plane {
+	@include hoverOpacity(0.5);
 	align-items: center;
 	background: $base-light-gray;
 	color: $base-white;
@@ -55,7 +82,7 @@
 }
 
 .c-button-large {
-	@include hoverOpacity;
+	@include hoverOpacity(0.5);
 	@include getTriangle($base-light-gray, right, 7, 8);
 	align-items: center;
 	border: 1px solid $base-light-blue;
