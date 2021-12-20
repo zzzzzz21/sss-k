@@ -55,6 +55,7 @@
 }
 
 .c-button-large {
+	@include hoverOpacity;
 	@include getTriangle($base-light-gray, right, 7, 8);
 	align-items: center;
 	border: 1px solid $base-light-blue;
@@ -71,5 +72,19 @@
 	@include sp {
 		min-height: 62px;
 		font-size: 14px;
+	}
+
+	&.is-about {
+		@include getTriangle($base-light-blue, right, 7, 8);
+
+		@include pc {
+			min-height: 28px;
+			min-width: auto;
+		}
+
+		@include sp {
+			font-size: 19px;
+			min-height: 39px;
+		}
 	}
 }

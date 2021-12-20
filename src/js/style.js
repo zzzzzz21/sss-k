@@ -45,6 +45,7 @@ function init() {
     getDeviceWidth();
     setNavigationCurrent();
     setHeaderWaiAria();
+	scrollToHashByMobile();
 }
 
 /**
@@ -112,6 +113,26 @@ for (let i = 0; i < scrollTrigger.length; i++) {
             behavior: 'smooth',
         });
     })
+}
+
+/**
+ * SPにてハッシュ付きURLでリンク遷移した時にヘッダー分スクロールする
+ *
+ */
+function scrollToHashByMobile() {
+	if(isSmartPhone) {
+		const hash = location.hash;
+		if(hash) {
+			const headerHeight = document.querySelector('.js-header').clientHeight;
+			const ScrollHeight = (headerHeight * -1);
+			setTimeout(function() {
+				window.scrollBy({
+					top: ScrollHeight,
+					behavior: 'smooth',
+				});
+			}, 500)
+		}
+	}
 }
 
 

@@ -31,6 +31,7 @@
 
 	@include sp {
 		flex-direction: column;
+		width: 100%;
 	}
 
 	&.is-align-top {
@@ -51,6 +52,7 @@
 	@include sp {
 		font-size: 13px;
 		margin-bottom: 16px;
+		width: 100%;
 	}
 }
 
@@ -58,15 +60,31 @@
 	@include pc {
 		flex: 1;
 		font-size: 14px;
-		line-height: 2.1;
+		line-height: 2.2;
 	}
 
 	@include sp {
 		font-size: 13px;
 		line-height: 1.8;
+		width: 100%;
 	}
 
 	small {
 		font-size: 0.8em;
+	}
+}
+
+.c-full-table-right {
+	display: block;
+	text-align: right;
+
+	@include sp {
+		margin-top: 20px;
+	}
+}
+
+.c-full-table-inline {
+	@include pc {
+		padding-left: 2em;
 	}
 }

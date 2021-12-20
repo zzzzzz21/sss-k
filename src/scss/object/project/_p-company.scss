@@ -222,3 +222,163 @@
 		}
 	}
 }
+
+.p-company-about {
+	@include pc {
+		padding-bottom: 100px;
+	}
+	@include sp {
+		padding-bottom: 32px;
+	}
+}
+
+.p-company-about-map {
+	@include pc {
+		align-items: baseline;
+		display: flex;
+	}
+
+	& + & {
+		border-top: 1px solid $base-border;
+
+		@include pc {
+			margin-top: 20px;
+			padding-top: 18px;
+		}
+
+		@include sp {
+			margin-top: 20px;
+			padding-top: 18px;
+		}
+	}
+}
+
+.p-company-about-map-label {
+	align-items: center;
+	border: 1px solid $base-black;
+	display: inline-flex;
+	justify-content: center;
+	font-size: 12px;
+	line-height: 1.5;
+	width: 80px;
+}
+
+.p-company-about-map-content {
+	@include pc {
+		margin-left: 20px;
+		flex: 1;
+	}
+
+	@include sp {
+		margin-top: 10px;
+	}
+}
+
+.p-company-about-map-item {
+	& + & {
+		border-top: 1px solid $base-border;
+
+		@include pc {
+			margin-top: 14px;
+			padding-top: 15px;
+		}
+
+		@include sp {
+			margin-top: 14px;
+			padding-top: 15px;
+		}
+	}
+}
+
+.p-company-about-map-text {
+	@include pc {
+		display: flex;
+		line-height: 2.25;
+	}
+}
+
+.p-company-about-map-point {
+	@include pc {
+		min-width: 140px;
+	}
+
+	@include sp {
+		display: block;
+		padding: 10px 0;
+	}
+}
+
+.p-company-about-map-frame {
+	@include sp {
+		height: 0;
+		left: 0;
+		margin-top: 20px;
+		padding: 42.6785% 0 0;
+		position: relative;
+		top: 0;
+		width: 100%;
+
+		iframe {
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+	}
+}
+
+.p-company-about-dl {
+	@include pc {
+		line-height: 2.3;
+	}
+
+	& + & {
+		@include pc {
+			margin-top: 20px;
+		}
+
+		@include sp {
+			margin-top: 20px;
+		}
+	}
+}
+
+.p-company-about-dl-dt {
+	color: $base-blue;
+
+	@include pc {
+		font-size: 12px;
+	}
+
+	@include sp {
+		font-size: 13px;
+	}
+}
+
+.p-company-about-dl-dd {
+	@include pc {
+		font-size: 14px;
+	}
+
+	@include sp {
+		font-size: 13px;
+		margin-top: 7px;
+	}
+}
+
+.p-comapny-about-button {
+	margin: 20px auto 0;
+	max-width: 820px;
+	padding: 0 20px;
+
+	@include sp {
+		margin-top: 38px;
+	}
+}
+
+.p-comapny-about-button-inner {
+	@include pc {
+		width: 270px;
+	}
+}
