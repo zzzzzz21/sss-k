@@ -8,8 +8,9 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-	<title><% if (!d.isTop) { -%><%- d.title %> | <% } -%><%- commonTitle %></title>
 	<meta charset="UTF-8">
+<%- include('./_gtm_head') %>
+  	<title><% if (!d.isTop) { -%><%- d.title %> | <% } -%><%- commonTitle %></title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 	<% if (d.ogtype) { -%>
 		<meta property="og:type" content="<%- d.ogtype %>">
@@ -26,5 +27,6 @@
 	<link rel="stylesheet" href="<%- d.path %>assets/css/style.css">
 </head>
 <body id="body" class="l-body js-body">
+<%- include('./_gtm_body') %>
 <%- include('./_svg') %>
 <div class="l-wrapper">
