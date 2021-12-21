@@ -15,7 +15,7 @@ $form = $_SESSION['post'];
 
 /*******************************************************/
 /* 問合せ処理メールアドレス */
-define('INQUIRY_EMAIL_ADMIN', 'shimizu@hakarai.co.jp'); // ADMIN
+define('INQUIRY_EMAIL_ADMIN', 'info@sss-k.co.jp'); // ADMIN
 define('INQUIRY_EMAIL_FROM', 'info@sss-k.co.jp'); // 送り主
 define('INQUIRY_EMAIL_RETURN', 'info@sss-k.co.jp'); // Return-Path
 /*******************************************************/
@@ -34,7 +34,7 @@ function send($input)
     $params = '-f ' . INQUIRY_EMAIL_RETURN;
     mb_language("Japanese");
     mb_internal_encoding("UTF-8");
-    mb_send_mail($input['email'], 'お問い合わせを受け付けました。｜サンエス工業', getBody($input), $headers, $params);
+    mb_send_mail($input['email'], '【サンエス工業】へのお問い合わせありがとうございました。', getBody($input), $headers, $params);
 
     // 管理者宛
     $headers = 'From: ' . INQUIRY_EMAIL_FROM;
@@ -47,43 +47,40 @@ function send($input)
 function getBody($input)
 {
     return <<< EOM
+
+-------------------------------------------------------------
+本メールはお客様からお問い合わせいただいた時点で送信される自動配信メールです。
+※本メールに返信はできません。
+-------------------------------------------------------------
+
 {$input['organization_title']} 様
 
 サンエス工業お問い合わせフォームから、
 下記の内容でお問い合わせを受け付けました。
 内容を確認して担当者から回答しますので、しばらくお待ちください。
 
+お問い合わせ内容項目： {$input['matter']}
 
 ---
-お問い合わせ内容： {$input['matter']}
-その他お問い合わせ： {$input['other_content']}
-会社名： {$input['organization']}
+お名前： {$input['organization_title']}
+貴社名： {$input['organization']}
 部署名： {$input['department']}
-ご担当者名： {$input['organization_title']}
-お電話番号： {$input['tel']}
 メールアドレス： {$input['email']}
-ご住所： {$input['postal_code']} {$input['prefecture']}{$input['address_level1']}{$input['address_line2']}
+電話番号： {$input['tel']}
+住所： {$input['postal_code']} {$input['prefecture']}{$input['address_level1']}{$input['address_line2']}
+お問い合わせ内容： {$input['other_content']}
 ---
 
-※このメールは サンエス工業のお問い合わせフォームから送信しました。
-※このメールアドレスは送信専用です。
-　お返事がない場合などは、お問い合わせフォームからご連絡ください。
 
-------------------------------------------
- 株式会社サンエス工業
- http://www.sss-k.co.jp/
-  【　本　社　】
-  〒110-0005
-  東京都台東区上野５丁目１５番１４号ミヤギビル
+原則として３営業日以内に、担当者よりご連絡いたします。
 
-  【東北支店･工場】
-  〒981-3117
-  宮城県仙台市泉区市名坂字野蔵１３
+よろしくお願いいたします。
 
-  【茨城工場】
-  〒300-0134
-  茨城県かすみがうら市深谷６７
-------------------------------------------
+================================
+株式会社サンエス工業
+http://www.sss-k.co.jp/
+================================
+
 
 EOM;
 }
@@ -92,17 +89,16 @@ function getBodyAdmin($input)
 {
     return <<< EOM
 下記の内容でお問い合わせがありました。
-内容を確認して、回答してください。
+内容を確認して、原則として3営業日以内に、回答してください。
 
 ---
-お問い合わせ内容： {$input['matter']}
-その他お問い合わせ： {$input['other_content']}
-会社名： {$input['organization']}
+お名前： {$input['organization_title']}
+貴社名： {$input['organization']}
 部署名： {$input['department']}
-ご担当者名： {$input['organization_title']}
-お電話番号： {$input['tel']}
 メールアドレス： {$input['email']}
-ご住所： {$input['postal_code']} {$input['prefecture']}{$input['address_level1']}{$input['address_line2']}
+電話番号： {$input['tel']}
+住所： {$input['postal_code']} {$input['prefecture']}{$input['address_level1']}{$input['address_line2']}
+お問い合わせ内容： {$input['other_content']}
 ---
 
 このメールは サンエス工業のお問い合わせフォームから送信されました。
