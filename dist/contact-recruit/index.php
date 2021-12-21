@@ -436,7 +436,7 @@ if(isset($_GET['recruit_base'])) $get['recruit_base'] =  $_GET['recruit_base'];
 									</div>
 								</div>
 							</div>
-							<p class="p-require-lead"> 当社プライバシーポリシーに同意頂ける場合は<br>「同意する」にチェックを付け「送信」ボタンをクリックしてください。 </p>
+							<p class="p-require-lead"> 当社<a href="../privacy/" class="c-common-link">プライバシーポリシー</a>に同意頂ける場合は<br>「同意する」にチェックを付け「送信」ボタンをクリックしてください。 </p>
 							<div class="p-require-check">
 								<div class="c-input-check">
 									<span class="c-input-check-line">
