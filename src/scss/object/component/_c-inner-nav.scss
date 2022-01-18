@@ -2,6 +2,10 @@
 	color: $base-blue;
 	font-size: 12px;
 	font-weight: bold;
+    span {
+        letter-spacing: .1em;
+        color: #878782;
+    }
 }
 
 .c-inner-nav-list {

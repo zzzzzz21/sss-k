@@ -58,7 +58,7 @@ $post = (isset($_SESSION['post']) ? $_SESSION['post'] : '');
 			<header class="l-header js-header">
 				<div class="l-header-wrapper">
 					<h1 class="l-header-logo">
-						<a href="../" class="l-header-logo__link"><img src="../assets/images/common/icon-ci.png" alt="株式会社サンエス工業" width="291" height="35"></a>
+						<a href="../" class="l-header-logo__link"><img src="../assets/images/common/icon-ci.svg" alt="株式会社サンエス工業"></a>
 					</h1>
 					<a href="../contact/" class="l-header-require">
 						<span class="l-header-require__text">お問い合わせ</span>
@@ -71,7 +71,7 @@ $post = (isset($_SESSION['post']) ? $_SESSION['post'] : '');
 								<a href="../introduction/" class="c-pc-header-nav-list__head">サンエス工業を語る</a>
 								<div class="c-pc-header-nav-block">
 									<div class="c-pc-header-nav-block__text">
-										<a href="../introduction/" class="c-pc-header-nav-block__link">快適な空気を作る３つの要素</a>
+										<a href="../introduction/" class="c-pc-header-nav-block__link">「空気」で創り出す快適な空間</a>
 									</div>
 									<div class="c-pc-header-nav-block__text">
 										<a href="../introduction/02/" class="c-pc-header-nav-block__link">サンエスらしさって何だろう</a>
@@ -118,10 +118,10 @@ $post = (isset($_SESSION['post']) ? $_SESSION['post'] : '');
 												<a href="../business/duct/" class="c-pc-header-nav-block__link">部門紹介</a>
 											</div>
 											<div class="c-pc-header-nav-block__text">
-												<a href="../business/duct/products.html" class="c-pc-header-nav-block__link">製品紹介</a>
+												<a href="../business/duct/business.html" class="c-pc-header-nav-block__link">業務紹介</a>
 											</div>
 											<div class="c-pc-header-nav-block__text">
-												<a href="../business/duct/works.html" class="c-pc-header-nav-block__link">導入実績</a>
+												<a href="../business/duct/construction.html" class="c-pc-header-nav-block__link">施工実績</a>
 											</div>
 										</div>
 									</div>
@@ -136,7 +136,7 @@ $post = (isset($_SESSION['post']) ? $_SESSION['post'] : '');
 										<a href="../company/" class="c-pc-header-nav-block__link">ご挨拶・企業理念</a>
 									</div>
 									<div class="c-pc-header-nav-block__text">
-										<a href="../company/about.html" class="c-pc-header-nav-block__link">企業概要</a>
+										<a href="../company/about.html" class="c-pc-header-nav-block__link">会社概要</a>
 									</div>
 									<div class="c-pc-header-nav-block__text">
 										<a href="../company/history.html" class="c-pc-header-nav-block__link">沿革</a>
@@ -176,7 +176,7 @@ $post = (isset($_SESSION['post']) ? $_SESSION['post'] : '');
 								<button class="c-sp-header-nav-block__head js-accordion-tab" type="button" id="js-accordion-tab-1" role="tab" aria-controls="js-accordion-panel-1" aria-selected="false">サンエス工業を語る</button>
 								<div class="c-sp-header-nav-block__list js-accordion-panel" id="js-accordion-panel-1" role="tabpanel" aria-labelledby="js-accordion-tab-1" aria-expanded="false" aria-hidden="true">
 									<div class="c-sp-header-nav-block__item">
-										<a href="../introduction/" class="c-sp-header-nav-block__link">- 快適な空気を作る３つの要素</a>
+										<a href="../introduction/" class="c-sp-header-nav-block__link">- 「空気」で創り出す快適な空間</a>
 									</div>
 									<div class="c-sp-header-nav-block__item">
 										<a href="../introduction/02/" class="c-sp-header-nav-block__link">- サンエスらしさって何だろう</a>
@@ -222,10 +222,10 @@ $post = (isset($_SESSION['post']) ? $_SESSION['post'] : '');
 											<a href="../business/duct/" class="c-sp-header-nav-block__link">- 部門紹介</a>
 										</div>
 										<div class="c-sp-header-nav-block__item">
-											<a href="../business/duct/products.html" class="c-sp-header-nav-block__link">- 製品紹介</a>
+											<a href="../business/duct/business.html" class="c-sp-header-nav-block__link">- 業務紹介</a>
 										</div>
 										<div class="c-sp-header-nav-block__item">
-											<a href="../business/duct/works.html" class="c-sp-header-nav-block__link">- 導入実績</a>
+											<a href="../business/duct/construction.html" class="c-sp-header-nav-block__link">- 施工実績</a>
 										</div>
 									</div>
 								</div>
@@ -456,7 +456,7 @@ $post = (isset($_SESSION['post']) ? $_SESSION['post'] : '');
 								<h3 class="l-footer-nav-block__sub">サンエス工業を語る</h3>
 								<ul class="l-footer-nav-block__list">
 									<li class="l-footer-nav-block__item">
-										<a href="../introduction/" class="l-footer-nav-block__link">- 快適な空気を作る３つの要素</a>
+										<a href="../introduction/" class="l-footer-nav-block__link">- 「空気」で創り出す快適な空間</a>
 									</li>
 									<li class="l-footer-nav-block__item">
 										<a href="../introduction/02/" class="l-footer-nav-block__link">- サンエスらしさって何だろう</a>
@@ -503,10 +503,10 @@ $post = (isset($_SESSION['post']) ? $_SESSION['post'] : '');
 												<a href="../business/duct/" class="l-footer-nav-block__link">- 部門紹介</a>
 											</li>
 											<li class="l-footer-nav-block__item">
-												<a href="../business/duct/products.html" class="l-footer-nav-block__link">- 製品紹介</a>
+												<a href="../business/duct/business.html" class="l-footer-nav-block__link">- 業務紹介</a>
 											</li>
 											<li class="l-footer-nav-block__item">
-												<a href="../business/duct/works.html" class="l-footer-nav-block__link">- 導入実績</a>
+												<a href="../business/duct/construction.html" class="l-footer-nav-block__link">- 施工実績</a>
 											</li>
 										</ul>
 									</div>

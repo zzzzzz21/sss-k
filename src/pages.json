@@ -51,7 +51,7 @@
 		{
 			"url": "/introduction/",
 			"name": "index",
-			"title": "快適な空気を作る３つの要素",
+			"title": "「空気」で創り出す快適な空間",
 			"contents": "contents/introduction/_index",
 			"path": "../",
 			"current": "introduction"
@@ -122,17 +122,17 @@
 		},
 		{
 			"url": "/business/duct/",
-			"name": "products",
-			"title": "ダクト部門 製品紹介",
-			"contents": "contents/business/duct/_products",
+			"name": "business",
+			"title": "ダクト部門 業務紹介",
+			"contents": "contents/business/duct/_business",
 			"path": "../../",
 			"current": "business"
 		},
 		{
 			"url": "/business/duct/",
-			"name": "works",
-			"title": "ダクト部門 導入実績",
-			"contents": "contents/business/duct/_works",
+			"name": "construction",
+			"title": "ダクト部門 施工実績",
+			"contents": "contents/business/duct/_construction",
 			"path": "../../",
 			"current": "business"
 		},
