@@ -131,3 +131,48 @@
 		width: 100%;
 	}
 }
+
+.c-roll-list-table-item {
+	font-size: 14px;
+	line-height: 2;
+	position: relative;
+	width: 100%;
+
+	@include pc {
+		padding-top: 4px;
+	}
+
+	@include sp {
+		padding: 1.5px 0;
+	}
+
+	&:not(:first-child) {
+		td {
+			&::before {
+				background-image: linear-gradient(
+					to right,
+					$base-beige,
+					$base-beige 2px,
+					transparent 2px,
+					transparent 4px
+				);
+				background-repeat: repeat-x;
+				background-size: 4px 1px;
+				top: 0;
+				content: "";
+				height: 1px;
+				left: 0;
+				position: absolute;
+				width: 100%;
+			}
+		}
+	}
+
+	td {
+		padding: 2px 0;
+		&:first-child {
+			padding-right: 1em;
+			white-space: nowrap;
+		}
+	}
+}

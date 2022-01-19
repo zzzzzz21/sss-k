@@ -129,9 +129,9 @@
 	@include pc {
 		margin: 4px 0 0 20px;
 		width: 345px;
-      &.is-auto {
-        width: auto;
-      }
+		&.is-auto {
+			width: auto;
+		}
 	}
 
 	@include sp {
@@ -149,6 +149,33 @@
 
 		@include sp {
 			margin-top: 5px;
+		}
+	}
+}
+
+.c-product-detail-images-title {
+	color: $base-gray;
+	font-size: 16px;
+
+	@include pc {
+		font-size: 16px;
+		margin-bottom: 20px;
+	}
+
+	@include sp {
+		font-size: 13px;
+		margin-bottom: 15px;
+	}
+}
+
+.c-product-detail-images-section {
+	&:nth-of-type(n + 2) {
+		@include pc {
+			margin-top: 50px;
+		}
+
+		@include sp {
+			margin-top: 34px;
 		}
 	}
 }
