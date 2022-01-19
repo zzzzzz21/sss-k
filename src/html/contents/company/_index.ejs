@@ -38,8 +38,18 @@
 							</p>
 						</div>
 						<div class="p-company-index-visual">
-							<img class="p-company-index-visual-image" src="<%- d.path %>assets/images/company/company-portrait1.jpg" alt="肖像写真" width="250" height="300">
-							<p class="p-company-index-visual-signiture"><img class="p-company-index-visual-image" src="<%- d.path %>assets/images/company/company-signiture1.png" alt="代表取締役社長 菊池丈之" width="215" height="25"></p>
+							<picture>
+								<source media="(max-width: 768px)" srcset="<%- d.path %>assets/images/company/company-portrait1@2x.jpg">
+								<source media="(min-width: 769px)" srcset="<%- d.path %>assets/images/company/company-portrait1.jpg">
+								<img class="p-company-index-visual-image" src="<%- d.path %>assets/images/company/company-portrait1.jpg" alt="肖像写真" width="250" height="300">
+							</picture>
+							<p class="p-company-index-visual-signiture">
+								<picture>
+									<source media="(max-width: 768px)" srcset="<%- d.path %>assets/images/company/company-signiture1@2x.png">
+									<source media="(min-width: 769px)" srcset="<%- d.path %>assets/images/company/company-signiture1.png">
+									<img class="p-company-index-visual-image" src="<%- d.path %>assets/images/company/company-signiture1.png" alt="代表取締役社長 菊池丈之" width="203" height="22">
+								</picture>
+							</p>
 						</div>
 					</div>
 				</section>
@@ -50,43 +60,35 @@
 							<span class="c-card-title-en">Philosophy</span>
 						</span>
 					</h2>
-					<div class="p-company-index-content">
-						<div class="p-company-index-detail">
-							<p class="p-company-index-text">
-                              サンエス工業では社名の「サンエス」に象徴されるポリシーとして、「三つのＳ」を掲げています。
-                            </p>
-							<p class="p-company-index-text">
-                              <strong>一つ目のＳはSolution（ソリューション）。</strong><br>
-                              お客様のニーズをくみ取り、予算や納期をクリアしたうえで良質な製品をお納めするために、自ら問題を発見し解決する。その姿勢を大切にしています。
-                            </p>
-							<p class="p-company-index-text">
-                              <strong>二つ目のＳはSupport（サポート）。</strong><br>
-                              現場で要求されるさまざまな条件を満足する製品づくりのために、現地調査なども含めたきめ細やかなサポートができる体制を整えています。
-                            </p>
-							<p class="p-company-index-text">
-                              <strong>三つ目のＳはService（サービス）。</strong><br>
-                              私たちはメーカーである前にまずお客様に寄り添うマインドを大切にし、既製品だけでなく特殊な製品もご要望に応じて対応できるような、高い技術力と機動力でお応えします。
-							</p>
+					<div class="p-company-index-3s">
+						<div class="p-company-index-content is-3s">
+							<div class="p-company-index-detail">
+								<p class="p-company-index-text">
+									サンエス工業では社名の「サンエス」に象徴されるポリシーとして、「三つのＳ」を掲げています。<br>
+									<strong>一つ目のＳはSolution（ソリューション）。</strong><br>
+									お客様のニーズをくみ取り、予算や納期をクリアしたうえで良質な製品をお納めするために、自ら問題を発見し解決する。その姿勢を大切にしています。<br>
+									<strong>二つ目のＳはSupport（サポート）。</strong><br>
+									現場で要求されるさまざまな条件を満足する製品づくりのために、現地調査なども含めたきめ細やかなサポートができる体制を整えています。<br>
+									<strong>三つ目のＳはService（サービス）。</strong><br>
+									私たちはメーカーである前にまずお客様に寄り添うマインドを大切にし、既製品だけでなく特殊な製品もご要望に応じて対応できるような、高い技術力と機動力でお応えします。
+								</p>
+							</div>
 						</div>
-					</div>
-				</section>
-				<section class="p-company-index-3s">
-					<div class="p-company-index-3s-head">
-						<h2 class="p-company-index-3s-head-title">サンエス工業の<strong>三つのＳ</strong></h2>
-						<div class="p-company-index-3s-head-illust">
-							<img src="<%- d.path %>assets/images/company/company-3s-illust.png" alt="Solution Support Service" width="343" height="334">
+						<div class="p-company-index-3s-wrapper">
+							<div class="p-company-index-3s-head">
+								<h2 class="p-company-index-3s-head-title">サンエス工業の<strong>三つのＳ</strong></h2>
+								<div class="p-company-index-3s-head-illust">
+									<img src="<%- d.path %>assets/images/company/company-3s-illust.png" alt="Solution Support Service" width="343" height="334">
+								</div>
+							</div>
+							<div class="p-company-index-3s-content">
+								<picture>
+									<source media="(max-width: 768px)" srcset="<%- d.path %>assets/images/company/company-3s_sp.png">
+									<source media="(min-width: 769px)" srcset="<%- d.path %>assets/images/company/company-3s.png">
+									<img class="p-company-index-visual-image" src="<%- d.path %>assets/images/company/company-3s.png" alt="サンエス工業の三つのＳ Solution 問題を発見し解決する Support 条件に適合し対応する Service お客様の要望に寄り添う" width="388" height="329">
+								</picture>
+							</div>
 						</div>
-					</div>
-
-					<div class="p-company-index-3s-content">
-						<img class="p-company-index-3s-image pc-view" 
-							src="<%- d.path %>assets/images/company/company-3s.png" 
-							alt="サンエス工業の三つのＳ Solution 問題を発見し解決する Support 条件に適合し対応する Service お客様の要望に寄り添う"
-							width="751" height="383">
-						<img class="p-company-index-3s-image sp-view"
-							src="<%- d.path %>assets/images/company/company-3s_sp.png"	
-							alt="サンエス工業の三つのＳ Solution 問題を発見し解決する Support 条件に適合し対応する Service お客様の要望に寄り添う"
-							width="280" height="474">
 					</div>
 				</section>
 			</div>
