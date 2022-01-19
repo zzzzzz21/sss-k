@@ -101,7 +101,7 @@
 	}
 
 	.c-sp-header-nav-list {
-		display: grid;
+		display: flex;
 		flex: 1;
 		flex-direction: column;
 		grid-column-gap: 36.2px;
@@ -116,7 +116,7 @@
 		white-space: nowrap;
 
 		& + & {
-			margin-top: 38px;
+			margin-top: 30px;
 		}
 	}
 
@@ -176,5 +176,9 @@
 		& + & {
 			margin-top: 30px;
 		}
+	}
+
+	.c-sp-header-nav-anchor {
+		margin-left: 2.5em;
 	}
 }

@@ -143,10 +143,17 @@ function scrollToHashByMobile() {
 
     if (hash) {
       var headerHeight = document.querySelector('.js-header').clientHeight;
-      var ScrollHeight = headerHeight * -1;
+      var scrollHeight = headerHeight * -1;
+
+      if (hash.indexOf('#recruit-block') === 0) {
+        // 採用ページ用ナビゲーションの高さ(198px)を追加
+        scrollHeight = scrollHeight - 198;
+        console.log(scrollHeight);
+      }
+
       setTimeout(function () {
         window.scrollBy({
-          top: ScrollHeight,
+          top: scrollHeight,
           behavior: 'smooth'
         });
       }, 500);
