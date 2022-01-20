@@ -72,6 +72,7 @@
 		color: $base-white;
 		display: flex;
 		font-size: 14px;
+		height: 28px;
 		padding: 4px 30px 4px 34px;
 
 		&.is-top {
@@ -99,5 +100,6 @@
 .l-header-require__text {
 	@include pc {
 		margin-left: 17px;
+		line-height: 1;
 	}
 }

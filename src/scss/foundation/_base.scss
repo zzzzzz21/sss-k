@@ -14,7 +14,7 @@ body {
 	width: 100%;
 
 	@include pc {
-		min-width: $PC_CONTENT_WIDTH;
+		// min-width: $PC_CONTENT_WIDTH;
 	}
 }
 

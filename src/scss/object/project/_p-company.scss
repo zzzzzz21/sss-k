@@ -80,11 +80,12 @@
 
 .p-company-index-visual-signiture {
 	@include sp {
-		min-width: 157px;
-		width: 100%;
+		width: 157px;
+		text-align: left;
 
 		img {
-			width: 86.578947%;
+			height: auto;
+			width: 100%;
 		}
 	}
 }

@@ -97,14 +97,14 @@ for (let i = 0; i < scrollTrigger.length; i++) {
         const offset = window.pageYOffset;
         // ヘッダーがトップ固定の場合はヘッダーの高さを入れる。
         let gap = 0;
-				if(isSmartPhone) {
-					const headerHeight = document.querySelector('.js-header');
-					gap = headerHeight.clientHeight;
-				}
-				if(recruit) {
-					const recruitNav = document.querySelector('.js-recruit-nav');
-					gap += recruitNav.clientHeight;
-				}
+		if(isSmartPhone) {
+			const headerHeight = document.querySelector('.js-header');
+			gap = headerHeight.clientHeight;
+		}
+		if(recruit) {
+			const recruitNav = document.querySelector('.js-recruit-nav');
+			gap += recruitNav.clientHeight;
+		}
         // 目的の要素の位置
         const target = rect + offset - gap;
         // behaviorでスピードを調整する。
@@ -276,6 +276,25 @@ if(recruit) {
 		targetHeight = titleHeight;
 		addTopToNav = headerHeight;
 		// addHeightToWrapper = recruitNavElementHeight + headerHeight;
+
+		// 募集要項ページ内で、ハンバーガーメニュ内の募集要項リンクをクリックしたときの処理
+		const recruitHeaderHeight = document.querySelector('.js-header').clientHeight;
+		const recruitNavElementHeight = document.querySelector('.js-recruit-nav').clientHeight;
+		const recruitScrollHeight = (recruitHeaderHeight + recruitNavElementHeight) * -1;
+		const recruitNavLink = document.querySelectorAll('.c-sp-header-nav-anchor__link');
+		for (let i = 0; i < recruitNavLink.length; i++) {
+			recruitNavLink[i].addEventListener('click', function() {
+				toggleMenu();
+
+				setTimeout(function() {
+					window.scrollBy({
+						top: recruitScrollHeight,
+						behavior: 'smooth',
+					});
+				}, 500)
+			})
+		}
+
 	} else {
 		targetHeight = headerHeight + titleHeight;
 		addTopToNav = 0;

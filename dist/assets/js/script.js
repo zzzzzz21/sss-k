@@ -303,8 +303,28 @@ if (recruit) {
   /** スマートフォンの時はナビゲーションの固定位置と固定開始タイミングを調整する */
 
   if (isSmartPhone) {
-    targetHeight = titleHeight;
-    addTopToNav = headerHeight; // addHeightToWrapper = recruitNavElementHeight + headerHeight;
+    (function () {
+      targetHeight = titleHeight;
+      addTopToNav = headerHeight; // addHeightToWrapper = recruitNavElementHeight + headerHeight;
+      // 募集要項ページ内で、ハンバーガーメニュ内の募集要項リンクをクリックしたときの処理
+
+      var recruitHeaderHeight = document.querySelector('.js-header').clientHeight;
+      var recruitNavElementHeight = document.querySelector('.js-recruit-nav').clientHeight;
+      var recruitScrollHeight = (recruitHeaderHeight + recruitNavElementHeight) * -1;
+      var recruitNavLink = document.querySelectorAll('.c-sp-header-nav-anchor__link');
+
+      for (var _i2 = 0; _i2 < recruitNavLink.length; _i2++) {
+        recruitNavLink[_i2].addEventListener('click', function () {
+          toggleMenu();
+          setTimeout(function () {
+            window.scrollBy({
+              top: recruitScrollHeight,
+              behavior: 'smooth'
+            });
+          }, 500);
+        });
+      }
+    })();
   } else {
     targetHeight = headerHeight + titleHeight;
     addTopToNav = 0;

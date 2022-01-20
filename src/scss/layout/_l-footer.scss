@@ -106,7 +106,7 @@
 
 .l-footer-nav {
 	border-top: 1px solid $base-blue;
-	padding: 34px 40px 24px;
+	padding: 34px 10px 24px;
 
 	@include sp {
 		display: none;
@@ -129,6 +129,11 @@
 	&:nth-of-type(n + 2) {
 		margin-left: 45px;
 	}
+
+	&:nth-of-type(2) {
+		max-width: 362px;
+		flex: 1;
+	}
 }
 
 .l-footer-nav-block {
@@ -147,7 +152,7 @@
 
 .l-footer-nav-block__wrapper {
 	display: flex;
-	min-width: 362px;
+	// min-width: 362px;
 	justify-content: space-between;
 }
 
