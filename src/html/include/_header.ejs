@@ -2,7 +2,13 @@
 <header class="l-header js-header">
 	<div class="l-header-wrapper">
 		<h1 class="l-header-logo">
-			<a href="<%- d.path %>" class="l-header-logo__link"><img src="<%- d.path %>assets/images/common/icon-ci.svg" alt="株式会社サンエス工業"></a>
+			<a href="<%- d.path %>" class="l-header-logo__link">
+				<picture>
+					<source media="(max-width: 768px)" srcset="<%- d.path %>assets/images/common/icon-ci@2x.png">
+					<source media="(min-width: 769px)" srcset="<%- d.path %>assets/images/common/icon-ci.png">
+					<img src="<%- d.path %>assets/images/common/icon-ci.png" alt="株式会社サンエス工業" width="292" height="35">
+				</picture>
+			</a>
 		</h1>
 		<a href="<%- d.path %>contact/" class="l-header-require<% if (d.isTop) { -%> is-top<% } -%>">
 			<span class="l-header-require__text">お問い合わせ</span>

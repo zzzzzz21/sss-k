@@ -136,7 +136,13 @@ return $result;
 			<header class="l-header js-header">
 				<div class="l-header-wrapper">
 					<h1 class="l-header-logo">
-						<a href="../" class="l-header-logo__link"><img src="../assets/images/common/icon-ci.svg" alt="株式会社サンエス工業"></a>
+						<a href="../" class="l-header-logo__link">
+							<picture>
+								<source media="(max-width: 768px)" srcset="../assets/images/common/icon-ci@2x.png">
+								<source media="(min-width: 769px)" srcset="../assets/images/common/icon-ci.png">
+								<img src="../assets/images/common/icon-ci.png" alt="株式会社サンエス工業" width="292" height="35">
+							</picture>
+						</a>
 					</h1>
 					<a href="../contact/" class="l-header-require">
 						<span class="l-header-require__text">お問い合わせ</span>
