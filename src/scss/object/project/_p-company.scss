@@ -165,12 +165,12 @@
 
 	@include pc {
 		padding-top: 70px;
-		padding-bottom: 105px;
+		padding-bottom: 130px;
 	}
 
 	@include sp {
 		padding-top: 42px;
-		padding-bottom: 28px;
+		padding-bottom: 54px;
 	}
 }
 
@@ -190,7 +190,7 @@
 	@include pc {
 		display: flex;
 		margin-top: 25px;
-		min-height: 235px;
+		min-height: 232px;
 	}
 
 	@include sp {
@@ -218,11 +218,12 @@
 
 .p-company-locations-detail-button {
 	@include pc {
-		margin-top: 10px;
+		margin: 10px 0 34px;
+		margin-bottom: 34px;
 	}
 
 	@include sp {
-		margin-top: 18px;
+		margin: 18px 0;
 		text-align: center;
 	}
 }
@@ -257,6 +258,16 @@
 		img {
 			width: 100%;
 		}
+	}
+}
+
+.p-company-locations-list {
+	@include pc {
+		margin-top: 10px;
+	}
+
+	@include sp {
+		margin-top: 25px;
 	}
 }
 

@@ -148,7 +148,6 @@ function scrollToHashByMobile() {
       if (hash.indexOf('#recruit-block') === 0) {
         // 採用ページ用ナビゲーションの高さ(198px)を追加
         scrollHeight = scrollHeight - 198;
-        console.log(scrollHeight);
       }
 
       setTimeout(function () {

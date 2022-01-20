@@ -1,0 +1,24 @@
+.c-vertical-list {
+	@include pc {
+		display: flex;
+		flex-flow: column wrap;
+		height: 140px;
+
+		&.is-4 {
+			height: 120px;
+		}
+	}
+}
+
+.c-vertical-list-item {
+	@include pc {
+		font-size: 14px;
+		line-height: 1.8;
+		width: 25%;
+	}
+
+	@include sp {
+		font-size: 13px;
+		line-height: 1.75;
+	}
+}

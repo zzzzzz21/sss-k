@@ -42,8 +42,10 @@
 			right: 0;
 			top: auto;
 
-			@include sp {
-				display: none;
+			&:not(.is-show-sp) {
+				@include sp {
+					display: none;
+				}
 			}
 		}
 	}

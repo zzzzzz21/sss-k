@@ -61,7 +61,6 @@
 }
 
 .c-button-plane {
-	@include hoverOpacity(0.5);
 	align-items: center;
 	background: $base-light-gray;
 	color: $base-white;
@@ -72,6 +71,10 @@
 	@include pc {
 		font-size: 12px;
 		min-width: 80px;
+
+		&:hover {
+			background: $base-blue;
+		}
 	}
 
 	@include sp {

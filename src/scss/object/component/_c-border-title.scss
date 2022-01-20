@@ -1,0 +1,16 @@
+.c-border-title {
+	border-bottom: 1px solid $c-border-title-border;
+	color: $base-blue;
+	letter-spacing: 0.1em;
+	line-height: 2.4;
+
+	@include pc {
+		font-size: 12px;
+		margin-bottom: 16px;
+	}
+
+	@include sp {
+		font-size: 11px;
+		margin-bottom: 20px;
+	}
+}
