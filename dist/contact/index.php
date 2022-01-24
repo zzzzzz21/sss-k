@@ -55,253 +55,253 @@ $post = (isset($_SESSION['post']) ? $_SESSION['post'] : '');
 			</defs>
 		</svg>
 		<div class="l-wrapper">
-          <header class="l-header js-header">
-            <div class="l-header-wrapper">
-              <h1 class="l-header-logo">
-                <a href="../" class="l-header-logo__link">
-                  <picture>
-                    <source media="(max-width: 768px)" srcset="../assets/images/common/icon-ci@2x.png">
-                    <source media="(min-width: 769px)" srcset="../assets/images/common/icon-ci.png">
-                    <img src="../assets/images/common/icon-ci.png" alt="株式会社サンエス工業" width="292" height="35">
-                  </picture>
-                </a>
-              </h1>
-              <a href="../contact/" class="l-header-require">
-                <span class="l-header-require__text">お問い合わせ</span>
-              </a>
-            </div>
-            <nav class="c-pc-header-nav">
-              <ul class="c-pc-header-nav-list">
-                <li class="c-pc-header-nav-list__item">
-                  <div class="c-pc-header-nav-list__wrapper">
-                    <a href="../introduction/" class="c-pc-header-nav-list__head">サンエス工業を語る</a>
-                    <div class="c-pc-header-nav-block">
-                      <div class="c-pc-header-nav-block__text">
-                        <a href="../introduction/" class="c-pc-header-nav-block__link">「空気」で創り出す快適な空間</a>
-                      </div>
-                      <div class="c-pc-header-nav-block__text">
-                        <a href="../introduction/02/" class="c-pc-header-nav-block__link">サンエスらしさって何だろう</a>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="c-pc-header-nav-list__item">
-                  <div class="c-pc-header-nav-list__wrapper">
-                    <a href="../business/silencer/" class="c-pc-header-nav-list__head">Business Lineup</a>
-                    <div class="c-pc-header-nav-block">
-                      <div class="c-pc-header-nav-block-item">
-                        <div class="c-pc-header-nav-block-item__title">消音部門</div>
-                        <div class="c-pc-header-nav-block-item__inner">
-                          <div class="c-pc-header-nav-block__text">
-                            <a href="../business/silencer/" class="c-pc-header-nav-block__link">部門紹介</a>
-                          </div>
-                          <div class="c-pc-header-nav-block__text">
-                            <a href="../business/silencer/products.html" class="c-pc-header-nav-block__link">製品紹介</a>
-                          </div>
-                          <div class="c-pc-header-nav-block__text">
-                            <a href="../business/silencer/works.html" class="c-pc-header-nav-block__link">導入実績</a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="c-pc-header-nav-block-item">
-                        <div class="c-pc-header-nav-block-item__title">空調部門</div>
-                        <div class="c-pc-header-nav-block-item__inner">
-                          <div class="c-pc-header-nav-block__text">
-                            <a href="../business/air-conditioning/" class="c-pc-header-nav-block__link">部門紹介</a>
-                          </div>
-                          <div class="c-pc-header-nav-block__text">
-                            <a href="../business/air-conditioning/products.html" class="c-pc-header-nav-block__link">製品紹介</a>
-                          </div>
-                          <div class="c-pc-header-nav-block__text">
-                            <a href="../business/air-conditioning/works.html" class="c-pc-header-nav-block__link">導入実績</a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="c-pc-header-nav-block-item">
-                        <div class="c-pc-header-nav-block-item__title">ダクト部門</div>
-                        <div class="c-pc-header-nav-block-item__inner">
-                          <div class="c-pc-header-nav-block__text">
-                            <a href="../business/duct/" class="c-pc-header-nav-block__link">部門紹介</a>
-                          </div>
-                          <div class="c-pc-header-nav-block__text">
-                            <a href="../business/duct/business.html" class="c-pc-header-nav-block__link">業務紹介</a>
-                          </div>
-                          <div class="c-pc-header-nav-block__text">
-                            <a href="../business/duct/construction.html" class="c-pc-header-nav-block__link">施工実績</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="c-pc-header-nav-list__item">
-                  <div class="c-pc-header-nav-list__wrapper">
-                    <a href="../company/" class="c-pc-header-nav-list__head">About us</a>
-                    <div class="c-pc-header-nav-block">
-                      <div class="c-pc-header-nav-block__text">
-                        <a href="../company/" class="c-pc-header-nav-block__link">ご挨拶・企業理念</a>
-                      </div>
-                      <div class="c-pc-header-nav-block__text">
-                        <a href="../company/about.html" class="c-pc-header-nav-block__link">会社概要</a>
-                      </div>
-                      <div class="c-pc-header-nav-block__text">
-                        <a href="../company/history.html" class="c-pc-header-nav-block__link">沿革</a>
-                      </div>
-                      <div class="c-pc-header-nav-block__text">
-                        <a href="../company/locations.html" class="c-pc-header-nav-block__link">事業拠点</a>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="c-pc-header-nav-list__item">
-                  <div class="c-pc-header-nav-list__wrapper">
-                    <a href="../recruit/" class="c-pc-header-nav-list__head">採用情報</a>
-                    <div class="c-pc-header-nav-block">
-                      <div class="c-pc-header-nav-block__text">
-                        <a href="../recruit/" class="c-pc-header-nav-block__link">募集要項</a>
-                      </div>
-                      <div class="c-pc-header-nav-block__text">
-                        <a href="../contact-recruit/" class="c-pc-header-nav-block__link">採用お問い合わせ</a>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </nav>
-            <button class="c-sp-header-nav-button js-header-button" aria-label="グローバルナビゲーション" aria-controls="aria-navigation">
-              <span class="c-sp-header-nav-button__lines">
-                <span class="c-sp-header-nav-button__line"></span>
-                <span class="c-sp-header-nav-button__line"></span>
-              </span>
-            </button>
-            <nav class="c-sp-header-nav js-header-menu" id="aria-navigation" aria-label="グローバルナビゲーション">
-              <ul class="c-sp-header-nav-list" role=tablist>
-                <li class="c-sp-header-nav-list__item">
-                  <div class="c-sp-header-nav-block js-accordion">
-                    <div class="c-sp-header-nav-block__sub">Introduction</div>
-                    <button class="c-sp-header-nav-block__head js-accordion-tab" type="button" id="js-accordion-tab-1" role="tab" aria-controls="js-accordion-panel-1" aria-selected="false">サンエス工業を語る</button>
-                    <div class="c-sp-header-nav-block__list js-accordion-panel" id="js-accordion-panel-1" role="tabpanel" aria-labelledby="js-accordion-tab-1" aria-expanded="false" aria-hidden="true">
-                      <div class="c-sp-header-nav-block__item">
-                        <a href="../introduction/" class="c-sp-header-nav-block__link">- 「空気」で創り出す快適な空間</a>
-                      </div>
-                      <div class="c-sp-header-nav-block__item">
-                        <a href="../introduction/02/" class="c-sp-header-nav-block__link">- サンエスらしさって何だろう</a>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="c-sp-header-nav-list__item">
-                  <div class="c-sp-header-nav-block js-accordion">
-                    <div class="c-sp-header-nav-block__sub">Business Lineup　事業案内</div>
-                    <div class="c-sp-header-nav-block__content">
-                      <button class="c-sp-header-nav-block__head js-accordion-tab" type="button" id="js-accordion-tab-2" role="tab" aria-controls="js-accordion-panel-2" aria-selected="false">消音部門</button>
-                      <div class="c-sp-header-nav-block__list js-accordion-panel" id="js-accordion-panel-2" role="tabpanel" aria-labelledby="js-accordion-tab-2" aria-expanded="false" aria-hidden="true">
-                        <div class="c-sp-header-nav-block__item">
-                          <a href="../business/silencer/" class="c-sp-header-nav-block__link">- 部門紹介</a>
-                        </div>
-                        <div class="c-sp-header-nav-block__item">
-                          <a href="../business/silencer/products.html" class="c-sp-header-nav-block__link">- 製品紹介</a>
-                        </div>
-                        <div class="c-sp-header-nav-block__item">
-                          <a href="../business/silencer/works.html" class="c-sp-header-nav-block__link">- 導入実績</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="c-sp-header-nav-block__content">
-                      <button class="c-sp-header-nav-block__head js-accordion-tab" type="button" id="js-accordion-tab-3" role="tab" aria-controls="js-accordion-panel-3" aria-selected="false">空調部門</button>
-                      <div class="c-sp-header-nav-block__list js-accordion-panel" id="js-accordion-panel-3" role="tabpanel" aria-labelledby="js-accordion-tab-3" aria-expanded="false" aria-hidden="true">
-                        <div class="c-sp-header-nav-block__item">
-                          <a href="../business/air-conditioning/" class="c-sp-header-nav-block__link">- 部門紹介</a>
-                        </div>
-                        <div class="c-sp-header-nav-block__item">
-                          <a href="../business/air-conditioning/products.html" class="c-sp-header-nav-block__link">- 製品紹介</a>
-                        </div>
-                        <div class="c-sp-header-nav-block__item">
-                          <a href="../business/air-conditioning/works.html" class="c-sp-header-nav-block__link">- 導入実績</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="c-sp-header-nav-block__content">
-                      <button class="c-sp-header-nav-block__head js-accordion-tab" type="button" id="js-accordion-tab-4" role="tab" aria-controls="js-accordion-panel-4" aria-selected="false">ダクト部門</button>
-                      <div class="c-sp-header-nav-block__list js-accordion-panel" id="js-accordion-panel-4" role="tabpanel" aria-labelledby="js-accordion-tab-4" aria-expanded="false" aria-hidden="true">
-                        <div class="c-sp-header-nav-block__item">
-                          <a href="../business/duct/" class="c-sp-header-nav-block__link">- 部門紹介</a>
-                        </div>
-                        <div class="c-sp-header-nav-block__item">
-                          <a href="../business/duct/business.html" class="c-sp-header-nav-block__link">- 業務紹介</a>
-                        </div>
-                        <div class="c-sp-header-nav-block__item">
-                          <a href="../business/duct/construction.html" class="c-sp-header-nav-block__link">- 施工実績</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="c-sp-header-nav-list__item">
-                  <div class="c-sp-header-nav-block js-accordion">
-                    <div class="c-sp-header-nav-block__sub">About us　会社案内</div>
-                    <button class="c-sp-header-nav-block__head js-accordion-tab" type="button" id="js-accordion-tab-5" role="tab" aria-controls="js-accordion-panel-5" aria-selected="false">企業情報</button>
-                    <div class="c-sp-header-nav-block__list js-accordion-panel" id="js-accordion-panel-5" role="tabpanel" aria-labelledby="js-accordion-tab-5" aria-expanded="false" aria-hidden="true">
-                      <div class="c-sp-header-nav-block__item">
-                        <a href="../company/" class="c-sp-header-nav-block__link">- ご挨拶・企業理念</a>
-                      </div>
-                      <div class="c-sp-header-nav-block__item">
-                        <a href="../company/about.html" class="c-sp-header-nav-block__link">- 会社概要</a>
-                      </div>
-                      <div class="c-sp-header-nav-block__item">
-                        <a href="../company/history.html" class="c-sp-header-nav-block__link">- 沿革</a>
-                      </div>
-                      <div class="c-sp-header-nav-block__item">
-                        <a href="../company/locations.html" class="c-sp-header-nav-block__link">- 事業拠点</a>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="c-sp-header-nav-list__item">
-                  <div class="c-sp-header-nav-block js-accordion">
-                    <button class="c-sp-header-nav-block__head js-accordion-tab" type="button" id="js-accordion-tab-6" role="tab" aria-controls="js-accordion-panel-6" aria-selected="false">採用情報</button>
-                    <div class="c-sp-header-nav-block__list js-accordion-panel" id="js-accordion-panel-6" role="tabpanel" aria-labelledby="js-accordion-tab-6" aria-expanded="false" aria-hidden="true">
-                      <div class="c-sp-header-nav-block__item">
-                        <a href="../recruit/" class="c-sp-header-nav-block__link">- 募集要項</a>
-                      </div>
-                      <div class="c-sp-header-nav-block__item">
-                        <span class="c-sp-header-nav-block__link">- 新卒採用</span>
-                        <ul class="c-sp-header-nav-anchor">
-                          <!--<li class="c-sp-header-nav-anchor__item">
+			<header class="l-header js-header">
+				<div class="l-header-wrapper">
+					<h1 class="l-header-logo">
+						<a href="../" class="l-header-logo__link">
+							<picture>
+								<source media="(max-width: 768px)" srcset="../assets/images/common/icon-ci@2x.png">
+								<source media="(min-width: 769px)" srcset="../assets/images/common/icon-ci.png">
+								<img src="../assets/images/common/icon-ci.png" alt="株式会社サンエス工業" width="292" height="35">
+							</picture>
+						</a>
+					</h1>
+					<a href="../contact/" class="l-header-require">
+						<span class="l-header-require__text">お問い合わせ</span>
+					</a>
+				</div>
+				<nav class="c-pc-header-nav">
+					<ul class="c-pc-header-nav-list">
+						<li class="c-pc-header-nav-list__item">
+							<div class="c-pc-header-nav-list__wrapper">
+								<a href="../introduction/" class="c-pc-header-nav-list__head">サンエス工業を語る</a>
+								<div class="c-pc-header-nav-block">
+									<div class="c-pc-header-nav-block__text">
+										<a href="../introduction/" class="c-pc-header-nav-block__link">「空気」で創り出す快適な空間</a>
+									</div>
+									<div class="c-pc-header-nav-block__text">
+										<a href="../introduction/02/" class="c-pc-header-nav-block__link">サンエスらしさって何だろう</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="c-pc-header-nav-list__item">
+							<div class="c-pc-header-nav-list__wrapper">
+								<a href="../business/silencer/" class="c-pc-header-nav-list__head">Business Lineup</a>
+								<div class="c-pc-header-nav-block">
+									<div class="c-pc-header-nav-block-item">
+										<div class="c-pc-header-nav-block-item__title">消音部門</div>
+										<div class="c-pc-header-nav-block-item__inner">
+											<div class="c-pc-header-nav-block__text">
+												<a href="../business/silencer/" class="c-pc-header-nav-block__link">部門紹介</a>
+											</div>
+											<div class="c-pc-header-nav-block__text">
+												<a href="../business/silencer/products.html" class="c-pc-header-nav-block__link">製品紹介</a>
+											</div>
+											<div class="c-pc-header-nav-block__text">
+												<a href="../business/silencer/works.html" class="c-pc-header-nav-block__link">導入実績</a>
+											</div>
+										</div>
+									</div>
+									<div class="c-pc-header-nav-block-item">
+										<div class="c-pc-header-nav-block-item__title">空調部門</div>
+										<div class="c-pc-header-nav-block-item__inner">
+											<div class="c-pc-header-nav-block__text">
+												<a href="../business/air-conditioning/" class="c-pc-header-nav-block__link">部門紹介</a>
+											</div>
+											<div class="c-pc-header-nav-block__text">
+												<a href="../business/air-conditioning/products.html" class="c-pc-header-nav-block__link">製品紹介</a>
+											</div>
+											<div class="c-pc-header-nav-block__text">
+												<a href="../business/air-conditioning/works.html" class="c-pc-header-nav-block__link">導入実績</a>
+											</div>
+										</div>
+									</div>
+									<div class="c-pc-header-nav-block-item">
+										<div class="c-pc-header-nav-block-item__title">ダクト部門</div>
+										<div class="c-pc-header-nav-block-item__inner">
+											<div class="c-pc-header-nav-block__text">
+												<a href="../business/duct/" class="c-pc-header-nav-block__link">部門紹介</a>
+											</div>
+											<div class="c-pc-header-nav-block__text">
+												<a href="../business/duct/business.html" class="c-pc-header-nav-block__link">業務紹介</a>
+											</div>
+											<div class="c-pc-header-nav-block__text">
+												<a href="../business/duct/construction.html" class="c-pc-header-nav-block__link">施工実績</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="c-pc-header-nav-list__item">
+							<div class="c-pc-header-nav-list__wrapper">
+								<a href="../company/" class="c-pc-header-nav-list__head">About us</a>
+								<div class="c-pc-header-nav-block">
+									<div class="c-pc-header-nav-block__text">
+										<a href="../company/" class="c-pc-header-nav-block__link">ご挨拶・企業理念</a>
+									</div>
+									<div class="c-pc-header-nav-block__text">
+										<a href="../company/about.html" class="c-pc-header-nav-block__link">会社概要</a>
+									</div>
+									<div class="c-pc-header-nav-block__text">
+										<a href="../company/history.html" class="c-pc-header-nav-block__link">沿革</a>
+									</div>
+									<div class="c-pc-header-nav-block__text">
+										<a href="../company/locations.html" class="c-pc-header-nav-block__link">事業拠点</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="c-pc-header-nav-list__item">
+							<div class="c-pc-header-nav-list__wrapper">
+								<a href="../recruit/" class="c-pc-header-nav-list__head">採用情報</a>
+								<div class="c-pc-header-nav-block">
+									<div class="c-pc-header-nav-block__text">
+										<a href="../recruit/" class="c-pc-header-nav-block__link">募集要項</a>
+									</div>
+									<div class="c-pc-header-nav-block__text">
+										<a href="../contact-recruit/" class="c-pc-header-nav-block__link">採用お問い合わせ</a>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</nav>
+				<button class="c-sp-header-nav-button js-header-button" aria-label="グローバルナビゲーション" aria-controls="aria-navigation">
+					<span class="c-sp-header-nav-button__lines">
+						<span class="c-sp-header-nav-button__line"></span>
+						<span class="c-sp-header-nav-button__line"></span>
+					</span>
+				</button>
+				<nav class="c-sp-header-nav js-header-menu" id="aria-navigation" aria-label="グローバルナビゲーション">
+					<ul class="c-sp-header-nav-list" role=tablist>
+						<li class="c-sp-header-nav-list__item">
+							<div class="c-sp-header-nav-block js-accordion">
+								<div class="c-sp-header-nav-block__sub">Introduction</div>
+								<button class="c-sp-header-nav-block__head js-accordion-tab" type="button" id="js-accordion-tab-1" role="tab" aria-controls="js-accordion-panel-1" aria-selected="false">サンエス工業を語る</button>
+								<div class="c-sp-header-nav-block__list js-accordion-panel" id="js-accordion-panel-1" role="tabpanel" aria-labelledby="js-accordion-tab-1" aria-expanded="false" aria-hidden="true">
+									<div class="c-sp-header-nav-block__item">
+										<a href="../introduction/" class="c-sp-header-nav-block__link">- 「空気」で創り出す快適な空間</a>
+									</div>
+									<div class="c-sp-header-nav-block__item">
+										<a href="../introduction/02/" class="c-sp-header-nav-block__link">- サンエスらしさって何だろう</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="c-sp-header-nav-list__item">
+							<div class="c-sp-header-nav-block js-accordion">
+								<div class="c-sp-header-nav-block__sub">Business Lineup　事業案内</div>
+								<div class="c-sp-header-nav-block__content">
+									<button class="c-sp-header-nav-block__head js-accordion-tab" type="button" id="js-accordion-tab-2" role="tab" aria-controls="js-accordion-panel-2" aria-selected="false">消音部門</button>
+									<div class="c-sp-header-nav-block__list js-accordion-panel" id="js-accordion-panel-2" role="tabpanel" aria-labelledby="js-accordion-tab-2" aria-expanded="false" aria-hidden="true">
+										<div class="c-sp-header-nav-block__item">
+											<a href="../business/silencer/" class="c-sp-header-nav-block__link">- 部門紹介</a>
+										</div>
+										<div class="c-sp-header-nav-block__item">
+											<a href="../business/silencer/products.html" class="c-sp-header-nav-block__link">- 製品紹介</a>
+										</div>
+										<div class="c-sp-header-nav-block__item">
+											<a href="../business/silencer/works.html" class="c-sp-header-nav-block__link">- 導入実績</a>
+										</div>
+									</div>
+								</div>
+								<div class="c-sp-header-nav-block__content">
+									<button class="c-sp-header-nav-block__head js-accordion-tab" type="button" id="js-accordion-tab-3" role="tab" aria-controls="js-accordion-panel-3" aria-selected="false">空調部門</button>
+									<div class="c-sp-header-nav-block__list js-accordion-panel" id="js-accordion-panel-3" role="tabpanel" aria-labelledby="js-accordion-tab-3" aria-expanded="false" aria-hidden="true">
+										<div class="c-sp-header-nav-block__item">
+											<a href="../business/air-conditioning/" class="c-sp-header-nav-block__link">- 部門紹介</a>
+										</div>
+										<div class="c-sp-header-nav-block__item">
+											<a href="../business/air-conditioning/products.html" class="c-sp-header-nav-block__link">- 製品紹介</a>
+										</div>
+										<div class="c-sp-header-nav-block__item">
+											<a href="../business/air-conditioning/works.html" class="c-sp-header-nav-block__link">- 導入実績</a>
+										</div>
+									</div>
+								</div>
+								<div class="c-sp-header-nav-block__content">
+									<button class="c-sp-header-nav-block__head js-accordion-tab" type="button" id="js-accordion-tab-4" role="tab" aria-controls="js-accordion-panel-4" aria-selected="false">ダクト部門</button>
+									<div class="c-sp-header-nav-block__list js-accordion-panel" id="js-accordion-panel-4" role="tabpanel" aria-labelledby="js-accordion-tab-4" aria-expanded="false" aria-hidden="true">
+										<div class="c-sp-header-nav-block__item">
+											<a href="../business/duct/" class="c-sp-header-nav-block__link">- 部門紹介</a>
+										</div>
+										<div class="c-sp-header-nav-block__item">
+											<a href="../business/duct/business.html" class="c-sp-header-nav-block__link">- 業務紹介</a>
+										</div>
+										<div class="c-sp-header-nav-block__item">
+											<a href="../business/duct/construction.html" class="c-sp-header-nav-block__link">- 施工実績</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="c-sp-header-nav-list__item">
+							<div class="c-sp-header-nav-block js-accordion">
+								<div class="c-sp-header-nav-block__sub">About us　会社案内</div>
+								<button class="c-sp-header-nav-block__head js-accordion-tab" type="button" id="js-accordion-tab-5" role="tab" aria-controls="js-accordion-panel-5" aria-selected="false">企業情報</button>
+								<div class="c-sp-header-nav-block__list js-accordion-panel" id="js-accordion-panel-5" role="tabpanel" aria-labelledby="js-accordion-tab-5" aria-expanded="false" aria-hidden="true">
+									<div class="c-sp-header-nav-block__item">
+										<a href="../company/" class="c-sp-header-nav-block__link">- ご挨拶・企業理念</a>
+									</div>
+									<div class="c-sp-header-nav-block__item">
+										<a href="../company/about.html" class="c-sp-header-nav-block__link">- 会社概要</a>
+									</div>
+									<div class="c-sp-header-nav-block__item">
+										<a href="../company/history.html" class="c-sp-header-nav-block__link">- 沿革</a>
+									</div>
+									<div class="c-sp-header-nav-block__item">
+										<a href="../company/locations.html" class="c-sp-header-nav-block__link">- 事業拠点</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="c-sp-header-nav-list__item">
+							<div class="c-sp-header-nav-block js-accordion">
+								<button class="c-sp-header-nav-block__head js-accordion-tab" type="button" id="js-accordion-tab-6" role="tab" aria-controls="js-accordion-panel-6" aria-selected="false">採用情報</button>
+								<div class="c-sp-header-nav-block__list js-accordion-panel" id="js-accordion-panel-6" role="tabpanel" aria-labelledby="js-accordion-tab-6" aria-expanded="false" aria-hidden="true">
+									<div class="c-sp-header-nav-block__item">
+										<a href="../recruit/" class="c-sp-header-nav-block__link">- 募集要項</a>
+									</div>
+									<div class="c-sp-header-nav-block__item">
+										<span class="c-sp-header-nav-block__link">- 新卒採用</span>
+										<ul class="c-sp-header-nav-anchor">
+											<!--<li class="c-sp-header-nav-anchor__item">
 <a href="../recruit/#recruit-block-1-1" class="c-sp-header-nav-anchor__link">●本社</a>
 </li>-->
-                          <li class="c-sp-header-nav-anchor__item">
-                            <a href="../recruit/#recruit-block-1-2" class="c-sp-header-nav-anchor__link">●東北支店</a>
-                          </li>
-                          <li class="c-sp-header-nav-anchor__item">
-                            <a href="../recruit/#recruit-block-1-3" class="c-sp-header-nav-anchor__link">●茨城工場</a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="c-sp-header-nav-block__item">
-                        <span class="c-sp-header-nav-block__link">- 中途採用</span>
-                        <ul class="c-sp-header-nav-anchor">
-                          <li class="c-sp-header-nav-anchor__item">
-                            <a href="../recruit/#recruit-block-2-1" class="c-sp-header-nav-anchor__link">●本社</a>
-                          </li>
-                          <li class="c-sp-header-nav-anchor__item">
-                            <a href="../recruit/#recruit-block-2-2" class="c-sp-header-nav-anchor__link">●東北支店</a>
-                          </li>
-                          <!--<li class="c-sp-header-nav-anchor__item">
+											<li class="c-sp-header-nav-anchor__item">
+												<a href="../recruit/#recruit-block-1-2" class="c-sp-header-nav-anchor__link">●東北支店</a>
+											</li>
+											<li class="c-sp-header-nav-anchor__item">
+												<a href="../recruit/#recruit-block-1-3" class="c-sp-header-nav-anchor__link">●茨城工場</a>
+											</li>
+										</ul>
+									</div>
+									<div class="c-sp-header-nav-block__item">
+										<span class="c-sp-header-nav-block__link">- 中途採用</span>
+										<ul class="c-sp-header-nav-anchor">
+											<li class="c-sp-header-nav-anchor__item">
+												<a href="../recruit/#recruit-block-2-1" class="c-sp-header-nav-anchor__link">●本社</a>
+											</li>
+											<li class="c-sp-header-nav-anchor__item">
+												<a href="../recruit/#recruit-block-2-2" class="c-sp-header-nav-anchor__link">●東北支店</a>
+											</li>
+											<!--<li class="c-sp-header-nav-anchor__item">
 <a href="../recruit/#recruit-block-2-3" class="c-sp-header-nav-anchor__link">●茨城工場</a>
 </li>-->
-                        </ul>
-                      </div>
-                      <div class="c-sp-header-nav-block__item">
-                        <a href="../contact-recruit/" class="c-sp-header-nav-block__link">- 採用お問い合わせ</a>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </nav>
-          </header>
-          <main class="l-main">
+										</ul>
+									</div>
+									<div class="c-sp-header-nav-block__item">
+										<a href="../contact-recruit/" class="c-sp-header-nav-block__link">- 採用お問い合わせ</a>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<main class="l-main">
 				<div class="l-content is-beige">
 					<div class="c-simple-head">
 						<h1 class="c-simple-head-title">お問い合わせフォーム</h1>
@@ -475,127 +475,127 @@ $post = (isset($_SESSION['post']) ? $_SESSION['post'] : '');
 					</div>
 				</div>
 			</main>
-          <footer class="l-footer">
-            <div class="l-footer-buttons">
-              <div class="l-footer-top-require"><a href="../require" class="l-footer-top-require__link">お問い合わせ</a></div>
-              <div class="l-footer-top-button">
-                <a href="#body" class="l-footer-top-button__link">up</a>
-              </div>
-            </div>
-            <nav class="l-footer-nav">
-              <ul class="l-footer-nav-list">
-                <li class="l-footer-nav-list__item">
-                  <div class="l-footer-nav-block">
-                    <h2 class="l-footer-nav-block__head">Introduction</h2>
-                    <h3 class="l-footer-nav-block__sub">サンエス工業を語る</h3>
-                    <ul class="l-footer-nav-block__list">
-                      <li class="l-footer-nav-block__item">
-                        <a href="../introduction/" class="l-footer-nav-block__link">- 「空気」で創り出す快適な空間</a>
-                      </li>
-                      <li class="l-footer-nav-block__item">
-                        <a href="../introduction/02/" class="l-footer-nav-block__link">- サンエスらしさって何だろう</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="l-footer-nav-list__item">
-                  <div class="l-footer-nav-block">
-                    <h2 class="l-footer-nav-block__head">Business Lineup<span>事業案内</span></h2>
-                    <div class="l-footer-nav-block__wrapper">
-                      <div class="l-footer-nav-block__content">
-                        <h2 class="l-footer-nav-block__sub">消音部門</h2>
-                        <ul class="l-footer-nav-block__list">
-                          <li class="l-footer-nav-block__item">
-                            <a href="../business/silencer/" class="l-footer-nav-block__link">- 部門紹介</a>
-                          </li>
-                          <li class="l-footer-nav-block__item">
-                            <a href="../business/silencer/products.html" class="l-footer-nav-block__link">- 製品紹介</a>
-                          </li>
-                          <li class="l-footer-nav-block__item">
-                            <a href="../business/silencer/works.html" class="l-footer-nav-block__link">- 導入実績</a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="l-footer-nav-block__content">
-                        <h2 class="l-footer-nav-block__sub">空調部門</h2>
-                        <ul class="l-footer-nav-block__list">
-                          <li class="l-footer-nav-block__item">
-                            <a href="../business/air-conditioning/" class="l-footer-nav-block__link">- 部門紹介</a>
-                          </li>
-                          <li class="l-footer-nav-block__item">
-                            <a href="../business/air-conditioning/products.html" class="l-footer-nav-block__link">- 製品紹介</a>
-                          </li>
-                          <li class="l-footer-nav-block__item">
-                            <a href="../business/air-conditioning/works.html" class="l-footer-nav-block__link">- 導入実績</a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="l-footer-nav-block__content">
-                        <h2 class="l-footer-nav-block__sub">ダクト部門</h2>
-                        <ul class="l-footer-nav-block__list">
-                          <li class="l-footer-nav-block__item">
-                            <a href="../business/duct/" class="l-footer-nav-block__link">- 部門紹介</a>
-                          </li>
-                          <li class="l-footer-nav-block__item">
-                            <a href="../business/duct/business.html" class="l-footer-nav-block__link">- 業務紹介</a>
-                          </li>
-                          <li class="l-footer-nav-block__item">
-                            <a href="../business/duct/construction.html" class="l-footer-nav-block__link">- 施工実績</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="l-footer-nav-list__item">
-                  <div class="l-footer-nav-block">
-                    <h2 class="l-footer-nav-block__head">About us<span>会社案内</span></h2>
-                    <h3 class="l-footer-nav-block__sub">企業情報</h3>
-                    <ul class="l-footer-nav-block__list">
-                      <li class="l-footer-nav-block__item">
-                        <a href="../company/" class="l-footer-nav-block__link">- ご挨拶・企業理念</a>
-                      </li>
-                      <li class="l-footer-nav-block__item">
-                        <a href="../company/about.html" class="l-footer-nav-block__link">- 会社概要</a>
-                      </li>
-                      <li class="l-footer-nav-block__item">
-                        <a href="../company/history.html" class="l-footer-nav-block__link">- 沿革</a>
-                      </li>
-                      <li class="l-footer-nav-block__item">
-                        <a href="../company/locations.html" class="l-footer-nav-block__link">- 事業拠点</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="l-footer-nav-list__item">
-                  <div class="l-footer-nav-block">
-                    <h2 class="l-footer-nav-block__sub">採用情報</h2>
-                    <ul class="l-footer-nav-block__list">
-                      <li class="l-footer-nav-block__item">
-                        <a href="../recruit/" class="l-footer-nav-block__link">- 募集要項</a>
-                      </li>
-                      <li class="l-footer-nav-block__item">
-                        <a href="../contact-recruit/" class="l-footer-nav-block__link">- 採用お問い合わせ</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="l-footer-nav-block">
-                    <h2 class="l-footer-nav-block__sub">お問い合わせ</h2>
-                    <ul class="l-footer-nav-block__list">
-                      <li class="l-footer-nav-block__item">
-                        <a href="../contact/" class="l-footer-nav-block__link">- お問い合わせ</a>
-                      </li>
-                      <li class="l-footer-nav-block__item">
-                        <a href="../privacy/" class="l-footer-nav-block__link">- プライバシーポリシー</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-            </nav>
-            <p class="l-footer-copy"><small>Copyright© SAN-ESU INDUSTRY Co.,Ltd. All Rights Reserved.</small></p>
-          </footer>
-      </div><!-- .l-wrapper -->
+			<footer class="l-footer">
+				<div class="l-footer-buttons">
+					<div class="l-footer-top-require"><a href="../require" class="l-footer-top-require__link">お問い合わせ</a></div>
+					<div class="l-footer-top-button">
+						<a href="#body" class="l-footer-top-button__link">up</a>
+					</div>
+				</div>
+				<nav class="l-footer-nav">
+					<ul class="l-footer-nav-list">
+						<li class="l-footer-nav-list__item">
+							<div class="l-footer-nav-block">
+								<h2 class="l-footer-nav-block__head">Introduction</h2>
+								<h3 class="l-footer-nav-block__sub">サンエス工業を語る</h3>
+								<ul class="l-footer-nav-block__list">
+									<li class="l-footer-nav-block__item">
+										<a href="../introduction/" class="l-footer-nav-block__link">- 「空気」で創り出す快適な空間</a>
+									</li>
+									<li class="l-footer-nav-block__item">
+										<a href="../introduction/02/" class="l-footer-nav-block__link">- サンエスらしさって何だろう</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="l-footer-nav-list__item">
+							<div class="l-footer-nav-block">
+								<h2 class="l-footer-nav-block__head">Business Lineup<span>事業案内</span></h2>
+								<div class="l-footer-nav-block__wrapper">
+									<div class="l-footer-nav-block__content">
+										<h2 class="l-footer-nav-block__sub">消音部門</h2>
+										<ul class="l-footer-nav-block__list">
+											<li class="l-footer-nav-block__item">
+												<a href="../business/silencer/" class="l-footer-nav-block__link">- 部門紹介</a>
+											</li>
+											<li class="l-footer-nav-block__item">
+												<a href="../business/silencer/products.html" class="l-footer-nav-block__link">- 製品紹介</a>
+											</li>
+											<li class="l-footer-nav-block__item">
+												<a href="../business/silencer/works.html" class="l-footer-nav-block__link">- 導入実績</a>
+											</li>
+										</ul>
+									</div>
+									<div class="l-footer-nav-block__content">
+										<h2 class="l-footer-nav-block__sub">空調部門</h2>
+										<ul class="l-footer-nav-block__list">
+											<li class="l-footer-nav-block__item">
+												<a href="../business/air-conditioning/" class="l-footer-nav-block__link">- 部門紹介</a>
+											</li>
+											<li class="l-footer-nav-block__item">
+												<a href="../business/air-conditioning/products.html" class="l-footer-nav-block__link">- 製品紹介</a>
+											</li>
+											<li class="l-footer-nav-block__item">
+												<a href="../business/air-conditioning/works.html" class="l-footer-nav-block__link">- 導入実績</a>
+											</li>
+										</ul>
+									</div>
+									<div class="l-footer-nav-block__content">
+										<h2 class="l-footer-nav-block__sub">ダクト部門</h2>
+										<ul class="l-footer-nav-block__list">
+											<li class="l-footer-nav-block__item">
+												<a href="../business/duct/" class="l-footer-nav-block__link">- 部門紹介</a>
+											</li>
+											<li class="l-footer-nav-block__item">
+												<a href="../business/duct/business.html" class="l-footer-nav-block__link">- 業務紹介</a>
+											</li>
+											<li class="l-footer-nav-block__item">
+												<a href="../business/duct/construction.html" class="l-footer-nav-block__link">- 施工実績</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="l-footer-nav-list__item">
+							<div class="l-footer-nav-block">
+								<h2 class="l-footer-nav-block__head">About us<span>会社案内</span></h2>
+								<h3 class="l-footer-nav-block__sub">企業情報</h3>
+								<ul class="l-footer-nav-block__list">
+									<li class="l-footer-nav-block__item">
+										<a href="../company/" class="l-footer-nav-block__link">- ご挨拶・企業理念</a>
+									</li>
+									<li class="l-footer-nav-block__item">
+										<a href="../company/about.html" class="l-footer-nav-block__link">- 会社概要</a>
+									</li>
+									<li class="l-footer-nav-block__item">
+										<a href="../company/history.html" class="l-footer-nav-block__link">- 沿革</a>
+									</li>
+									<li class="l-footer-nav-block__item">
+										<a href="../company/locations.html" class="l-footer-nav-block__link">- 事業拠点</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="l-footer-nav-list__item">
+							<div class="l-footer-nav-block">
+								<h2 class="l-footer-nav-block__sub">採用情報</h2>
+								<ul class="l-footer-nav-block__list">
+									<li class="l-footer-nav-block__item">
+										<a href="../recruit/" class="l-footer-nav-block__link">- 募集要項</a>
+									</li>
+									<li class="l-footer-nav-block__item">
+										<a href="../contact-recruit/" class="l-footer-nav-block__link">- 採用お問い合わせ</a>
+									</li>
+								</ul>
+							</div>
+							<div class="l-footer-nav-block">
+								<h2 class="l-footer-nav-block__sub">お問い合わせ</h2>
+								<ul class="l-footer-nav-block__list">
+									<li class="l-footer-nav-block__item">
+										<a href="../contact/" class="l-footer-nav-block__link">- お問い合わせ</a>
+									</li>
+									<li class="l-footer-nav-block__item">
+										<a href="../privacy/" class="l-footer-nav-block__link">- プライバシーポリシー</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</nav>
+				<p class="l-footer-copy"><small>Copyright© SAN-ESU INDUSTRY Co.,Ltd. All Rights Reserved.</small></p>
+			</footer>
+		</div><!-- .l-wrapper -->
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 		<script src="../assets/js/script.js"></script>
 	</body>
