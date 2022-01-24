@@ -106,8 +106,7 @@ gulp.task('imagemin', (done) => {
     imageminJpg(),
     imageminGif({
         interlaced: false,
-        optimizationLevel: 3,
-        colors:180
+        optimizationLevel: 1
     }),
     imageminSvg()
   ]
