@@ -357,11 +357,18 @@
 	}
 }
 
+.p-company-about-map-inner {
+	&[aria-hidden="true"] {
+		height: 0;
+		overflow: hidden;
+	}
+}
+
 .p-company-about-map-frame {
+	margin-top: 20px;
 	@include sp {
 		height: 0;
 		left: 0;
-		margin-top: 20px;
 		padding: 42.6785% 0 0;
 		position: relative;
 		top: 0;
@@ -374,6 +381,24 @@
 			top: 0;
 			width: 100%;
 		}
+	}
+}
+
+.p-company-about-map-button {
+	@include hoverOpacity(0.5);
+	align-items: center;
+	background: $base-light-blue;
+	display: flex;
+	font-size: inherit;
+	justify-content: center;
+	line-height: 1.7;
+	margin-top: 10px;
+	padding: 0.15em 0;
+	width: 100%;
+
+	span {
+		font-size: 0.9em;
+		margin-left: 1em;
 	}
 }
 
