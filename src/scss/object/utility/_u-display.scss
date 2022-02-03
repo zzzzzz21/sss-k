@@ -12,6 +12,6 @@
         display: none !important;
     }
     @include sp {
-        display: block !important;
+        visibility: visible !important;
     }
 }

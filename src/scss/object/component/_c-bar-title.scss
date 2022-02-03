@@ -28,7 +28,7 @@
 
 	&.is-white,
 	&.is-beige {
-		color: $c-bar-title-gray;
+		color: $base-black;
 		&::after {
 			background: url(#{$IMG_PATH}common/icon-blue-curve.svg) left top/100%
 				no-repeat;
@@ -52,11 +52,12 @@
 	}
 
 	&.is-small {
-		font-size: 14px;
+		font-size: 16px;
 		min-height: 27px;
 		width: 195px;
 
 		@include sp {
+    		font-size: 14px;
 			margin: 0;
 		}
 

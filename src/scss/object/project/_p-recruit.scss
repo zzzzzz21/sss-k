@@ -21,7 +21,8 @@
 	width: 100%;
 
 	@include pc {
-		height: 83px;
+		min-height: 83px;
+        padding:1em 0;
 		justify-content: center;
 	}
 

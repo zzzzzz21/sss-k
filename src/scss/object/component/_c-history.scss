@@ -58,7 +58,7 @@
 
 .c-history-dt {
 	color: $base-blue;
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: bold;
 	white-space: nowrap;
 
@@ -69,14 +69,14 @@
 
 .c-history-dd {
 	@include pc {
-		font-size: 14px;
+//		font-size: 14px;
 		line-height: 2.2;
 		margin: -5px 0 0 45px;
 	}
 
 	@include sp {
 		flex: 1;
-		font-size: 13px;
+//		font-size: 13px;
 		line-height: 1.8;
 		min-height: 70px;
 	}

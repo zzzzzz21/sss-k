@@ -17,11 +17,11 @@
 
 .c-archive-caption-title {
 	border-bottom: 1px solid $base-light-blue;
-	color: $base-gray;
+//	color: $base-gray;
 
 	@include pc {
 		flex: 1;
-		font-size: 16px;
+		font-size: 18px;
 		padding-bottom: 12px;
 	}
 

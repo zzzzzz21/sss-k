@@ -333,6 +333,9 @@ return $result;
 									<div class="c-sp-header-nav-block__item">
 										<a href="../company/locations.html" class="c-sp-header-nav-block__link">- 事業拠点</a>
 									</div>
+									<div class="c-sp-header-nav-block__item">
+										<a href="../privacy/" class="c-sp-header-nav-block__link">- プライバシーポリシー</a>
+									</div>
 								</div>
 							</div>
 						</li>

@@ -13,12 +13,12 @@
 }
 
 .c-roll-list-title-text {
-	color: $base-light-gray;
+//	color: $base-light-gray;
 	display: block;
 	padding: 0 20px 0;
 
 	@include pc {
-		font-size: 16px;
+		font-size: 18px;
 		width: 820px;
 	}
 
@@ -94,7 +94,7 @@
 }
 
 .c-roll-list-content-item {
-	font-size: 14px;
+//	font-size: 14px;
 	line-height: 2;
 	position: relative;
 	width: 100%;
@@ -133,7 +133,7 @@
 }
 
 .c-roll-list-table-item {
-	font-size: 14px;
+//	font-size: 14px;
 	line-height: 2;
 	position: relative;
 	width: 100%;
@@ -143,10 +143,33 @@
 	}
 
 	@include sp {
-		padding: 1.5px 0;
+        display: block;
+		padding: 0;
+        & + & {
+          margin-top: 1em;
+        }
 	}
 
 	&:not(:first-child) {
+		th {
+			&::before {
+				background-image: linear-gradient(
+					to right,
+					$base-beige,
+					$base-beige 2px,
+					transparent 2px,
+					transparent 4px
+				);
+				background-repeat: repeat-x;
+				background-size: 4px 1px;
+				top: 0;
+				content: "";
+				height: 1px;
+				left: 0;
+				position: absolute;
+				width: 100%;
+			}
+		}
 		td {
 			&::before {
 				background-image: linear-gradient(
@@ -168,6 +191,12 @@
 		}
 	}
 
+	th {
+        font-weight: normal;
+        text-align: left;
+        padding: 2px 2em 2px 0;
+        white-space: nowrap;
+	}
 	td {
 		padding: 2px 0;
 		&:first-child {
@@ -175,4 +204,13 @@
 			white-space: nowrap;
 		}
 	}
+    @include sp {
+        th, td {
+            display: block;
+            padding-right: 0;
+        }
+        th {
+            font-weight: 700;
+        }
+    }
 }

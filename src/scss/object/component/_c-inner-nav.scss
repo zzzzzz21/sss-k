@@ -1,6 +1,6 @@
 .c-inner-nav {
 	color: $base-blue;
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: bold;
     span {
         letter-spacing: .1em;
@@ -33,7 +33,9 @@
 		@include hoverOpacity;
 	}
 }
-
+.c-inner-nav-head-text {
+    font-size: 18px;
+}
 .c-inner-nav-item {
 	line-height: 1;
 	padding: 0 15px;
