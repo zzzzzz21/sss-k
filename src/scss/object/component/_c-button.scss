@@ -4,11 +4,12 @@
 	background: $base-light-blue;
 	color: $base-white;
 	display: flex;
+    font-weight: 700;
 	justify-content: center;
 	overflow: hidden;
 
 	@include pc {
-		font-size: 14px;
+//		font-size: 14px;
 		padding: 0.2em 0;
 
 		&:hover {

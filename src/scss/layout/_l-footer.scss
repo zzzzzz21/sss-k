@@ -115,7 +115,7 @@
 }
 
 .l-footer-nav-list {
-	color: $base-gray;
+	color: $base-black;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -145,7 +145,8 @@
 .l-footer-nav-block__head {
 	border-bottom: 1px solid $base-gray;
 	display: flex;
-	font-size: 10px;
+	font-size: 12px;
+    font-weight: normal;
 	justify-content: space-between;
 	margin-bottom: 8px;
 }
@@ -171,7 +172,7 @@
 }
 
 .l-footer-nav-block__link {
-	color: $base-gray;
+	color: $base-black;
 
 	&:hover,
 	&:focus {

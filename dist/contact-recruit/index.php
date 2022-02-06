@@ -38,7 +38,7 @@ $post = (isset($_SESSION['post']) ? $_SESSION['post'] : '');
 		<meta property="og:site_name" content="株式会社サンエス工業｜空調機器製造販売">
 		<meta property="og:description" content="採用お問い合わせ。株式会社サンエス工業は、昭和49年創業の空調機器及び消音機器の製造メーカーです。">
 		<meta name="description" content="株式会社サンエス工業は、昭和49年創業の空調機器及び消音機器の製造メーカーです。">
-		<link rel="stylesheet" href="../assets/css/style.css">
+		<link rel="stylesheet" href="../assets/css/style.css?20220207">
 	</head>
 	<body id="body" class="l-body js-body">
 		<!-- Google Tag Manager (noscript) -->

@@ -2,10 +2,10 @@
 	@include pc {
 		display: flex;
 		flex-flow: column wrap;
-		height: 140px;
+		height: 160px;
 
 		&.is-4 {
-//			height: 120px;
+          height: 140px;
 		}
 	}
 }

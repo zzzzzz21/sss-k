@@ -100,9 +100,9 @@
 		border: 3px solid $base-blue;
 		display: flex;
 		flex-direction: column;
-		height: 230px;
+		height: 250px;
 		padding: 30px 38px 38px;
-		width: 250px;
+		width: 300px;
 	}
 
 	@include sp {
@@ -145,7 +145,7 @@
 }
 
 .p-top-card__title {
-	color: $base-gray;
+	color: $base-black;
 	font-weight: 500;
 	line-height: 1.2;
 	text-align: center;
