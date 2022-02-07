@@ -113,7 +113,7 @@ return $result;
 		<meta property="og:type" content="article">
 		<meta name="format-detection" content="telephone=no">
 		<meta property="og:title" content="お問い合わせ 確認 | 株式会社サンエス工業｜空調機器製造販売">
-		<meta property="og:url" content="http://www.sss-k.co.jp/contact/confirm.html">
+		<meta property="og:url" content="https://www.sss-k.co.jp/contact/confirm.html">
 		<meta property="og:site_name" content="株式会社サンエス工業｜空調機器製造販売">
 		<meta property="og:description" content="お問い合わせ 確認。株式会社サンエス工業は、昭和49年創業の空調機器及び消音機器の製造メーカーです。">
 		<meta name="description" content="株式会社サンエス工業は、昭和49年創業の空調機器及び消音機器の製造メーカーです。">
