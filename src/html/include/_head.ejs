@@ -2,7 +2,8 @@
 	const d = jsonData;
 	const commonTitle = '株式会社サンエス工業｜空調機器製造販売';
 	const commonDescription = '株式会社サンエス工業は、昭和49年創業の空調機器及び消音機器の製造メーカーです。';
-	const domain = 'http://www.sss-k.co.jp';
+	const domain = 'https://www.sss-k.co.jp';
+    const update = '20220207';
 -%>
 <%- include('./_contact') %>
 <!DOCTYPE html>
@@ -24,7 +25,7 @@
 	<meta property="og:description" content="<%- d.title %>。<%- commonDescription %>">
 	<meta name="description" content="<%- commonDescription %>">
 	<% if(d.css) { -%><% for(var i=0; i < d.css.length;i++) { -%><link rel="stylesheet" href="<%- d.css[i] -%>"><% } -%><% } -%>
-	<link rel="stylesheet" href="<%- d.path %>assets/css/style.css">
+	<link rel="stylesheet" href="<%- d.path %>assets/css/style.css?<%- update %>">
 </head>
 <body id="body" class="l-body js-body">
 <%- include('./_gtm_body') %>

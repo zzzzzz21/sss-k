@@ -34,11 +34,11 @@ $post = (isset($_SESSION['post']) ? $_SESSION['post'] : '');
 		<meta property="og:type" content="article">
 		<meta name="format-detection" content="telephone=no">
 		<meta property="og:title" content="採用お問い合わせ | 株式会社サンエス工業｜空調機器製造販売">
-		<meta property="og:url" content="http://www.sss-k.co.jp/contact-recruit/index.html">
+		<meta property="og:url" content="https://www.sss-k.co.jp/contact-recruit/index.html">
 		<meta property="og:site_name" content="株式会社サンエス工業｜空調機器製造販売">
 		<meta property="og:description" content="採用お問い合わせ。株式会社サンエス工業は、昭和49年創業の空調機器及び消音機器の製造メーカーです。">
 		<meta name="description" content="株式会社サンエス工業は、昭和49年創業の空調機器及び消音機器の製造メーカーです。">
-		<link rel="stylesheet" href="../assets/css/style.css">
+		<link rel="stylesheet" href="../assets/css/style.css?20220207">
 	</head>
 	<body id="body" class="l-body js-body">
 		<!-- Google Tag Manager (noscript) -->
@@ -254,6 +254,9 @@ $post = (isset($_SESSION['post']) ? $_SESSION['post'] : '');
 									<div class="c-sp-header-nav-block__item">
 										<a href="../company/locations.html" class="c-sp-header-nav-block__link">- 事業拠点</a>
 									</div>
+									<div class="c-sp-header-nav-block__item">
+										<a href="../privacy/" class="c-sp-header-nav-block__link">- プライバシーポリシー</a>
+									</div>
 								</div>
 							</div>
 						</li>
@@ -331,7 +334,7 @@ if(isset($_GET['recruit_base'])) $get['recruit_base'] =  $_GET['recruit_base'];
 													<label for="form-matter3" class="c-input-radio-label">新卒採用</label>
 												</div>
 												<div class="c-input-radio-item">
-													<input type="radio" name="recruit_matter" id="form-matter4" value="中途採用" class="c-input-radio-input" <?php if((isset($post['recruit_matter']) && $post['recruit_matter'] == '中途採用' ) || $get['recruit_matter'] == '中途採用' ) echo 'checked'; ?>>
+													<input type="radio" name="recruit_matter" id="form-matter4" value="中途採用" class="c-input-radio-input" <?php if((isset($post['recruit_matter']) && $post['recruit_matter'] == '新卒採用' ) || $get['recruit_matter'] == '中途採用' ) echo 'checked'; ?>>
 													<label for="form-matter4" class="c-input-radio-label">中途採用</label>
 												</div>
 											</div> <?php if(isset($res['err']['recruit_matter'])): ?> <?php echo '<p class="c-input-error">'.$res['err']['recruit_matter'][0].'</p>'; ?> <?php endif ?>
@@ -353,7 +356,7 @@ if(isset($_GET['recruit_base'])) $get['recruit_base'] =  $_GET['recruit_base'];
 													<label for="form-matter6" class="c-input-radio-label">東北支店</label>
 												</div>
 												<div class="c-input-radio-item">
-													<input type="radio" name="recruit_base" id="form-matter7" value="茨城工場" class="c-input-radio-input" <?php if((isset($post['recruit_base']) && $post['recruit_base'] == '茨城工場' ) || $get['recruit_base'] == '茨城工場' ) echo 'checked'; ?>>
+													<input type="radio" name="recruit_base" id="form-matter7" value="茨城工場" class="c-input-radio-input" <?php if((isset($post['recruit_base']) && $post['recruit_base'] == '東北支店' ) || $get['recruit_base'] == '東北支店' ) echo 'checked'; ?>>
 													<label for="form-matter7" class="c-input-radio-label">茨城工場</label>
 												</div>
 											</div> <?php if(isset($res['err']['recruit_base'])): ?> <?php echo '<p class="c-input-error">'.$res['err']['recruit_base'][0].'</p>'; ?> <?php endif ?>

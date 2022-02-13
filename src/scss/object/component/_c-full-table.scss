@@ -45,28 +45,45 @@
 	letter-spacing: 0.1em;
 
 	@include pc {
-		font-size: 12px;
+//		font-size: 12px;
 		width: 170px;
+
+		.is-about & {
+//			font-size: 14px;
+			width: 190px;
+		}
 	}
 
 	@include sp {
-		font-size: 13px;
+//		font-size: 13px;
 		margin-bottom: 16px;
 		width: 100%;
+
+		.is-about & {
+//			font-size: 15px;
+		}
 	}
 }
 
 .c-full-table-dd {
 	@include pc {
 		flex: 1;
-		font-size: 14px;
+//		font-size: 14px;
 		line-height: 2.2;
+
+		.is-about & {
+//			font-size: 16px;
+		}
 	}
 
 	@include sp {
-		font-size: 13px;
+//		font-size: 13px;
 		line-height: 1.8;
 		width: 100%;
+
+		.is-about & {
+//			font-size: 15px;
+		}
 	}
 
 	small {

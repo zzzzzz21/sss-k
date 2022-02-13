@@ -6,11 +6,12 @@
 	border: 2px solid $base-light-blue;
 	color: $base-blue;
 	display: inline-flex;
-	font-size: 14px;
-	min-width: 284px;
+//	font-size: 14px;
+	min-width: 300px;
 	padding-right: 18px;
 
 	@include sp {
+      	font-size: 14px;
 		margin: 0 auto;
 		width: calc(100% - 20px);
 	}
@@ -47,7 +48,7 @@
 
 .c-image-button__text {
 	flex: 1;
-	font-size: 14px;
+//	font-size: 14px;
 	font-weight: bold;
 	letter-spacing: 0.4em;
 }

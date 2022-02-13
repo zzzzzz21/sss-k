@@ -2,23 +2,23 @@
 	@include pc {
 		display: flex;
 		flex-flow: column wrap;
-		height: 140px;
+		height: 160px;
 
 		&.is-4 {
-			height: 120px;
+          height: 140px;
 		}
 	}
 }
 
 .c-vertical-list-item {
 	@include pc {
-		font-size: 14px;
+//		font-size: 14px;
 		line-height: 1.8;
-		width: 25%;
+//		width: 25%;
 	}
 
 	@include sp {
-		font-size: 13px;
+//		font-size: 13px;
 		line-height: 1.75;
 	}
 }

@@ -1,6 +1,6 @@
 .c-lead-block-headline {
-	color: $base-gray;
-	font-weight: normal;
+	color: $base-navy;
+	font-weight: 700;
 
 	@include pc {
 		font-size: 26px;
@@ -9,23 +9,30 @@
 
 	@include sp {
 		font-size: 18px;
+		line-height: 1.75;
 	}
+  
+
+    &.is-black {
+      color: $base-black;
+    }
+
 }
 
 .c-lead-block-text {
 	@include pc {
-		font-size: 16px;
+//		font-size: 16px;
 		line-height: 2.05;
 		margin-top: 12px;
 
 		&.is-small {
-			font-size: 14px;
+//			font-size: 16px;
 			line-height: 2.2;
 		}
 	}
 
 	@include sp {
-		font-size: 13px;
+//		font-size: 13px;
 		line-height: 1.75;
 		margin-top: 18px;
 	}

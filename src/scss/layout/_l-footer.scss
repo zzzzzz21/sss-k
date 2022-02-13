@@ -55,13 +55,13 @@
 	color: $base-white;
 	display: block;
 	margin: 0 auto;
-	padding-top: 14px;
+	padding-top: 8px;
 	text-align: center;
 
 	@include pc {
-		font-size: 13px;
-		height: 38px;
-		width: 38px;
+		font-size: 16px;
+		height: 44px;
+		width: 44px;
 	}
 
 	@include sp {
@@ -115,14 +115,14 @@
 }
 
 .l-footer-nav-list {
-	color: $base-gray;
+	color: $base-black;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 }
 
 .l-footer-nav-list__item {
-	font-size: 11px;
+	font-size: 14px;
 	min-width: 120px;
 	white-space: nowrap;
 
@@ -145,7 +145,8 @@
 .l-footer-nav-block__head {
 	border-bottom: 1px solid $base-gray;
 	display: flex;
-	font-size: 10px;
+	font-size: 12px;
+    font-weight: normal;
 	justify-content: space-between;
 	margin-bottom: 8px;
 }
@@ -171,7 +172,7 @@
 }
 
 .l-footer-nav-block__link {
-	color: $base-gray;
+	color: $base-black;
 
 	&:hover,
 	&:focus {
