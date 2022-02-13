@@ -8,7 +8,7 @@ if (!(isset($_POST["csrf_token"])
     && $_POST["csrf_token"] === $_SESSION['csrf_token2'])) {
     // header('HTTP/1.1 403 Forbidden');
     header( "HTTP/1.1 302" );
-    header('Location : ./index.php');
+    header('Location: ./index.php');
     exit;
 }
 $form = $_SESSION['post'];
@@ -35,7 +35,7 @@ if ($_SESSION['res']['isSuccess'] === true) {
     $_SESSION = array();
     session_destroy();
     header( "HTTP/1.1 302" );
-    header('Location : ./complete.html');
+    header('Location: ./complete.html');
 }
 function send($input)
 {
