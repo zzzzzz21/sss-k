@@ -111,10 +111,12 @@
 		border-radius: 50%;
 		content: "";
 		display: inline-block;
+		vertical-align: middle;
 
 		@include pc {
-			height: 5px;
-			width: 5px;
+			height: 8px;
+			margin: 0 .4em .1em 0;
+			width: 8px;
 		}
 
 		@include sp {
@@ -130,7 +132,7 @@
 
 	@include pc {
 		margin: 4px 0 0 40px;
-		width: 325px;
+		width: 345px;
 		&.is-auto {
 			width: auto;
 		}

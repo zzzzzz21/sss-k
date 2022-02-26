@@ -10,6 +10,10 @@
 	@return $rate * $size * 1vw;
 }
 
+@function get_size_sp($size, $viewport: 640) {
+	@return ($size / $viewport) * 100vw;
+}
+
 @mixin fz_vw($font_size: 10) {
 	font-size: $font_size * 1px;
 	font-size: get_vw($font_size);

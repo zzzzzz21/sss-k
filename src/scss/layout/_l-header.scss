@@ -40,8 +40,10 @@
 	display: block;
 
 	@include pc {
-		height: 35px;
-		width: 292px;
+/*
+		height: 21px;
+		width: 257px;
+*/
 
 		img {
 			width: 100%;
@@ -50,7 +52,7 @@
 
 	@include sp {
 		height: auto;
-		width: 226px;
+		width: get_size_sp(450);
 
 		img {
 			width: 100%;
